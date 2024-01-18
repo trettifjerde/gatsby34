@@ -1,3 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+    --bg: rgb(0, 128, 128);
+    --bg-trans: rgb(0, 140, 140);
+    --nav-color: rgb(127, 255, 212);
+    --nav-color-trans: rgba(127, 255, 212, 0.2);
+    --gradient: linear-gradient(to right, var(--nav-color-trans), var(--nav-color));
+    --shadow-color: transparent;
+    --nav-gap: 1.5rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.body {
+    height: 100vh;
+    height: 100svh;
+    display: grid;
+    grid-template-areas: 'main nav';
+    grid-template-columns: auto 20rem;
+    align-items: center;
+}
+
+nav {
+    grid-area: nav;
+    max-height: 100%;
+    overflow: auto;
+    font-size: 1.2rem;
+    background-image: var(--gradient);
+    padding-block: var(--nav-gap);
+}
+
+nav ul {
+    list-style: none;
+    display: grid;
+    gap: var(--nav-gap);
+}
+
+nav li {
+    --dimens: 1rem;
+    position: relative;
+    margin-inline-end: 3rem;
+    padding: var(--nav-gap);
+    cursor: pointer;
+    background-color: var(--bg-color);
+    transition: background-color .3s ease;
+    border-radius: 0 100vw 100vw 0;
+}
+
+/* nav li.active::before,
+nav li.active::after, */
+nav li::before,
+nav li::after  {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: var(--dimens);
+    width: var(--dimens);
+    background-color: transparent;
+    transition: box-shadow .3s ease;
+    z-index: 10;
+}
+
+nav li::before {
+    top: calc(var(--dimens) * -1);
+    border-radius: 0 0 0 100vw;
+    box-shadow: -3px 3px 0 3px var(--bg-color);
+}
+
+nav li::after {
+    bottom: calc(var(--dimens) * -1);
+    border-radius: 100vw 0 0 0;
+    box-shadow: -3px -3px 0 3px var(--bg-color);
+}
+
+nav li.active {
+    --bg-color: var(--bg) !important;
+}
+
+nav li:hover {
+    --bg-color: var(--bg-trans);
+}
+
+main {
+    grid-area: main;
+}
