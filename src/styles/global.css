@@ -1,11 +1,12 @@
 :root {
     --bg: rgb(0, 128, 128);
     --bg-trans: rgb(0, 140, 140);
-    --nav-color: rgb(127, 255, 212);
+    --nav-color: rgb(115, 226, 189);
     --nav-color-trans: rgba(127, 255, 212, 0.2);
     --gradient: linear-gradient(to right, var(--nav-color-trans), var(--nav-color));
     --shadow-color: transparent;
     --nav-gap: 1.5rem;
+    --font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 }
 
 * {
@@ -16,6 +17,7 @@
 
 body {
     background-color: var(--bg);
+    font-family: var(--font-family);
 }
 
 .body {
@@ -24,13 +26,14 @@ body {
     display: grid;
     grid-template-areas: 'main nav';
     grid-template-columns: auto 20rem;
-    align-items: center;
 }
 
 nav {
     grid-area: nav;
     max-height: 100%;
     overflow: auto;
+    display: grid;
+    align-items: center;
     font-size: 1.2rem;
     background-image: var(--gradient);
     padding-block: var(--nav-gap);
@@ -43,18 +46,17 @@ nav ul {
 }
 
 nav li {
-    --dimens: 1rem;
+    --dimens: 12px;
+    --bg-color: transparent;
     position: relative;
     margin-inline-end: 3rem;
     padding: var(--nav-gap);
     cursor: pointer;
     background-color: var(--bg-color);
-    transition: background-color .3s ease;
+    transition: background-color .3s;
     border-radius: 0 100vw 100vw 0;
 }
 
-/* nav li.active::before,
-nav li.active::after, */
 nav li::before,
 nav li::after  {
     content: '';
@@ -85,6 +87,12 @@ nav li.active {
 
 nav li:hover {
     --bg-color: var(--bg-trans);
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
 }
 
 main {

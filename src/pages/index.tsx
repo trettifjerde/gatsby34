@@ -1,14 +1,41 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
-import SEO from "../components/seo"
-import Layout from "../components/layout"
+import * as React from 'react';
+import { PageProps, graphql } from 'gatsby';
+import SEO from '../components/seo';
+import NavLi from '../components/nav-li';
 
-const IndexPage: React.FC<PageProps> = () => {
-  return <Layout>
-    index
-  </Layout>
+const Index = ({data}: PageProps<Queries.IndexQuery>) => {
+  const [project, setProject] = React.useState(data.allMdx.nodes[0]);
+
+  return <div className='body'>
+    <main>
+      {project.body}
+    </main>
+
+    <nav>
+      <ul>
+        { data.allMdx.nodes.map(node => <NavLi id={node.id} info={node.frontmatter} />)}
+      </ul>
+    </nav>
+  </div>
 }
 
-export default IndexPage
+export default Index;
 
-export const Head: HeadFC = () => <SEO title="home page" />
+export const Head = () => <SEO></SEO>
+
+export const query = graphql`
+  query Index {
+    allMdx(sort: {frontmatter: {name: ASC }}) {
+      nodes {
+        frontmatter {
+          name
+          repo
+          url
+          slug
+        },
+        id,
+        body
+      } 
+    }
+  }
+`;
