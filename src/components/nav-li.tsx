@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { ProjectNavLi } from "../types";
+import { ProjectInfo } from '../types';
 
-const NavLi = ({info, id}: {info: ProjectNavLi | null, id: string}) => {
-    return <li key={id}>
-    <a href={info?.slug || ''}>{info?.name}</a>
+const NavLi = ({project, active, setProject}: {active: boolean, project: ProjectInfo, setProject: React.Dispatch<ProjectInfo>}) => {
+    return <li className={active ? 'active' : ''} onClick={() => setProject(project)}>
+    {project.frontmatter?.name}
   </li>
 }
 
