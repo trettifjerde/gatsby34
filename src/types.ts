@@ -1,1 +1,1 @@
-export type ProjectInfo = Queries.IndexQuery["allMdx"]["nodes"][0];
+export type ProjectInfo = Queries.IndexQuery["allMarkdownRemark"]["edges"][0]["node"];

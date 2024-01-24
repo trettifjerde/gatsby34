@@ -14,7 +14,11 @@ tags:
 - Framer Motion
 ---
 An app for sharing recipes and keeping shopping lists.
+
 Signing up is done on the server. Passwords are hashed. Sessions are managed using **JWT**. A middleware guards protected routes.
+
 Shopping lists can be managed manually or updated with ingredients from any recipe in just one click. Items with the same name and units stack automatically.
+
 Data is stored in a **Mongo Atlas** database and cached both on server and client, so the number of calls to the database is reduced.
+
 Recipe images get uploaded to third-party image hosting upon form submission.

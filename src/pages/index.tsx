@@ -5,7 +5,7 @@ import NavLi from '../components/nav-li';
 import Main from '../components/main';
 
 const Index = ({data}: PageProps<Queries.IndexQuery>) => {
-  const [project, setProject] = React.useState(data.allMdx.nodes[0]);
+  const [project, setProject] = React.useState(data.allMarkdownRemark.edges[0].node);
 
   return <>
     <header>
@@ -16,7 +16,9 @@ const Index = ({data}: PageProps<Queries.IndexQuery>) => {
 
     <nav>
       <ul>
-        { data.allMdx.nodes.map(node => <NavLi key={node.id} active={project.id === node.id} project={node} setProject={setProject} />)} 
+        { data.allMarkdownRemark.edges
+          .map(edge => edge.node)
+          .map(node => <NavLi key={node.id} active={project.id === node.id} project={node} setProject={setProject} />)} 
       </ul>
     </nav>
   </>
@@ -28,17 +30,19 @@ export const Head = () => <SEO></SEO>
 
 export const query = graphql`
   query Index {
-    allMdx(sort: {frontmatter: {name: ASC }}) {
-      nodes {
-        frontmatter {
-          name
-          repo
-          url
-          tags
-        },
-        id,
-        body
-      } 
+    allMarkdownRemark {
+      edges {
+        node {
+          html
+          id
+          frontmatter {
+            name
+            repo
+            url
+            tags
+          }
+        } 
+      }
     }
   }
 `;

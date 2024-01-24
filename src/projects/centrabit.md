@@ -12,7 +12,9 @@ tags:
 - SCSS
 ---
 A blog for a startup. Has **reCAPTCHA** protected forms.
+
 Submitted form data is stored in a **Mongo** database. Upon form submission, the server sends emails both to the user, confirming that their request is received, and to the site owners, notifying them of a new request.
+
 Dynamic pages content is collected from .md files and is regularly revalidated and cached, so no rebuilds after content updates are needed.
-*The owners are currently filling the pages with content, so the website is not deployed on the
-official domain yet.*
+
+*The owners are currently filling the pages with content, so the website is not deployed on the official domain yet.*

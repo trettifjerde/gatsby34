@@ -8,4 +8,5 @@ tags:
 - SCSS
 ---
 A birthday present for a friend who is new to Zadar and enjoys city quests.
+
 A question-answer web app. Saves the current question number in local storage so you do not have to go through all the questions over again if you close the app.
