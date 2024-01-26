@@ -5,7 +5,7 @@ import NavLi from '../components/nav-li';
 import Main from '../components/main';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
-const LAST_COLOR = 5;
+const LAST_COLOR = 6;
 const STEP = Math.ceil(100 / (LAST_COLOR - 1));
 const GRADIENT_PROPERTY = '--bg-position';
 const COLOR1_PROPERTY = '--grad1';
