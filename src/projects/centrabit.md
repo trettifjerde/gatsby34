@@ -1,20 +1,21 @@
 ---
 name: "Centrabit website"
-repo: "private, snippets can be shared"
 url: "http://148.251.199.126:8080/"
+desc: "A start-up homepage. The owners are currently filling the pages with content, so the website is not deployed on the official domain yet."
+accountable: 
+- fullstack
+- design
 tags: 
 - TypeScript
 - React
-- Next.js pages router
+- Next.js
 - nodemailer
 - Rest API
 - MongoDB
 - SCSS
 ---
-A blog for a startup. Has **reCAPTCHA** protected forms.
+**reCAPTCHA** protected forms.
 
-Submitted form data is stored in a **Mongo** database. Upon form submission, the server sends emails both to the user, confirming that their request is received, and to the site owners, notifying them of a new request.
+Form data is stored in a **Mongo** database. Upon form submission, the server emails the user, confirming that their request is received, and the site owners, notifying them of a new request.
 
-Dynamic pages content is collected from .md files and is regularly revalidated and cached, so no rebuilds after content updates are needed.
-
-*The owners are currently filling the pages with content, so the website is not deployed on the official domain yet.*
+Pages are rendered from **.md** files and are revalidated regularly - no need to rebuild the site after updates have been made.

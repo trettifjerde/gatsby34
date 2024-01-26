@@ -2,23 +2,25 @@
 name: "Cookbook Next.js"
 repo: "https://github.com/trettifjerde/cookbook-nextjs"
 url: "https://cookbook-nextjs-34.vercel.app/"
+desc: "An app for sharing recipes and keeping shopping lists."
+accountable:
+- fullstack
+- design
 tags: 
 - TypeScript
 - React
+- Next.js
 - Redux Toolkit
-- Next.js app router
 - Rest API
 - MongoDB
 - CSS
 - Tailwind
 - Framer Motion
 ---
-An app for sharing recipes and keeping shopping lists.
+Registration, authentication and authorization are implemented without any third-party libraries except for **JWT**.
 
-Signing up is done on the server. Passwords are hashed. Sessions are managed using **JWT**. A middleware guards protected routes.
+Data is stored in a **Mongo Atlas** database and is cached both on server and client, so the number of DB calls is reduced.
 
-Shopping lists can be managed manually or updated with ingredients from any recipe in just one click. Items with the same name and units stack automatically.
+Recipe images are uploaded to [imgbb](https://imgbb.com/) when the recipe form is being submitted.
 
-Data is stored in a **Mongo Atlas** database and cached both on server and client, so the number of calls to the database is reduced.
-
-Recipe images get uploaded to third-party image hosting upon form submission.
+All the ingredients of any given recipe can be added to your shopping list in just one click. Items with the same name and units add up automatically.

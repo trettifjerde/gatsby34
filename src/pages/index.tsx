@@ -3,16 +3,52 @@ import { PageProps, graphql } from 'gatsby';
 import SEO from '../components/seo';
 import NavLi from '../components/nav-li';
 import Main from '../components/main';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
+
+const LAST_COLOR = 5;
+const STEP = Math.ceil(100 / (LAST_COLOR - 1));
+const GRADIENT_PROPERTY = '--bg-position';
+const COLOR1_PROPERTY = '--grad1';
+const COLOR2_PROPERTY = '--grad2';
 
 const Index = ({data}: PageProps<Queries.IndexQuery>) => {
   const [project, setProject] = React.useState(data.allMarkdownRemark.edges[0].node);
+  const [nextGradient, setNextGradient] = React.useState([1, 1]);
 
   return <>
     <header>
       
     </header>
 
-    <Main project={project} />
+    <SwitchTransition mode='out-in'>
+
+      <CSSTransition key={project.id} 
+        onExited={(node) => {
+          const color = nextGradient[0]; 
+          const bgStep = STEP * color;
+
+          document.documentElement.style.setProperty(GRADIENT_PROPERTY, `${bgStep}% ${bgStep}%`);
+          document.documentElement.style.setProperty(COLOR1_PROPERTY, `var(--c${color})`);
+          document.documentElement.style.setProperty(COLOR2_PROPERTY, `var(--c${color + 1})`);
+
+          setNextGradient(prev => {
+            const [color, direction] = prev;
+            const nextColor = color + direction;
+
+            if ((nextColor === LAST_COLOR) || (nextColor === 0))
+              return [color - 1, direction * -1];
+
+            return [nextColor, direction];      
+          })
+        }}
+        addEndListener={(node, done) => node.addEventListener("animationend", done, false)}>
+
+        <Main project={project} />
+
+      </CSSTransition>
+
+    </SwitchTransition>
+
 
     <nav>
       <ul>
@@ -40,6 +76,7 @@ export const query = graphql`
             repo
             url
             tags
+            accountable
           }
         } 
       }
