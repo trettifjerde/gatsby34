@@ -5,9 +5,9 @@ import NavLi from '../components/nav-li';
 import Main from '../components/main';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
-const LAST_COLOR = 6;
-const STEP = Math.ceil(100 / (LAST_COLOR - 1));
-const GRADIENT_PROPERTY = '--bg-position';
+const LAST_COLOR = 11;
+const STEP = 100 / (LAST_COLOR - 1);
+const BG_POSITION = '--bg-position';
 const COLOR1_PROPERTY = '--grad1';
 const COLOR2_PROPERTY = '--grad2';
 
@@ -27,7 +27,7 @@ const Index = ({data}: PageProps<Queries.IndexQuery>) => {
           const color = nextGradient[0]; 
           const bgStep = STEP * color;
 
-          document.documentElement.style.setProperty(GRADIENT_PROPERTY, `${bgStep}% ${bgStep}%`);
+          document.documentElement.style.setProperty(BG_POSITION, `${bgStep}%`);
           document.documentElement.style.setProperty(COLOR1_PROPERTY, `var(--c${color})`);
           document.documentElement.style.setProperty(COLOR2_PROPERTY, `var(--c${color + 1})`);
 

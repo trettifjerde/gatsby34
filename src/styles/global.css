@@ -7,23 +7,34 @@
     --bg-trans: rgba(46, 53, 53, 0.5);
 
     --max-width: 75rem;
+    
+    --c0: #c080e0;
+    --c1: #40c0e0;
+    --c2: #80c080;
+    --c3: #c040e0;
+    --c4: #80c0e0;
+    --c5: #008080;    
+    --c6: #8040e0;
+    --c7: #c08062;
+    --c8: #c04080;
+    --c9: #4080e0;
+    --c10: #40c080;   
+    --c11: rgb(128, 64, 128);
 
-    --c0: #d74ad7;
-    --c1: #4ad7d7;
-    --c2: #9141ec;
-    --c3: #c4c146;
-    --c4: #4a6bd7;
-    --c5: #48db61;
-    --c6: var(--c0);
+    --all-colors: var(--c0), var(--c1), var(--c2), var(--c3), var(--c4), var(--c5), var(--c6), var(--c7), var(--c8), var(--c9), var(--c10), var(--c11); 
+    --bg-size: 1100%;
 
-    --bg-size: 600%;
-    --bg-position: 0% 0%;
+    --bg-position: 0%;
 
     --grad1: var(--c0);
     --grad2: var(--c1);
 
-    --all-colors: var(--c0), var(--c1), var(--c2), var(--c3), var(--c4), var(--c5), var(--c0);
     --two-colors: var(--grad1), var(--grad2);
+
+    --main-direction: -45deg;
+    --links-direction: 0deg;
+    --nav-direction: 135deg;
+    --nav-li-direction: 280deg;
 
     --gap: 0.5rem;
     --indent: 1.5rem;
@@ -45,11 +56,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-@keyframes gradient {
-    from { background-position: left;}
-    to { background-position: right;}
 }
 
 @keyframes fade-in {
@@ -121,14 +127,12 @@ nav, main {
     box-shadow: 0 0 1rem 0.5rem var(--bg-shadow);
 }
 
-nav, main, nav li::before {
-    background-size: var(--bg-size);
-    background-position: var(--bg-position);
+nav, nav li::before {
     background-image: linear-gradient(var(--grad-direction), var(--all-colors));
 }
 
 main {
-    --grad-direction: 45deg;
+    --grad-direction: var(--main-direction);
     --opacity: 1;
 
     grid-area: main;
@@ -145,13 +149,15 @@ nav, nav ul {
 }
 
 nav {
-    --grad-direction: 135deg;
-    
+    --grad-direction: var(--nav-direction);
+
     grid-area: nav;
     display: grid;
     align-items: center;
     padding-right: 0;
     position: sticky;
+    background-size: var(--bg-size) var(--bg-size);
+    background-position: var(--bg-position) var(--bg-position);
     top: 0;
     transition: background-position .5s ease-in-out;
 }
@@ -167,6 +173,7 @@ nav ul {
     justify-items: end;
 }
 
+main,
 article h1, 
 .links a {
     background-image: linear-gradient(var(--grad-direction), var(--two-colors));
@@ -178,8 +185,7 @@ nav li {
     --scale: 1;
     --padding-left: 0;
     --opacity: 0;
-    --grad-direction: 90deg;
-    --visibility: hidden;
+    --grad-direction: var(--nav-li-direction);
     --box-shadow: none;
     --text-shadow: 1px 1px 0.5rem var(--shadow-color);
 
@@ -226,16 +232,16 @@ nav li::before {
     z-index: -1;
     padding-left: var(--padding-left);
     border-radius: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
+    background-size: var(--bg-size);
+    background-position: calc(100% - var(--bg-position));
     opacity: var(--opacity);
-    visibility: var(--visibility);
     box-shadow: var(--box-shadow);
-    transition: opacity .3s ease-in-out, padding .3s ease-in-out, visibility .3s, background-position .5s ease-in-out;
+    transition: opacity .3s ease-in-out, padding .3s ease-in-out, background-position .5s ease-in-out;
 }
 
 nav li:hover,
 nav li.active {
     --opacity: 1;
-    --visibility: visible;
     --box-shadow: 0 0 6px 3px var(--bg-trans);
     --color: #fff;
     --text-shadow: none;
@@ -253,8 +259,6 @@ article {
 }
 
 article h1 {
-    --grad-direction: -90deg;
-
     width: fit-content;
     margin-top: var(--gap);
     margin-left: auto;
@@ -266,7 +270,7 @@ article h1 {
     text-transform: uppercase;
     letter-spacing: 0.125rem;
     line-height: 1;
-    text-shadow: 0 0 10rem var(--grad2);
+    text-shadow: 0 0 10rem var(--grad1);
 }
 
 .links {
@@ -281,7 +285,7 @@ article h1 {
 }
 
 .links a {
-    --grad-direction: 0deg;
+    --grad-direction: var(--links-direction);
     padding-block: calc(0.5 * var(--border-width));
 }
 
