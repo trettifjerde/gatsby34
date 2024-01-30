@@ -1,7 +1,7 @@
 ---
 name: "Centrabit website"
 url: "http://148.251.199.126:8080/"
-desc: "A start-up homepage. The owners are currently filling the pages with content, so the website is not deployed on the official domain yet."
+desc: "A website for a start-up. Currently is being filled with with content, so not deployed on the official domain yet."
 accountable: 
 - fullstack
 - design

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import SVGWrapper from './svg-wrapper';
-import { EMAIL_ADDRESS } from '../config';
+import { EMAIL_ADDRESS, POPUP_DURATION } from '../config';
 import { CSSTransition } from 'react-transition-group';
 
 export default function Mail() {
@@ -14,7 +14,7 @@ export default function Mail() {
         timer.current = setTimeout(() => {
             setAlert(false);
             timer.current = null;
-        }, 3000);
+        }, POPUP_DURATION);
 
         navigator.clipboard.writeText(EMAIL_ADDRESS);
         setAlert(true);

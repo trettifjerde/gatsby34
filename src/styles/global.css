@@ -6,7 +6,7 @@
     --bg-shadow: rgb(38, 43, 43);
     --bg-trans: rgba(46, 53, 53, 0.5);
 
-    --max-width: 75rem;
+    --max-width: 28rem;
     --scrollbar-width: 0.5rem;
     
     --c0: #c080e0;
@@ -37,11 +37,11 @@
     --nav-direction: 135deg;
     --nav-li-direction: 280deg;
 
-    --nav-padding-inline: 0;
-    --nav-border-radius: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-md);
+    --frame-padding-inline: 0;
 
-    --gap: 0.5rem;
-    --indent: 1.5rem;
+    --gap: 0.75rem;
+    --indent: 2.5rem;
+    --section-margin: calc(1.5 * var(--indent));
     --p-margin: 0.75rem;
 
     --border-width: 0.5rem;
@@ -122,7 +122,7 @@ strong, a {
     min-height: 100vh;
     min-height: 100svh;
     max-width: var(--max-width);
-    padding: var(--indent);
+    padding: var(--indent) var(--gap);
     margin-inline: auto;
     display: grid;
     grid-template-areas:    'header'
@@ -173,9 +173,10 @@ header .logo {
     color: var(--grad2);
 }
 
-nav, main {
+main, nav {
     position: relative;
-    padding: var(--border-width);
+    padding-block: var(--border-width);
+    padding-inline: var(--frame-padding-inline);
     box-shadow: 0 0 1rem 0.5rem var(--bg-shadow);
 }
 
@@ -183,54 +184,50 @@ nav, nav li::before {
     background-image: linear-gradient(var(--grad-direction), var(--all-colors));
 }
 
+main,
+article h1, 
+.links a {
+    background-image: linear-gradient(var(--grad-direction), var(--two-colors));
+}
+
+main, article, nav, nav ul {
+    border-radius: var(--border-radius);
+}
+
+article, nav ul {
+    background-color: var(--bg);
+}
+
 main {
     --grad-direction: var(--main-direction);
     --opacity: 1;
     --animation-duration: .4s;
     --transY: var(--main-transY);
+    --border-radius: var(--outline-radius-md) var(--outline-radius-md) var(--outline-radius-lg) var(--outline-radius-lg);
 
     grid-area: main;
-    padding-left: 0;
     opacity: var(--opacity);
-}
-
-main, article {
-    border-radius: var(--outline-radius-sm) var(--outline-radius-md) 0 var(--outline-radius-lg);
-}
-
-nav, nav ul {
-    border-radius: var(--nav-border-radius);
 }
 
 nav {
     --grad-direction: var(--nav-direction);
+    --border-radius: var(--outline-radius-sm) var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-lg);
 
     grid-area: nav;
     display: grid;
     align-items: center;
-    padding-inline: var(--nav-padding-inline);
     position: sticky;
+    top: var(--indent);
     background-size: var(--bg-size) var(--bg-size);
     background-position: var(--bg-position) var(--bg-position);
-    top: var(--indent);
     transition: background-position .5s ease-in-out;
 }
 
 nav ul {
-    overflow-x: scroll;
-    scroll-snap-type: x proximity;
-    max-height: calc(5 * var(--indent));
-    padding: var(--gap);
-    background-color: var(--bg);
+    overflow: auto;
     list-style: none;
+    padding: var(--gap);
     display: flex;
-    justify-items: end;
-}
-
-main,
-article h1, 
-.links a {
-    background-image: linear-gradient(var(--grad-direction), var(--two-colors));
 }
 
 nav li {
@@ -240,10 +237,9 @@ nav li {
     --padding-left: 0;
     --opacity: 0;
     --grad-direction: var(--nav-li-direction);
+    --border-radius: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
     --box-shadow: none;
     --text-shadow: 1px 1px 0.5rem var(--shadow-color);
-
-    scroll-snap-align: end;
 
     font-size: 0.75rem;
     font-weight: 400;
@@ -254,7 +250,6 @@ nav li {
     position: relative;
     padding-block: var(--gap);
     padding-inline: var(--indent);
-    border-radius: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
     
     transform: translateX(var(--translateX));
     transition: transform .3s ease-in-out, color .3s ease-in-out;
@@ -276,6 +271,10 @@ nav li:nth-child(even) {
     --shadow-color: var(--grad2);
 }
 
+nav li, nav li::before {
+    border-radius: var(--border-radius);
+}
+
 nav li::before {
     content: '';
     position: absolute;
@@ -285,7 +284,6 @@ nav li::before {
     min-width: 100%;
     z-index: -1;
     padding-left: var(--padding-left);
-    border-radius: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
     background-size: var(--bg-size);
     background-position: calc(100% - var(--bg-position));
     opacity: var(--opacity);
@@ -302,36 +300,62 @@ nav li.active {
 }
 
 article {
-    background-color: var(--bg);
-    padding-block: calc(1.5 * var(--indent));
-    padding-inline: var(--indent);
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    gap: calc(2 * var(--gap));
-    align-items: center;
-    min-height: 50vh;
+    padding: var(--indent);
 }
 
 article h1 {
     width: fit-content;
-    margin-top: var(--gap);
-    margin-left: auto;
-    background-clip: text;
-    color: transparent;
+    margin-block: var(--section-margin) var(--indent);
+    margin-inline: auto;
+    text-align: center;
     font-size: 2rem;
     font-weight: 500;
-    text-align: end;
     text-transform: uppercase;
     letter-spacing: 0.125rem;
     line-height: 1;
+    color: transparent;
+    background-clip: text;
     text-shadow: 0 0 10rem var(--grad1);
 }
 
+.info {
+    display: grid;
+    grid-template-areas: 'desc desc'
+                        'accountable links';
+    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    font-weight: 200;
+    font-size: 0.875rem;
+}
+
+.info h5 {
+    grid-area: desc;
+    font-weight: inherit;
+    font-size: inherit;
+    text-align: inherit;
+}
+
+.accountable {
+    grid-area: accountable;
+}
+
+.accountable p::before {
+    content: '~';
+    font-weight: 600;
+    padding-right: 0.25rem;
+    color: var(--grad1);
+}
+
+.accountable p:nth-child(even)::before {
+    color: var(--grad2);
+}
+
 .links {
+    grid-area: links;
     display: flex;
-    gap: var(--gap);
-    align-items: center;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .links a, .links h3 {
@@ -359,7 +383,7 @@ article h1 {
 }
 
 section {
-    padding-left: var(--indent);
+    margin-block: var(--section-margin);
 }
 
 section ul,
@@ -367,9 +391,12 @@ section p {
     margin-block: var(--p-margin);
 }
 
-section p,
-section ul {
-    line-height: 1.15;
+section p {
+    text-indent: var(--gap) hanging;
+}
+
+section p::first-letter {
+    color: var(--grad2);
 }
 
 section ul {
@@ -377,22 +404,21 @@ section ul {
     padding-left: var(--p-margin);
 }
 
-section ul li {
+section li {
     --marker-color: var(--grad1);
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 }
 
-section ul li:nth-child(even) {
+section li:nth-child(even) {
     --marker-color: var(--grad2);
 }
 
-section ul li::before {
+section li::before {
     position: absolute;
-    top: -0.25rem;
+    top: 0;
     left: 0;
     content: '✓';
-    font-size: 1.5rem;
     margin-right: var(--p-margin);
     color: var(--marker-color);
 }
@@ -400,8 +426,8 @@ section ul li::before {
 section a {
     color: var(--grad1);
     font-weight: 400;
-    text-decoration: underline;
-    text-underline-offset: 6px;
+    text-decoration: underline var(--grad2) 2px;
+    text-underline-offset: 2px;
 }
 
 section a:hover {
@@ -412,8 +438,8 @@ aside {
     color: var(--light-text);
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.5rem;
+    justify-content: space-evenly;
+    gap: 0.25rem;
 }
 
 aside span {
@@ -451,13 +477,12 @@ em {
     --opacity: 0;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 45rem) {
 
     :root {
-        --gap: 0.75rem;
-        --indent: 2rem;
-        --nav-border-radius: 0 var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-md);
-        --nav-padding-inline: var(--border-width) 0;
+        --gap: 1rem;
+        --section-margin: calc(1.25 * var(--indent));
+        --max-width: 75rem;
     }
 
     #gatsby-focus-wrapper {
@@ -465,33 +490,39 @@ em {
                                 'main nav';
         grid-template-rows: auto 1fr;
         grid-template-columns: 2fr 1fr;
+        padding: var(--indent);
     }
 
     main {
+        --border-radius: 0 var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-lg);
+        --frame-padding-inline: 0 var(--border-width);
         align-self: center;
     }
 
     nav {
+        --border-radius: 0 var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-md);
+        --frame-padding-inline: var(--border-width) 0;
         position: static;
         margin-top: 20vh;
     }
 
     nav ul {
         display: grid;
-        justify-items: start;
-        max-height: unset;
-        overflow: visible;
         gap: var(--gap);
-        padding-block: var(--indent);
+        justify-items: start;
+        overflow: visible;
+        padding: var(--gap);
     }
 
     nav li {
-        margin-right: var(--indent);
+        padding-block: var(--gap);
+        padding-left: var(--gap);
+        padding-right: var(--indent);
     }
 
     nav li:hover,
     nav li.active {
-        --padding-left: var(--indent);
+        --padding-left: calc(1.25 * var(--indent));
     }
 
     nav li.active {
@@ -499,14 +530,24 @@ em {
          --scale: 1.2;
     }
 
-    article {
-        min-height: unset;
+    article h1 {
+        margin-top: var(--indent);
+        margin-right: 0;
+        text-align: right;
+    }
+
+    aside {
+        gap: calc(0.5 * var(--gap));
+        justify-content: flex-end;
     }
 }
 
 @media (min-width: 75rem) {
     :root {
-        --gap: 1rem;
+        --gap: 1.25rem;
         --indent: 3rem;
+    }
+    article {
+        padding-left: calc(2 * var(--indent));
     }
 }

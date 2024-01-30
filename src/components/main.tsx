@@ -4,17 +4,28 @@ import { ProjectInfo } from '../types';
 const Main = ({ project }: { project: ProjectInfo }) => {
 return <main>
     <article>
+
       <h1>{project.frontmatter?.name}</h1>
 
-      <div className='links'>
-        <a href={project.frontmatter?.url || '#'}>
-          <h3>site</h3>
-        </a>
+      <div className='info'>
+        <div className='accountable'>
+          {project.frontmatter?.accountable?.map(item => <p key={item}>{item}</p>)}
+        </div>
 
-        { project.frontmatter?.repo && <a href={project.frontmatter.repo}>
-            <h3>repo</h3>
+        <h5>{project.frontmatter?.desc}</h5>
+
+        <div className='links'>
+
+          <a href={project.frontmatter?.url || '#'}>
+            <h3>site</h3>
           </a>
-        }
+
+          { project.frontmatter?.repo && <a href={project.frontmatter.repo}>
+              <h3>repo</h3>
+            </a>
+          }
+        </div>
+
       </div>
 
       <section dangerouslySetInnerHTML={{ __html: project.html || '' }} />

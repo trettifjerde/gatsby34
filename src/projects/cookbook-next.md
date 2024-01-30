@@ -2,7 +2,7 @@
 name: "Cookbook Next.js"
 repo: "https://github.com/trettifjerde/cookbook-nextjs"
 url: "https://cookbook-nextjs-34.vercel.app/"
-desc: "An app for sharing recipes and keeping shopping lists."
+desc: "A web app for sharing recipes and keeping shopping lists."
 accountable:
 - fullstack
 - design

@@ -67,6 +67,7 @@ export const query = graphql`
           id
           frontmatter {
             name
+            desc
             repo
             url
             tags
