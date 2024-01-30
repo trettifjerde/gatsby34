@@ -41,7 +41,7 @@
 
     --gap: 0.75rem;
     --indent: 2.5rem;
-    --section-margin: calc(1.5 * var(--indent));
+    --text-indent: 0;
     --p-margin: 0.75rem;
 
     --border-width: 0.5rem;
@@ -305,7 +305,7 @@ article {
 
 article h1 {
     width: fit-content;
-    margin-block: var(--section-margin) var(--indent);
+    margin-block: var(--indent);
     margin-inline: auto;
     text-align: center;
     font-size: 2rem;
@@ -320,13 +320,15 @@ article h1 {
 
 .info {
     display: grid;
-    grid-template-areas: 'desc desc'
+    grid-template-areas: 'desc links'
                         'accountable links';
     grid-template-columns: 1fr auto;
-    grid-template-columns: 1fr auto;
-    gap: 0.5rem;
+    grid-template-rows: auto auto;
+    row-gap: calc(0.5 * var(--gap));
+    column-gap: var(--gap);
     font-weight: 200;
     font-size: 0.875rem;
+    padding-left: calc(1.25 * var(--text-indent));
 }
 
 .info h5 {
@@ -354,8 +356,9 @@ article h1 {
 .links {
     grid-area: links;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
+    gap: calc(0.5 * var(--gap));
 }
 
 .links a, .links h3 {
@@ -383,7 +386,7 @@ article h1 {
 }
 
 section {
-    margin-block: var(--section-margin);
+    margin-block: var(--indent);
 }
 
 section ul,
@@ -392,7 +395,7 @@ section p {
 }
 
 section p {
-    text-indent: var(--gap) hanging;
+    text-indent: var(--text-indent) hanging;
 }
 
 section p::first-letter {
@@ -481,7 +484,7 @@ em {
 
     :root {
         --gap: 1rem;
-        --section-margin: calc(1.25 * var(--indent));
+        --text-indent: var(--p-margin);
         --max-width: 75rem;
     }
 
@@ -531,9 +534,13 @@ em {
     }
 
     article h1 {
-        margin-top: var(--indent);
+        margin-top: calc(1.5 * var(--indent));
         margin-right: 0;
         text-align: right;
+    }
+
+    section {
+        margin-top: calc(1.25 * var(--indent));
     }
 
     aside {
@@ -547,7 +554,13 @@ em {
         --gap: 1.25rem;
         --indent: 3rem;
     }
-    article {
+
+    .info, article {
         padding-left: calc(2 * var(--indent));
+    }
+    
+    article h1, section {
+        margin-top: var(--indent);
+        margin-bottom: calc(0.75 * var(--indent));
     }
 }
