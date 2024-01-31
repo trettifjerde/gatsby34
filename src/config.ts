@@ -1,5 +1,5 @@
 export const SVG_DIMENS = 24;
-export const POPUP_DURATION = 200;
+export const POPUP_DURATION = 2000;
 
 export const LAST_COLOR_N = 11;
 export const BG_POS_SHIFT_STEP = 100 / (LAST_COLOR_N - 1);

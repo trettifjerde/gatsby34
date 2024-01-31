@@ -60,7 +60,7 @@ export const Head = () => <SEO></SEO>
 
 export const query = graphql`
   query Index {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { frontmatter: { order: DESC }}) {
       edges {
         node {
           html
@@ -69,9 +69,10 @@ export const query = graphql`
             name
             desc
             repo
-            url
+            site
             tags
             accountable
+            order
           }
         } 
       }

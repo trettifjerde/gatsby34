@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { ProjectInfo } from '../types';
 
-const Main = ({ project }: { project: ProjectInfo }) => {
-return <main>
+const Main = ({ project }: { project: ProjectInfo }) => <main>
     <article>
 
       <h1>{project.frontmatter?.name}</h1>
@@ -16,9 +15,9 @@ return <main>
 
         <div className='links'>
 
-          <a href={project.frontmatter?.url || '#'}>
+          {project.frontmatter?.site && <a href={project.frontmatter?.site || '#'}>
             <h3>site</h3>
-          </a>
+          </a>}
 
           { project.frontmatter?.repo && <a href={project.frontmatter.repo}>
               <h3>repo</h3>
@@ -36,6 +35,5 @@ return <main>
 
     </article>
   </main>
-}
 
 export default Main;

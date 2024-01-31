@@ -1,10 +1,9 @@
 ---
 name: "Centrabit website"
-url: "http://148.251.199.126:8080/"
-desc: "A website for a start-up. Currently is being filled with with content, so not deployed on the official domain yet."
+site: "http://148.251.199.126:8080/"
+desc: "A website for a start-up. Currently is being filled with content, so it's not deployed on the official domain yet."
 accountable: 
 - fullstack
-- design
 tags: 
 - TypeScript
 - React
@@ -13,9 +12,11 @@ tags:
 - Rest API
 - MongoDB
 - SCSS
+order: 1
 ---
-**reCAPTCHA** protected forms.
+Pages are rendered from **.md** files and are **revalidated regularly** - no need to rebuild the website when content is updated.
 
-Form data is stored in a **Mongo** database. Upon form submission, the server emails the user, confirming that their request is received, and the site owners, notifying them of a new request.
+Upon form submission, the backend stores data in a database and **sends email notifications** - to the user, confirming that their request has been received, and to the site administrator, notifying them of a new request.
 
-Pages are rendered from **.md** files and are revalidated regularly - no need to rebuild the site after updates have been made.
+Forms are protected with **reCAPTCHA Enterprise**.
+

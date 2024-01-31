@@ -1,8 +1,8 @@
 ---
 name: "Cookbook Next.js"
 repo: "https://github.com/trettifjerde/cookbook-nextjs"
-url: "https://cookbook-nextjs-34.vercel.app/"
-desc: "A web app for sharing recipes and keeping shopping lists."
+site: "https://cookbook-nextjs-34.vercel.app/"
+desc: "A web app for sharing recipes and keeping grocery lists."
 accountable:
 - fullstack
 - design
@@ -16,11 +16,12 @@ tags:
 - CSS
 - Tailwind
 - Framer Motion
+order: 0
 ---
-Registration, authentication and authorization are implemented without any third-party libraries except for **JWT**.
+Registration and authentication are implemented without third-party libraries other than **JWT**.
 
-Data is stored in a **Mongo Atlas** database and is cached both on server and client, so the number of DB calls is reduced.
+Database data is **cached** both on server and client, so the number of DB calls is reduced.
 
-Recipe images are uploaded to [imgbb](https://imgbb.com/) when the recipe form is being submitted.
+Images users attach to their recipe forms are uploaded to [imgbb](https://imgbb.com/) image hosting.
 
-All the ingredients of any given recipe can be added to your shopping list in just one click. Items with the same name and units add up automatically.
+Ingredients of any given recipe can be added to user's grocery list **in just one click**. Items with the same name and units **add up automatically**.
