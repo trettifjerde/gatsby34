@@ -41,7 +41,7 @@
 
     --gap: 0.75rem;
     --indent: 2.5rem;
-    --text-indent: 0;
+    --text-indent: calc(0.5 * var(--gap));
     --p-margin: 0.75rem;
 
     --border-width: 0.5rem;
@@ -97,6 +97,35 @@
     }
 }
 
+@keyframes scale-in {
+    0% {
+        opacity: 0;
+        transform: scale(var(--scale-min));
+    }
+    75% {
+        opacity: 1;
+        transform: scale(var(--scale-max));
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes scale-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(var(--scale-max));
+    }
+    100% {
+        opacity: 0;
+        transform: scale(var(--scale-min));
+    }
+}
+
 html {
     background-color: var(--bg);
     color: var(--gray-text);
@@ -136,24 +165,67 @@ strong, a {
 
 header {
     grid-area: header;
-    position: relative;
-    display: flex;
-    align-items: center;
     gap: var(--gap);
 }
 
-header .logo {
+header, .contact {
+    display: flex;
+    align-items: center;
+}
+
+.logo div {
+    font-weight: 300;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .4s ease-in-out .4s, visibility .4s ease-in-out .4s, color var(--duration) var(--timing), transform var(--duration) var(--timing);
+}
+
+.logo div.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.contact {
     flex-grow: 1;
+    justify-content: flex-end;
+    position: relative;
 }
 
 .a-svg svg {
-    fill: var(--grad1);
-    cursor: pointer;
-    transition: fill .3s ease-in-out;
+    transition: fill var(--duration) var(--timing), transform var(--duration) var(--timing);
 }
 
 .a-svg:hover svg {
     fill: var(--grad2);
+}
+
+.a-svg, .logo {
+    padding-inline: 0.5rem;
+    cursor: pointer;
+}
+
+.logo {
+    padding-block: 0.5rem;
+}
+
+.logo:has(.hidden) {
+    cursor: default;
+}
+
+.a-svg svg,
+.logo div {
+    --duration: .2s;
+    --timing: ease;
+
+    fill: var(--grad1);
+    color: var(--grad1);
+    transform: scale(1);
+}
+.a-svg:hover svg,
+.logo:hover div {
+    fill: var(--grad2);
+    color: var(--grad2);
+    transform: scale(1.2);
 }
 
 .mail-alert {
@@ -187,7 +259,7 @@ nav, nav li::before {
 
 main,
 article h1, 
-.links a {
+.links .a {
     background-image: linear-gradient(var(--grad-direction), var(--two-colors));
 }
 
@@ -202,6 +274,8 @@ article, nav ul {
 main {
     --grad-direction: var(--main-direction);
     --opacity: 1;
+    --animation-in: fade-in;
+    --animation-out: fade-out;
     --animation-duration: .4s;
     --transY: var(--main-transY);
     --border-radius: var(--outline-radius-md) var(--outline-radius-md) var(--outline-radius-lg) var(--outline-radius-lg);
@@ -306,18 +380,16 @@ article {
 }
 
 article h1 {
-    width: fit-content;
     margin-block: var(--indent);
     margin-inline: auto;
     text-align: center;
     font-size: 2rem;
     font-weight: 500;
-    text-transform: uppercase;
     letter-spacing: 0.125rem;
-    line-height: 1;
+    text-transform: uppercase;
+    line-height: 1.25;
     color: transparent;
     background-clip: text;
-    text-shadow: 0 0 10rem var(--grad1);
 }
 
 .info {
@@ -325,11 +397,10 @@ article h1 {
     grid-template-areas: 'desc links'
                         'accountable links';
     grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;
     row-gap: calc(0.25 * var(--gap));
     column-gap: var(--gap);
     font-size: 0.875rem;
-    padding-left: calc(1.25 * var(--text-indent));
 }
 
 .info h5 {
@@ -337,11 +408,12 @@ article h1 {
     font-weight: inherit;
     font-size: inherit;
     text-align: inherit;
-    line-height: 1.1;
+    line-height: 1rem;
 }
 
 .accountable {
     grid-area: accountable;
+    padding-left: calc(1.25 * var(--text-indent));
 }
 
 .accountable p::before {
@@ -357,18 +429,33 @@ article h1 {
 .links {
     grid-area: links;
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: calc(0.5 * var(--gap));
 }
 
-.links a, .links h3 {
+.col {
+    flex-direction: column;
+}
+
+.links.row {
+    justify-content: flex-end;
+}
+
+.links .a, .links h3 {
     border-radius: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
 }
 
-.links a {
+.links .a {
     --grad-direction: var(--links-direction);
     padding-block: calc(0.5 * var(--border-width));
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
+}
+
+.links .a.active {
+    cursor: default;
+    transform: scale(1.2);
 }
 
 .links h3 {
@@ -379,16 +466,17 @@ article h1 {
     padding-inline: 1.25rem 0.75rem;
     padding-block: 0.375rem 0.25rem;
     background-color: var(--bg);
+    transform: scale(1);
     transition: background-color .3s ease-in-out;
 }
 
-.links a:hover h3 {
+.links .a:hover h3, .links .active h3 {
     background-color: transparent;
 }
 
 section {
     margin-block: var(--indent);
-    line-height: 1.3;
+    line-height: 1.25;
 }
 
 section ul,
@@ -469,11 +557,11 @@ em {
 }
 
 .enter {
-    animation: fade-in var(--animation-duration) forwards;
+    animation: var(--animation-in) var(--animation-duration) forwards;
 }
 
 .exit {
-    animation: fade-out var(--animation-duration) forwards;
+    animation: var(--animation-out) var(--animation-duration) forwards;
 }
 
 .enter-done {
@@ -484,11 +572,22 @@ em {
     --opacity: 0;
 }
 
+.hello {
+    --animation-in: scale-in;
+    --animation-out: scale-out;
+    --scale-max: 1.15;
+    --scale-min: 0;
+}
+
+.hello h1 {
+    text-transform: none;
+    width: fit-content;
+}
+
 @media (min-width: 45rem) {
 
     :root {
         --gap: 1rem;
-        --text-indent: var(--p-margin);
         --max-width: 75rem;
     }
 
@@ -559,16 +658,11 @@ em {
         --indent: 3rem;
     }
 
-    .info {
-        padding-left: var(--indent);
-    }
-
     article {
         padding-left: calc(2 * var(--indent));
     }
-    
-    article h1, section {
-        margin-top: var(--indent);
-        margin-bottom: calc(0.75 * var(--indent));
+
+    section, article h1 {
+        margin-block: calc(0.75 * var(--indent));
     }
 }

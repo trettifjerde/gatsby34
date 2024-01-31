@@ -2,21 +2,27 @@ import * as React from 'react';
 import { PageProps, graphql } from 'gatsby';
 import SEO from '../components/seo';
 import NavLi from '../components/nav-li';
-import Main from '../components/main';
+import Project from '../components/project';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
-import Header from '../components/header';
+import ContactInfo from '../components/contact-info';
 import { BG_POS_PROPERTY_NAME, COLOR1_PROPERTY_NAME, COLOR2_PROPERTY_NAME, LAST_COLOR_N, BG_POS_SHIFT_STEP } from '../config';
+import { ProjectInfo } from '../types';
+import Hello from '../components/hello';
+import Logo from '../components/logo';
 
 const Index = ({data}: PageProps<Queries.IndexQuery>) => {
-  const [project, setProject] = React.useState(data.allMarkdownRemark.edges[0].node);
+  const [project, setProject] = React.useState<ProjectInfo | null>(null);
   const [nextGradient, setNextGradient] = React.useState([1, 1]);
 
   return <>
-    <Header />
+    <header>
+      <Logo hidden={!project} onclick={() => setProject(null)}/>
+      <ContactInfo />
+    </header>
 
     <SwitchTransition mode='out-in'>
 
-      <CSSTransition key={project.id} 
+      <CSSTransition key={project ? project.id : 'hello'} 
         onExited={(node) => {
           const color = nextGradient[0]; 
           const bgStep = BG_POS_SHIFT_STEP * color;
@@ -37,7 +43,13 @@ const Index = ({data}: PageProps<Queries.IndexQuery>) => {
         }}
         addEndListener={(node, done) => node.addEventListener("animationend", done, false)}>
 
-        <Main project={project} />
+        <main>
+          <article>
+            {project && <Project project={project} />}
+            {!project && <Hello />}
+          </article>
+        </main>
+
 
       </CSSTransition>
 
@@ -48,7 +60,7 @@ const Index = ({data}: PageProps<Queries.IndexQuery>) => {
       <ul>
         { data.allMarkdownRemark.edges
           .map(edge => edge.node)
-          .map(node => <NavLi key={node.id} active={project.id === node.id} project={node} setProject={setProject} />)} 
+          .map(node => <NavLi key={node.id} active={(!!project) && (project.id === node.id)} project={node} setProject={setProject} />)} 
       </ul>
     </nav>
   </>

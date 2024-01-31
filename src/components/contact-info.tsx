@@ -3,12 +3,10 @@ import Github from '../svg/github';
 import Mail from '../svg/mail';
 import LinkedIn from '../svg/linkedin';
 
-const Header = () => <header>
-    <div className='logo'></div>
+const ContactInfo = () => <div className='contact'>
     <LinkedIn />
     <Mail />
     <Github />
+</div>;
 
-</header>;
-
-export default Header;
+export default ContactInfo;
