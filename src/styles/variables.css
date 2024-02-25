@@ -1,0 +1,107 @@
+:root {
+    --light-text: #f3f3f3;
+    --gray-text: #dadada;
+    --bg: rgb(46, 53, 53);
+    --bg-lighter: rgb(56, 63, 63);
+    --bg-shadow: rgb(38, 43, 43);
+    --bg-trans: rgba(46, 53, 53, 0.5);
+    
+    --c0: #c080e0;
+    --c1: #40c0e0;
+    --c2: #80c080;
+    --c3: #c040e0;
+    --c4: #008080;    
+    --c5: #80c0e0;
+    --c6: #8040e0;
+    --c7: #c08062;
+    --c8: #c04080;
+    --c9: #4080e0;
+    --c10: #40c080;   
+    --c11: #804080;
+
+    --grad1: var(--c0);
+    --grad2: var(--c1);
+    --two-colors: var(--grad1), var(--grad2);
+    --all-colors: var(--c0), var(--c1), var(--c2), var(--c3), var(--c4), var(--c5), var(--c6), var(--c7), var(--c8), var(--c9), var(--c10), var(--c11); 
+    
+    --bg-size: 1100%;
+    --bg-position: 0%;
+
+    --main-direction: -45deg;
+    --links-direction: 0deg;
+    --nav-direction: 135deg;
+    --nav-li-direction: 280deg;
+
+    --fixed-gap: 0.75rem;
+    --relative-indent: 5vw;
+    --container-margin: 5vw;
+    --text-indent: calc(0.5 * var(--fixed-gap));
+    --h1-size: 2rem;
+    --p-margin: 1rem;
+
+    --border-width: 0.5rem;
+    --outline-radius-sm: 1.5rem;
+    --outline-radius-md: 3rem;
+    --outline-radius-lg: 6rem;
+    --outline-radius-nav: 100vw;
+
+    --font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    --font-weight: 200;
+
+    --animation-in: slide-in;
+    --animation-out: slide-out;
+    --animation-duration: .4s;
+
+    --fade-in: fade-in;
+    --fade-out: fade-out;
+    --scale-in: scale-in;
+    --scale-out: scale-out;
+    --slide-in: slide-in;
+    --slide-out: slide-out;
+}
+
+#gatsby-focus-wrapper {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-block: var(--relative-indent);
+    padding-inline: var(--container-margin);
+    display: grid;
+    grid-template-areas:    'header'
+                            'nav'
+                            'main';
+    grid-template-rows: auto auto 1fr;
+    gap: var(--relative-indent);
+    align-items: start;
+}
+
+@media (min-width: 45rem) {
+
+    :root {
+        --fixed-gap: 1rem;
+        --container-margin: 2rem;
+    }
+
+    #gatsby-focus-wrapper {
+        grid-template-areas:    'header header'
+                                'main nav';
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 2fr 1fr;
+        gap: calc(2 * var(--fixed-gap));
+    }
+}
+
+@media (min-width: 75rem) {
+    :root {
+        --fixed-gap: 1.25rem;
+        --container-margin: 12vw;
+    }
+}
+
+@media (min-width: 150rem) {
+    #gatsby-focus-wrapper {
+        max-width: 120rem;
+        padding-inline: 0;
+        margin-inline: auto;
+    }
+}

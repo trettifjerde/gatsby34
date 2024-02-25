@@ -1,0 +1,75 @@
+.hello {
+    --animation-duration: .4s;
+    --scale-max: 1.3;
+    --scale-min: 0.6;
+}
+
+.hello h1 {
+    text-transform: none;
+    width: fit-content;
+}
+
+.langs {
+    justify-content: center;
+}
+
+.active {
+    transform: scale(var(--scale-max));
+}
+
+.active h3 {
+    background-color: transparent;
+}
+
+.enter section, .exit section, .enter h1, .exit h1, .enter .active, .exit .active {
+    animation: var(--animation-name) var(--animation-duration) forwards;
+}
+
+.enter section {
+    --animation-name: var(--fade-in);
+}
+
+.exit section {
+    --animation-name: var(--fade-out);
+}
+
+.enter h1 {
+    --animation-name: var(--scale-in);
+}
+
+.exit h1 {
+    --animation-name: var(--scale-out);
+}
+
+.enter .active {
+    --animation-name: turn-on;
+}
+
+.enter .active h3 {
+    background-color: transparent;
+}
+
+.exit .active {
+    --animation-name: turn-off;
+}
+.exit .active h3 {
+    background-color: var(--bg);
+}
+
+@keyframes turn-on {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(var(--scale-max));
+    }
+}
+
+@keyframes turn-off {
+    from {
+        transform: scale(var(--scale-max));
+    }
+    to {
+        transform: scale(1);
+    }
+}

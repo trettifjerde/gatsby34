@@ -1,0 +1,37 @@
+.info {
+    display: grid;
+    grid-template-areas: 'desc desc'
+                        'accountable links';
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+    gap: var(--fixed-gap);
+    font-size: 0.875rem;
+    padding-inline: var(--fixed-gap);
+}
+
+.info h5 {
+    grid-area: desc;
+    font-weight: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    line-height: 1rem;
+}
+
+.accountable {
+    grid-area: accountable;
+    padding-left: calc(1.25 * var(--text-indent));
+}
+
+.accountable p::before {
+    content: '✓';
+    padding-right: 0.25rem;
+    color: var(--grad1);
+}
+
+.accountable p:nth-child(even)::before {
+    color: var(--grad2);
+}
+
+.links {
+    grid-area: links;
+}

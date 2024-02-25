@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SVG_DIMENS } from '../config';
+import { SVG_DIMENS } from '../../../config';
 
 export default function SVGWrapper({viewBox, children}: {viewBox: string, children: React.ReactNode}) {
     return (

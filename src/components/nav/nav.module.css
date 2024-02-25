@@ -1,0 +1,118 @@
+.nav {
+    --grad-direction: var(--nav-direction);
+    --border-radius: var(--outline-radius-sm) var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-lg);
+
+    position: sticky;
+    top: var(--relative-indent);
+    background-position: var(--bg-position) var(--bg-position);
+    grid-area: nav;
+    display: grid;
+    align-items: center;
+}
+
+.nav ul {
+    overflow: auto;
+    list-style: none;
+    padding: var(--fixed-gap);
+    display: flex;
+}
+
+.nav li {
+    --dimens: 12px;
+    --translateX: 0;
+    --textTranslateX: 0;
+    --scale: 1;
+    --overlay-padding-left: 0;
+    --overlay-opacity: 0;
+    --grad-direction: var(--nav-li-direction);
+    --grad-image: var(--all-colors);
+    --border-radius: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
+    --box-shadow: none;
+    --text-shadow: 1px 1px 0.5rem var(--shadow-color);
+
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    color: var(--light-text);
+
+    position: relative;
+    padding-block: var(--fixed-gap);
+    padding-inline: calc(1.5 * var(--fixed-gap));
+    
+    transform: translateX(var(--translateX)) scale(var(--scale));
+    transition: transform .3s ease-in-out, color .3s ease-in-out;
+
+    cursor: pointer;
+}
+
+.nav li div {
+    text-shadow: var(--text-shadow);
+}
+
+.nav li:nth-child(odd) {
+    --shadow-color: var(--grad1);
+}
+
+.nav li:nth-child(even) {
+    --shadow-color: var(--grad2);
+}
+
+.nav li, .nav li::before {
+    border-radius: var(--border-radius);
+}
+
+.nav li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    min-width: 100%;
+    z-index: -1;
+    padding-left: var(--overlay-padding-left);
+    background-image: linear-gradient(var(--grad-direction), var(--all-colors));
+    background-size: var(--bg-size);
+    background-position: calc(100% - var(--bg-position));
+    opacity: var(--overlay-opacity);
+    box-shadow: var(--box-shadow);
+    transition: opacity .3s ease-in-out, padding .3s ease-in-out, background-position .5s ease-in-out;
+}
+
+.nav li:hover,
+.nav li.active {
+    --overlay-opacity: 1;
+    --box-shadow: 0 0 6px 3px var(--bg-trans);
+    --color: #fff;
+    --text-shadow: none;
+}
+
+@media (min-width: 45rem) {
+    .nav {
+        --border-radius: 0 var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-md);
+        top: 33%;
+    }
+
+    .nav ul {
+        display: grid;
+        gap: var(--fixed-gap);
+        justify-items: start;
+        overflow: visible;
+        padding: var(--fixed-gap);
+    }
+
+    .nav li {
+        padding-inline: var(--fixed-gap);
+    }
+
+    .nav li:hover,
+    .nav li.active {
+        --overlay-padding-left: calc(2 * var(--fixed-gap));
+    }
+
+    .nav li.active {
+        --translateX: calc(-2 * var(--fixed-gap));
+        --scale: 1.2;
+    }
+}

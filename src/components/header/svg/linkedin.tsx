@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LINKEDIN_URL } from '../config';
+import { LINKEDIN_URL } from '../../../config';
 import ASVG from './a-svg';
 
 export default function LinkedIn() {

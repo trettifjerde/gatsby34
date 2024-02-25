@@ -1,0 +1,86 @@
+.header {
+    --duration: .2s;
+    --timing: ease;
+
+    grid-area: header;
+    gap: var(--fixed-gap);
+}
+
+.header,
+.contact {
+    display: flex;
+    align-items: center;
+}
+
+.contact {
+    flex-grow: 1;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.logo {
+    padding-block: 0.5rem;
+}
+
+.svga,
+.logo {
+    padding-inline: 0.5rem;
+    cursor: pointer;
+}
+
+.logo div {
+    font-weight: 300;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .4s ease-in-out .4s, visibility .4s ease-in-out .4s, color var(--duration) var(--timing), transform var(--duration) var(--timing);
+}
+
+.logo div.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.logo:has(.hidden) {
+    cursor: default;
+}
+
+.svga svg {
+    transition: fill var(--duration) var(--timing), transform var(--duration) var(--timing);
+}
+
+.svga:hover svg {
+    fill: var(--grad2);
+}
+
+.svga svg,
+.logo div {
+    fill: var(--grad1);
+    color: var(--grad1);
+    transform: scale(1);
+}
+
+.svga:hover svg,
+.logo:hover div {
+    fill: var(--grad2);
+    color: var(--grad2);
+    transform: scale(1.2);
+}
+
+.popup {
+    --animation-duration: .3s;
+    --transY: 50%;
+
+    font-size: 0.875rem;
+    position: absolute;
+    right: -.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: .5rem;
+    background-color: var(--bg-lighter);
+    box-shadow: 0 0 0.5rem 0.125rem var(--bg-shadow);
+    border-radius: var(--outline-radius-sm) 0 var(--outline-radius-sm) 0;
+    z-index: 1;
+}
+
+.popup strong {
+    color: var(--grad2);
+}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GITHUB_URL } from '../config';
+import { GITHUB_URL } from '../../../config';
 import ASVG from './a-svg';
 
 export default function Github() {

@@ -1,0 +1,150 @@
+.main {
+    --grad-direction: var(--main-direction);
+    --grad-position: calc(100% - var(--bg-position));
+    --transY: var(--relative-indent);
+    --border-radius: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
+    --fixed-padding: var(--fixed-gap);
+    
+
+    width: 100%;
+    position: relative;
+    background-position: var(--grad-position) var(--grad-position);
+    grid-area: main;
+}
+
+.main article {
+    padding-block: calc(5 * var(--fixed-padding));
+    padding-inline: var(--relative-indent);
+}
+
+:where(.main h1) {
+    margin-top: calc(3 * var(--fixed-padding));
+    margin-bottom: calc(2 * var(--fixed-padding));
+    margin-inline: auto;
+    text-align: center;
+    font-size: var(--h1-size);
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.25;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(var(--grad-direction), var(--two-colors));
+}
+
+.main section {
+    margin-block: calc(5 * var(--fixed-padding));
+    line-height: 1.25;
+}
+
+.main section ul,
+.main section p {
+    margin-block: var(--p-margin);
+}
+
+.main section p {
+    text-indent: var(--text-indent) hanging;
+}
+
+.main section p::first-letter {
+    color: var(--grad2);
+    font-weight: 400;
+}
+
+.main section ul {
+    list-style-type: none;
+    padding-left: var(--p-margin);
+}
+
+.main section li {
+    --marker-color: var(--grad1);
+    position: relative;
+    padding-left: 1rem;
+}
+
+.main section li:nth-child(even) {
+    --marker-color: var(--grad2);
+}
+
+.main section li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '~';
+    font-weight: 400;
+    margin-right: var(--p-margin);
+    color: var(--marker-color);
+}
+
+.main section a {
+    color: var(--grad1);
+    font-weight: 400;
+    text-decoration: underline var(--grad2) 2px;
+    text-underline-offset: 2px;
+}
+
+.main section a:hover {
+    color: var(--grad2);
+}
+
+.main aside {
+    color: var(--light-text);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: var(--fixed-padding);
+    padding-inline: var(--fixed-padding);
+}
+
+.main aside span {
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1em;
+    border-width: calc(0.25 * var(--border-width));
+    border-style: solid;
+    border-left-color: var(--grad1);
+    border-right-color: var(--grad2);
+    border-block: none;
+    transition: border-color .3s ease-in-out;
+}
+
+@media (max-width: 45rem) {
+    .main {
+        max-width: 30rem;
+        margin-inline: auto;
+    }
+}
+
+@media (min-width: 45rem) {
+    .main {
+        --border-radius: 0 var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-lg);
+        padding-left: 0;
+        align-self: center;
+    }
+
+    .main article {
+        padding-block: calc(4 * var(--fixed-padding));
+        padding-inline: calc(2 * var(--fixed-padding));
+    }
+
+    .main article h1 {
+        margin-right: 0;
+        text-align: right;
+    }
+
+    .main section {
+        margin-block: calc(4 * var(--fixed-padding));
+    }
+
+    .main aside {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 75rem) {
+    .main article {
+        --fixed-padding: calc(0.75 * var(--fixed-gap));
+        padding-left: calc(1.5 * var(--relative-indent));
+        padding-right: var(--relative-indent);
+    }
+}
