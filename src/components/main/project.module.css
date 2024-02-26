@@ -1,24 +1,25 @@
 .info {
-    display: grid;
-    grid-template-areas: 'desc desc'
-                        'accountable links';
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto 1fr;
-    gap: var(--fixed-gap);
     font-size: 0.875rem;
     padding-inline: var(--fixed-gap);
 }
 
 .info h5 {
-    grid-area: desc;
     font-weight: inherit;
     font-size: inherit;
-    text-align: inherit;
+    text-align: center;
     line-height: 1rem;
+    margin-top: calc(1.5 * var(--padding));
+    margin-bottom: calc(2 * var(--padding));
+}
+
+.info h5 + div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--fixed-gap);
 }
 
 .accountable {
-    grid-area: accountable;
     padding-left: calc(1.25 * var(--text-indent));
 }
 
@@ -33,5 +34,17 @@
 }
 
 .links {
-    grid-area: links;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+@media (min-width: 45rem) {
+    .info {
+        
+    }
+    .info h5 {
+        margin-left: auto;
+        max-width: 85%;
+        text-align: right;
+    }
 }

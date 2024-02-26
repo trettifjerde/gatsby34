@@ -33,8 +33,7 @@
     --nav-li-direction: 280deg;
 
     --fixed-gap: 0.75rem;
-    --relative-indent: 5vw;
-    --container-margin: 5vw;
+    --relative-indent: 4vw;
     --text-indent: calc(0.5 * var(--fixed-gap));
     --h1-size: 2rem;
     --p-margin: 1rem;
@@ -65,13 +64,13 @@
     min-height: 100vh;
     min-height: 100svh;
     padding-block: var(--relative-indent);
-    padding-inline: var(--container-margin);
+    padding-inline: calc(1.5 * var(--fixed-gap));
     display: grid;
     grid-template-areas:    'header'
                             'nav'
                             'main';
     grid-template-rows: auto auto 1fr;
-    gap: var(--relative-indent);
+    gap: calc(1.5 * var(--fixed-gap));
     align-items: start;
 }
 
@@ -79,29 +78,20 @@
 
     :root {
         --fixed-gap: 1rem;
-        --container-margin: 2rem;
     }
 
     #gatsby-focus-wrapper {
+        max-width: 80rem;
+        margin-inline: auto;
         grid-template-areas:    'header header'
                                 'main nav';
         grid-template-rows: auto 1fr;
         grid-template-columns: 2fr 1fr;
-        gap: calc(2 * var(--fixed-gap));
     }
 }
 
 @media (min-width: 75rem) {
-    :root {
-        --fixed-gap: 1.25rem;
-        --container-margin: 12vw;
-    }
-}
-
-@media (min-width: 150rem) {
     #gatsby-focus-wrapper {
-        max-width: 120rem;
-        padding-inline: 0;
-        margin-inline: auto;
+        grid-template-columns: 5fr 2fr;
     }
 }

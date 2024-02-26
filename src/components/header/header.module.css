@@ -3,7 +3,7 @@
     --timing: ease;
 
     grid-area: header;
-    gap: var(--fixed-gap);
+    gap: 1rem;
 }
 
 .header,
