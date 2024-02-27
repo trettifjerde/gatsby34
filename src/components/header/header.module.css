@@ -19,7 +19,8 @@
 }
 
 .logo {
-    padding-block: 0.5rem;
+    font-family: var(--handwritten-font);
+    font-size: 1.5rem;
 }
 
 .svga,

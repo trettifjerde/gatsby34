@@ -8,7 +8,8 @@
     font-size: inherit;
     text-align: center;
     line-height: 1rem;
-    margin-top: calc(1.5 * var(--padding));
+    /* margin-top: calc(1.5 * var(--padding)); */
+    margin-top: 0;
     margin-bottom: calc(2 * var(--padding));
 }
 
@@ -20,7 +21,7 @@
 }
 
 .accountable {
-    padding-left: calc(1.25 * var(--text-indent));
+    padding-left: calc(1.25 * var(--fixed-gap));
 }
 
 .accountable p::before {

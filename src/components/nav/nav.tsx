@@ -11,6 +11,7 @@ type NavProps = {
 
 export default function Nav({projects, activeId, setProject}: NavProps) {
     return <nav className={`gradient-frame ${nav}`}>
+      <aside>projects</aside>
       <ul>
         {
             projects.map(project => <NavLi key={project.id} 
