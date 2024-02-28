@@ -1,12 +1,21 @@
 .nav {
-    --grad-direction: var(--nav-direction);
-    --border-radius: var(--outline-radius-sm) var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-lg);
+    --grad-dir: 135deg;
+    --grad-pos: var(--bg-position) var(--bg-position);
+    --grad-colors: var(--all-colors);
+    --grad-size: var(--bg-size) var(--bg-size);
+    --frame-shape: var(--outline-radius-sm) var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-lg);
+    --bg: var(--bg-lighter);
+    --outer-deg: -1deg;
+    --inner-deg: 2deg;
+    --outer-padding: 0.25rem;
+    --inner-padding: 0.75rem 0 0.5rem 0.5rem;
 
-    position: sticky;
-    top: var(--relative-indent);
-    background-position: var(--bg-position) var(--bg-position);
     grid-area: nav;
+    position: sticky;
+    z-index: 1;
+    top: calc(1.5 * var(--h1-size));
     display: grid;
+    grid-template-columns: 100%;
     align-items: center;
 }
 
@@ -14,22 +23,21 @@
     --dimens: calc(0.875 * var(--h1-size));
     
     position: absolute;
-    top: 0;
+    top: calc(-1.25 * var(--dimens));
     right: var(--fixed-gap);
-    transform: translateY(calc(-1 * var(--dimens))) rotate(10deg);
-    font-family: var(--handwritten);
+    z-index: 5;
     font-size: var(--dimens);
     line-height: var(--dimens);
-    color: var(--grad2);
+    font-family: var(--handwritten);
+    color: var(--grad1);
+    transform: rotate(10deg);
     transition: color var(--animation-duration) ease-in-out;
-    background-color: transparent;
 }
 
 .nav ul {
-    overflow: auto;
-    list-style: none;
-    padding: var(--fixed-gap);
     display: flex;
+    overflow: auto;
+    border-radius: var(--frame-shape);
 }
 
 .nav li {
@@ -105,15 +113,16 @@
 
 @media (min-width: 45rem) {
     .nav {
-        --border-radius: 0 var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-md);
-        top: 33%;
-        padding-right: 0;
+        --frame-shape: var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg) var(--outline-radius-sm);
+        --outer-padding: 0;
+        --inner-padding: 4rem 2rem;
+        --outer-deg: -5deg;
+        --inner-deg: 5deg;
+        top: 30%;
     }
 
     .nav aside {
-        top: 0;
-        right: var(--fixed-gap);
-        transform: translateY(calc(-1 * var(--dimens))) rotate(10deg);
+        color: var(--grad2);
     }
 
     .nav ul {
@@ -121,7 +130,6 @@
         gap: var(--fixed-gap);
         justify-items: start;
         overflow: visible;
-        padding: var(--fixed-gap);
     }
 
     .nav li {
@@ -130,7 +138,7 @@
 
     .nav li:hover,
     .nav li.active {
-        --overlay-padding-left: calc(2 * var(--fixed-gap));
+        --overlay-padding-left: calc(3 * var(--fixed-gap));
     }
 
     .nav li.active {

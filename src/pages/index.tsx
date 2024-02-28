@@ -19,8 +19,8 @@ const Index = ({ data }: PageProps<Queries.IndexQuery>) => {
 
   return <>
     <Header hidden={!currentProject} setProject={setCurrentProject} />
-    <Main project={currentProject} changeColor={changeColor} />
     <Nav projects={allProjects} activeId={currentProject?.id} setProject={setCurrentProject}/>
+    <Main project={currentProject} changeColor={changeColor} />
   </>
 }
 

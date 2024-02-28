@@ -1,0 +1,48 @@
+.leaf {
+    position: relative;
+    padding: var(--outer-padding);
+    z-index: 0;
+}
+
+.leaf::before,
+.glow::after {
+    transform: rotate(var(--outer-deg));
+}
+
+.leaf::before,
+.glow::after {
+    background-image: linear-gradient(var(--grad-dir), var(--grad-colors));
+    background-position: var(--grad-pos);
+    background-size: var(--grad-size);
+    transition: background-position var(--animation-duration) ease;
+}
+
+.leaf::before, 
+.innerleaf::before,
+.glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: var(--frame-shape);
+}
+
+.innerleaf {
+    position: relative;
+    z-index: 0;
+    padding: var(--inner-padding);
+}
+
+.innerleaf::before {
+    transform: rotate(var(--inner-deg));
+    background-color: var(--bg);
+    transition: background-color .2s ease-in-out;
+}
+
+.hover:hover .innerleaf::before {
+    background-color: transparent;
+}
+
+.glow::after {
+    /* filter: blur(6px); */
+}

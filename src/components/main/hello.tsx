@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { hello, langs, enter, exit, active } from './hello.module.css';
 import { leaves, hover } from '../../styles/leaves.module.css';
+import Leaf from '../ui/leaf';
 
 export default function Hello({ changeColor }: { changeColor: () => void }) {
     const [lang, setLang] = React.useState<Lang>('en');
@@ -21,9 +22,9 @@ export default function Hello({ changeColor }: { changeColor: () => void }) {
                     <section>{TEXTS[lang].section}</section>
 
                     <div className={`${leaves} ${langs}`}>
-                        {LANGS.map(l => <span key={l} className={`leaf ${hover} ${l === lang ? active : ''}`} onClick={() => setLang(l)}>
+                        {LANGS.map(l => <Leaf hoverable key={l} className={l === lang ? active : ''} onClick={() => setLang(l)}>
                             <h3>{l}</h3>
-                        </span>)}
+                        </Leaf>)}
                     </div>
                 </div>
             </CSSTransition>

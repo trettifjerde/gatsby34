@@ -29,11 +29,11 @@ html {
     color: var(--gray-text);
     font-family: var(--font-family);
     font-weight: var(--font-weight);
+    overflow: clip;
 }
 
 ul {
-    list-style-position: inside;
-    list-style-type: square;
+    list-style: none;
 }
 
 a {
@@ -51,48 +51,35 @@ em {
     font-size: 0.75rem;
 }
 
-.gradient-frame {
-    background-image: linear-gradient(var(--grad-direction), var(--all-colors));
-    padding: var(--border-width);
-    box-shadow: 0 0 2rem var(--bg-shadow);
-    background-size: var(--bg-size) var(--bg-size);
-    transition: background-position .5s ease-in-out;
-}
-.gradient-frame, .gradient-frame > * {
-    border-radius: var(--border-radius);
-}
-
-.gradient-frame > * {
-    background-color: var(--bg);
-}
-
-.leaf {
+#gatsby-focus-wrapper {
     position: relative;
-    background-color: var(--bg);
-    border-radius: var(--frame-shape);
-    padding: var(--leaf-padding);
-    transition: background-color .2s ease-in-out;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-block: var(--relative-indent);
+    padding-inline: calc(1.5 * var(--fixed-gap));
+    display: grid;
+    grid-template-areas:    'header'
+                            'nav'
+                            'main';
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 100%;
+    gap: var(--section-margin);
+    align-items: start;
 }
 
-.leaf::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: var(--top);
-    left: var(--left);
-    right: var(--right);
-    bottom: var(--bottom);
-
-    border-radius: inherit;
-    background-image: linear-gradient(var(--grad-dir), var(--grad-colors));
-    background-position: var(--grad-pos);
-    background-size: var(--grad-size);
-    transform: rotate(var(--frame-angle));
-    transition: transform var(--animation-duration) ease-in-out, background-position var(--animation-duration) ease-in-out;
+@media (min-width: 45rem) {
+    #gatsby-focus-wrapper {
+        max-width: 75rem;
+        margin-inline: auto;
+        grid-template-areas:    'header header'
+                                'main nav';
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 2fr 1fr;
+    }
 }
 
-@media (max-width: 45rem) {
-    .gradient-frame {
-        padding-inline: 0;
+@media (min-width: 75rem) {
+    #gatsby-focus-wrapper {
+        grid-template-columns: 5fr 2fr;
     }
 }

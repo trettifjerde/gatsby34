@@ -1,20 +1,21 @@
 .main {
-    --grad-direction: var(--main-direction);
-    --grad-position: calc(100% - var(--bg-position));
-    --transY: 4rem;
-    --border-radius: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
-    --padding: 1rem;
-    --section-margin: calc(4 * var(--padding));
+    --bg: var(--bg-lighter);
+    --m-bg-pos: calc(100% - var(--bg-position));
+    --grad-dir: -45deg;
+    --grad-pos: var(--m-bg-pos) var(--m-bg-pos);
+    --grad-colors: var(--all-colors);
+    --grad-size: var(--bg-size) var(--bg-size);
+    --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
+    --outer-padding: 0;
+    --inner-padding: var(--section-margin) calc(0.5 * var(--section-margin));
+    --outer-deg: 1deg;
+    --inner-deg: -1deg;
+    --transY: var(--section-margin);
 
     width: 100%;
     position: relative;
     background-position: var(--grad-position) var(--grad-position);
     grid-area: main;
-}
-
-.main article {
-    padding-block: calc(4 * var(--padding));
-    padding-inline: calc(2 * var(--padding));
 }
 
 .main section {
@@ -23,6 +24,8 @@
 }
 
 :where(.main h1) {
+    --transY: var(--section-margin);
+    --grad-dir: 180deg;
     margin-block: 0;
     margin-inline: auto;
     width: fit-content;
@@ -33,7 +36,7 @@
     line-height: 2;
     color: transparent;
     background-clip: text;
-    background-image: linear-gradient(var(--grad-direction), var(--two-colors));
+    background-image: linear-gradient(var(--grad-dir), var(--two-colors));
     animation: var(--animation-duration) forwards var(--slide-in);
 }
 
@@ -85,28 +88,6 @@
     color: var(--grad2);
 }
 
-.main aside {
-    color: var(--light-text);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: var(--padding);
-    padding-inline: var(--padding);
-}
-
-.main aside span {
-    font-size: 0.875rem;
-    font-weight: 400;
-    padding: 0.25rem 0.5rem;
-    border-radius: 1em;
-    border-width: calc(0.25 * var(--border-width));
-    border-style: solid;
-    border-left-color: var(--grad1);
-    border-right-color: var(--grad2);
-    border-block: none;
-    transition: border-color .3s ease-in-out;
-}
-
 .enter {
     animation: var(--animation-duration) forwards var(--slide-in);
 }
@@ -124,8 +105,9 @@
 
 @media (min-width: 45rem) {
     .main {
-        --border-radius: 0 var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-lg);
-        padding-left: 0;
+        --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
+        --outer-deg: 4deg;
+        --inner-deg: 1deg;
         align-self: center;
     }
 
@@ -140,8 +122,9 @@
 }
 
 @media (min-width: 75rem) {
-    .main article {
-        padding-left: calc(8 * var(--padding));
-        padding-right: calc(4 * var(--padding));
+    .main {
+        --outer-deg: 10deg;
+        --inner-deg: 4deg;
+        --inner-padding: calc(1.5 * var(--section-margin)) var(--section-margin) var(--section-margin) calc(1.5 * var(--section-margin));
     }
 }

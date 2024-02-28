@@ -1,33 +1,40 @@
 import * as React from 'react';
 import { ProjectInfo } from '../../utils/types';
-import { leaves, hover } from '../../styles/leaves.module.css';
-import { info, accountable, links } from './project.module.css';
+import { leaves } from '../../styles/leaves.module.css';
+import { proj, accountable, links } from './project.module.css';
+import Leaf from '../ui/leaf';
 
-const Project = ({ project }: { project: ProjectInfo }) => <article>
+const Project = ({ project }: { project: ProjectInfo }) => <article className={proj}>
   <h1>{project.frontmatter?.name}</h1>
 
-  <div className={info}>
+  <header>
     <h5>{project.frontmatter?.desc}</h5>
 
-    <div>
+    <nav>
 
       <div className={accountable}>
         {project.frontmatter?.accountable?.map(item => <p key={item}>{item}</p>)}
       </div>
 
       <div className={`${leaves} ${links}`}>
-        {project.frontmatter?.site && <a className={`leaf ${hover}`} href={project.frontmatter?.site || '#'}>
-          <h3>site</h3>
-        </a>}
-
-        {project.frontmatter?.repo && <a className={`leaf ${hover}`} href={project.frontmatter.repo}>
-          <h3>repo</h3>
+        {project.frontmatter?.site && <a key="site" href={project.frontmatter?.site || '#'}>
+          <Leaf hoverable>
+            <h3>site</h3>
+          </Leaf>
         </a>
+        }
+
+        {project.frontmatter?.repo &&
+          <a key="repo" href={project.frontmatter.repo}>
+            <Leaf hoverable>
+              <h3>repo</h3>
+            </Leaf>
+          </a>
         }
       </div>
 
-    </div>
-  </div>
+    </nav>
+  </header>
 
   <section dangerouslySetInnerHTML={{ __html: project.html || '' }} />
 

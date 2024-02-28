@@ -14,18 +14,21 @@
 .enter {
     --section-animation: var(--fade-in);
     --h1-animation: var(--scale-in);
+    --frame-animation: frame-on;
     --leaf-animation: leaf-on;
 }
 
 .exit {
     --section-animation: var(--fade-out);
     --h1-animation: var(--scale-out);
+    --frame-animation: frame-off;
     --leaf-animation: leaf-off;
 }
 
 .hello section,
 .hello h1,
-.hello .active {
+.hello .active::before,
+.active > div::before  {
     animation-duration: var(--animation-duration);
     animation-fill-mode: forwards;
 }
@@ -39,14 +42,33 @@
 }
 
 .active {
-    animation-name: var(--leaf-animation);
-    background-color: transparent;
     cursor: default !important;
 }
 
-.exit .langs>*:hover {
+.active::before {
+    animation-name: var(--frame-animation);
+    transform: rotate(var(--outer-deg)) scale(var(--scale-max));
+}
+
+.active > div::before {
+    animation-name: var(--leaf-animation);
+    background-color: transparent;
+}
+
+.exit .langs > div:hover > div::before {
     background-color: var(--bg);
 }
+
+@keyframes frame-on {
+    from { transform: rotate(var(--outer-deg)) scale(1);}
+    to { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
+}
+
+@keyframes frame-off {
+    from { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
+    to { transform: rotate(var(--outer-deg)) scale(1);}
+}
+
 
 @keyframes leaf-on {
     from {

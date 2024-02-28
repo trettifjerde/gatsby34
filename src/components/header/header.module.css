@@ -49,39 +49,38 @@
     transition: fill var(--duration) var(--timing), transform var(--duration) var(--timing);
 }
 
-.svga:hover svg {
-    fill: var(--grad2);
-}
-
 .svga svg,
 .logo div {
-    fill: var(--grad1);
-    color: var(--grad1);
+    fill: var(--grad2);
+    color: var(--grad2);
     transform: scale(1);
 }
 
 .svga:hover svg,
 .logo:hover div {
-    fill: var(--grad2);
-    color: var(--grad2);
+    fill: var(--grad1);
+    color: var(--grad1);
 }
 
 .popup {
-    --frame-shape: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
-    --frame-angle: 3deg;
-    --leaf-padding: .75rem 1.5rem;
-    --top: -0.125rem;
-    --bottom: -0.125rem;
-    --left: -.5rem;
-    --right: -0.5rem;
+    --frame-shape: var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-sm);
+    --grad-dir: 0;
+    --grad-pos: auto;
+    --grad-colors: var(--two-colors);
+    --grad-size: auto;
+    --outer-padding: 0;
+    --inner-padding: 1.5rem 2.5rem;
+    --outer-deg: 1deg;
+    --inner-deg: -3deg;
     --animation: none;
     --transY: 50%;
-    --bg-shadow: green;
+    --bg: var(--bg-lighter);
 
     animation: .3s forwards var(--animation);
-    position: absolute;
-    top: 200%;
-    right: -.5rem;
+    position: fixed;
+    top: var(--section-margin);
+    right: 1rem;
+    z-index: 10;
 }
 
 .popup strong {
@@ -93,4 +92,12 @@
 }
 .exit {
     --animation: var(--slide-out);
+}
+
+@media (min-width: 45rem) {
+    .popup {
+        position: absolute;
+        top: 200%;
+        right: 2rem;
+    }
 }

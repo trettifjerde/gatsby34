@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import SVGWrapper from './svg-wrapper';
 import { EMAIL_ADDRESS, POPUP_DURATION } from '../../../config';
 import { svga, popup, enter, exit } from '../header.module.css';
+import Leaf from '../../ui/leaf';
 
 export default function Mail() {
     const [alert, setAlert] = React.useState(false);
@@ -29,9 +30,9 @@ export default function Mail() {
 
         <CSSTransition in={alert} timeout={300} classNames={{enter, exit}} mountOnEnter unmountOnExit>
             <div className={popup}>
-                <div className="leaf">
+                <Leaf>
                     <strong>{EMAIL_ADDRESS}</strong> - copied!
-                </div>
+                </Leaf>
             </div>
         </CSSTransition>
 

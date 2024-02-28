@@ -1,11 +1,13 @@
 .leaves {
+    --grad-dir: 75deg;
+    --grad-pos: auto;
+    --grad-colors: var(--two-colors);
+    --grad-size: auto;
     --frame-shape: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
-    --frame-angle: -10deg;
-    --leaf-padding: .25rem 1rem .25rem 1.25rem;
-    --top: -0.25rem;
-    --bottom: -0.25rem;
-    --left: -.5rem;
-    --right: -0.25rem;
+    --outer-padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+    --inner-padding: .25rem 1rem .25rem 1.25rem;
+    --outer-deg: -10deg;
+    --inner-deg: 0deg;
 
     font-family: var(--handwritten);
     font-size: inherit;
@@ -18,8 +20,4 @@
 
 .leaves > * {
     cursor: pointer;
-}
-
-.hover:hover {
-    background-color: transparent;
 }

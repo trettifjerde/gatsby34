@@ -1,16 +1,16 @@
-.info {
+.proj header {
     font-size: calc(0.375 * var(--h1-size));
 }
 
-.info h5 {
+.proj header h5 {
     font-weight: inherit;
     font-size: 0.875rem;
     text-align: center;
-    line-height: 1;
+    line-height: 1.25;
     margin-block: var(--fixed-gap);
 }
 
-.info h5 + div {
+.proj nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@
 }
 
 .accountable p {
-    transform: rotate(-10deg);
+    transform: rotate(-7deg);
 }
 
 .accountable p::before {
@@ -51,14 +51,36 @@
     font-weight: inherit;
 }
 
+.proj aside {
+    color: var(--light-text);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: calc(0.75 * var(--fixed-gap));
+    padding-inline: var(--fixed-gap);
+}
+
+.proj aside span {
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1em;
+    border-width: calc(0.25 * var(--border-width));
+    border-style: solid;
+    border-left-color: var(--grad1);
+    border-right-color: var(--grad2);
+    border-block: none;
+    transition: border-color .3s ease-in-out;
+}
+
 @media (min-width: 45rem) {
-    .info h5 {
+    .proj header h5 {
         margin-left: auto;
         max-width: 85%;
         text-align: right;
     }
 
     .accountable {
-        padding-left: calc(2 * var(--padding));
+        padding-left: calc(2 * var(--fixed-gap));
     }
 }

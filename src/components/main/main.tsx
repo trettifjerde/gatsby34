@@ -7,6 +7,7 @@ import Project from './project';
 import Hello from './hello';
 
 import {main, enter, exit} from './main.module.css';
+import Leaf from '../ui/leaf';
 
 export default function Main({project, changeColor}: {project: ProjectInfo | null, changeColor: () => void}) {
     const mainRef = React.useRef<HTMLElement>(null);
@@ -18,9 +19,11 @@ export default function Main({project, changeColor}: {project: ProjectInfo | nul
         onExited={changeColor}
         addEndListener={(done) => mainRef.current?.addEventListener("animationend", done, false)}>
 
-        <main className={`gradient-frame ${main}`} ref={mainRef}>
-            {project && <Project project={project} />}
-            {!project && <Hello changeColor={changeColor} />}
+        <main className={main} ref={mainRef}>
+            <Leaf glowing>
+                {project && <Project project={project} />}
+                {!project && <Hello changeColor={changeColor} />}
+            </Leaf>
         </main>
 
         </CSSTransition>
