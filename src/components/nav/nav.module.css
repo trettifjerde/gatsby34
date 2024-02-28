@@ -100,6 +100,7 @@
     background-position: calc(100% - var(--bg-position));
     opacity: var(--overlay-opacity);
     box-shadow: var(--box-shadow);
+    transform: rotate(2deg);
     transition: opacity .3s ease-in-out, padding .3s ease-in-out, background-position .5s ease-in-out;
 }
 
@@ -115,7 +116,7 @@
     .nav {
         --frame-shape: var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg) var(--outline-radius-sm);
         --outer-padding: 0;
-        --inner-padding: 4rem 2rem;
+        --inner-padding: 4rem 0.5rem 4rem 2rem;
         --outer-deg: -5deg;
         --inner-deg: 5deg;
         top: 30%;
@@ -144,5 +145,11 @@
     .nav li.active {
         --translateX: calc(-2 * var(--fixed-gap));
         --scale: 1.2;
+    }
+}
+
+@media (min-width: 75rem) {
+    .nav li {
+        padding-inline: var(--fixed-gap) calc(1.25 * var(--fixed-gap));
     }
 }

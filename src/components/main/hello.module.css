@@ -3,7 +3,6 @@
     --scale-min: 0.6;
     --animation-duration: .4s;
     --section-animation: none;
-    --h1-animation: none;
 }
 
 .langs {
@@ -26,7 +25,6 @@
 }
 
 .hello section,
-.hello h1,
 .hello .active::before,
 .active > div::before  {
     animation-duration: var(--animation-duration);
@@ -35,10 +33,6 @@
 
 .hello section {
     animation-name: var(--section-animation);
-}
-
-.hello h1 {
-    animation-name: var(--h1-animation);
 }
 
 .active {

@@ -11,11 +11,14 @@
     --outer-deg: 1deg;
     --inner-deg: -1deg;
     --transY: var(--section-margin);
+    --main-animation: none;
+    --h1-animation: none;
 
     width: 100%;
     position: relative;
     background-position: var(--grad-position) var(--grad-position);
     grid-area: main;
+    animation: var(--animation-duration) forwards var(--main-animation);
 }
 
 .main section {
@@ -37,7 +40,7 @@
     color: transparent;
     background-clip: text;
     background-image: linear-gradient(var(--grad-dir), var(--two-colors));
-    animation: var(--animation-duration) forwards var(--slide-in);
+    animation: var(--animation-duration) forwards var(--h1-animation);
 }
 
 .main section p {
@@ -89,11 +92,12 @@
 }
 
 .enter {
-    animation: var(--animation-duration) forwards var(--slide-in);
+    --h1-animation: var(--slide-in);
+    --main-animation: var(--slide-in);
 }
 
 .exit {
-    animation: var(--animation-duration) forwards var(--slide-out);
+    --main-animation: var(--slide-out);
 }
 
 @media (max-width: 45rem) {

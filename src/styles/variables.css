@@ -76,6 +76,7 @@
 
 @media (min-width: 75rem) {
     :root {
+        --fixed-gap: 1.25rem;
         --relative-indent: 5vh;
         --h1-size: 3.5rem;
     }
