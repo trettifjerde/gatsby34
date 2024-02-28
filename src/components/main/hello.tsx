@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
-import { hello, langs, active, enter, exit } from './hello.module.css';
-import { leaves } from '../../styles/leaves.module.css';
+import { hello, langs, enter, exit, active } from './hello.module.css';
+import { leaves, hover } from '../../styles/leaves.module.css';
 
 export default function Hello({ changeColor }: { changeColor: () => void }) {
     const [lang, setLang] = React.useState<Lang>('en');
@@ -10,10 +10,7 @@ export default function Hello({ changeColor }: { changeColor: () => void }) {
     return <article className={hello}>
         <SwitchTransition mode='out-in'>
             <CSSTransition key={lang}
-                classNames={{
-                    enter,
-                    exit
-                }}
+                classNames={{enter, exit}}
                 nodeRef={ref}
                 onExited={changeColor}
                 addEndListener={(done) => ref.current?.addEventListener('animationend', done, false)}>
@@ -24,7 +21,7 @@ export default function Hello({ changeColor }: { changeColor: () => void }) {
                     <section>{TEXTS[lang].section}</section>
 
                     <div className={`${leaves} ${langs}`}>
-                        {LANGS.map(l => <span key={l} className={l === lang ? active : ''} onClick={() => setLang(l)}>
+                        {LANGS.map(l => <span key={l} className={`leaf ${hover} ${l === lang ? active : ''}`} onClick={() => setLang(l)}>
                             <h3>{l}</h3>
                         </span>)}
                     </div>

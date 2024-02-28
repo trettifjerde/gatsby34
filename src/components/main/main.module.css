@@ -4,6 +4,7 @@
     --transY: 4rem;
     --border-radius: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
     --padding: 1rem;
+    --section-margin: calc(4 * var(--padding));
 
     width: 100%;
     position: relative;
@@ -17,7 +18,7 @@
 }
 
 .main section {
-    margin-block: calc(4 * var(--padding));
+    margin-block: var(--section-margin);
     line-height: 1.25;
 }
 
@@ -26,13 +27,14 @@
     margin-inline: auto;
     width: fit-content;
     text-align: center;
-    font-family: var(--handwritten-font);
+    font-family: var(--handwritten);
     font-size: var(--h1-size);
     font-weight: 400;
     line-height: 2;
     color: transparent;
     background-clip: text;
     background-image: linear-gradient(var(--grad-direction), var(--two-colors));
+    animation: var(--animation-duration) forwards var(--slide-in);
 }
 
 .main section p {
@@ -44,7 +46,7 @@
     color: var(--grad2);
     font-weight: 400;
     font-size: 1.5rem;
-    font-family: var(--handwritten-font);
+    font-family: var(--handwritten);
 }
 
 .main section ul {
@@ -103,6 +105,14 @@
     border-right-color: var(--grad2);
     border-block: none;
     transition: border-color .3s ease-in-out;
+}
+
+.enter {
+    animation: var(--animation-duration) forwards var(--slide-in);
+}
+
+.exit {
+    animation: var(--animation-duration) forwards var(--slide-out);
 }
 
 @media (max-width: 45rem) {

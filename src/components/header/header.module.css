@@ -19,7 +19,7 @@
 }
 
 .logo {
-    font-family: var(--handwritten-font);
+    font-family: var(--handwritten);
     font-size: 1.5rem;
 }
 
@@ -64,24 +64,33 @@
 .logo:hover div {
     fill: var(--grad2);
     color: var(--grad2);
-    transform: scale(1.2);
 }
 
 .popup {
-    --animation-duration: .3s;
+    --frame-shape: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
+    --frame-angle: 3deg;
+    --leaf-padding: .75rem 1.5rem;
+    --top: -0.125rem;
+    --bottom: -0.125rem;
+    --left: -.5rem;
+    --right: -0.5rem;
+    --animation: none;
     --transY: 50%;
+    --bg-shadow: green;
 
-    font-size: 0.875rem;
+    animation: .3s forwards var(--animation);
     position: absolute;
+    top: 200%;
     right: -.5rem;
-    padding: 0.5rem 1rem;
-    margin-top: .5rem;
-    background-color: var(--bg-lighter);
-    box-shadow: 0 0 0.5rem 0.125rem var(--bg-shadow);
-    border-radius: var(--outline-radius-sm) 0 var(--outline-radius-sm) 0;
-    z-index: 1;
 }
 
 .popup strong {
     color: var(--grad2);
+}
+
+.enter {
+    --animation: var(--slide-in);
+}
+.exit {
+    --animation: var(--slide-out);
 }

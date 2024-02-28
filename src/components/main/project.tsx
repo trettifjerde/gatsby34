@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ProjectInfo } from '../../utils/types';
-import { leaves } from '../../styles/leaves.module.css';
+import { leaves, hover } from '../../styles/leaves.module.css';
 import { info, accountable, links } from './project.module.css';
 
 const Project = ({ project }: { project: ProjectInfo }) => <article>
@@ -16,11 +16,11 @@ const Project = ({ project }: { project: ProjectInfo }) => <article>
       </div>
 
       <div className={`${leaves} ${links}`}>
-        {project.frontmatter?.site && <a href={project.frontmatter?.site || '#'}>
+        {project.frontmatter?.site && <a className={`leaf ${hover}`} href={project.frontmatter?.site || '#'}>
           <h3>site</h3>
         </a>}
 
-        {project.frontmatter?.repo && <a href={project.frontmatter.repo}>
+        {project.frontmatter?.repo && <a className={`leaf ${hover}`} href={project.frontmatter.repo}>
           <h3>repo</h3>
         </a>
         }

@@ -11,13 +11,13 @@
 }
 
 .nav aside {
-    --dimens: var(--h1-size);
+    --dimens: calc(0.875 * var(--h1-size));
     
     position: absolute;
     top: 0;
     right: var(--fixed-gap);
     transform: translateY(calc(-1 * var(--dimens))) rotate(10deg);
-    font-family: var(--handwritten-font);
+    font-family: var(--handwritten);
     font-size: var(--dimens);
     line-height: var(--dimens);
     color: var(--grad2);

@@ -6,13 +6,14 @@ import { ProjectInfo } from '../../utils/types';
 import Project from './project';
 import Hello from './hello';
 
-import {main} from './main.module.css';
+import {main, enter, exit} from './main.module.css';
 
 export default function Main({project, changeColor}: {project: ProjectInfo | null, changeColor: () => void}) {
     const mainRef = React.useRef<HTMLElement>(null);
 
     return <SwitchTransition mode='out-in'>
         <CSSTransition key={project?.id || 'hello'}
+        classNames={{enter, exit}}
         nodeRef={mainRef}
         onExited={changeColor}
         addEndListener={(done) => mainRef.current?.addEventListener("animationend", done, false)}>
