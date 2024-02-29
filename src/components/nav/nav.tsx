@@ -13,7 +13,7 @@ type NavProps = {
 export default function Nav({projects, activeId, setProject}: NavProps) {
     return <nav className={nav}>
       <aside>projects</aside>
-      <Leaf glowing>
+      <Leaf>
         <ul>
           {
               projects.map(project => <NavLi key={project.id} 

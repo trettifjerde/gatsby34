@@ -60,6 +60,7 @@
 .logo:hover div {
     fill: var(--grad1);
     color: var(--grad1);
+    transform: scale(1.4);
 }
 
 .popup {

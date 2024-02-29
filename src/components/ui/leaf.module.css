@@ -1,48 +1,59 @@
-.leaf {
+:root {
+    --grad-pos: auto;
+    --grad-size: auto;
+    --grad-dir: 0deg;
+    --frame-shape: 0;
+    --outer-padding: 0;
+    --inner-padding: 0;
+    --outer-deg: 0;
+    --inner-deg: 0;
+    --outer-scale: 1;
+    --inner-scale: 1;
+    --outer-animation: none;
+    --inner-animation: none;
+    --inner-bg: var(--bg-lighter);
+}
+
+.leaf, .innerleaf {
     position: relative;
-    padding: var(--outer-padding);
     z-index: 0;
 }
 
-.leaf::before,
-.glow::after {
-    transform: rotate(var(--outer-deg));
+.leaf {
+    padding: var(--outer-padding);
 }
 
-.leaf::before,
-.glow::after {
-    background-image: linear-gradient(var(--grad-dir), var(--grad-colors));
-    background-position: var(--grad-pos);
-    background-size: var(--grad-size);
-    transition: background-position var(--animation-duration) ease;
+.innerleaf {
+    padding: var(--inner-padding);
 }
 
 .leaf::before, 
-.innerleaf::before,
-.glow::after {
+.innerleaf::before {
     content: '';
     position: absolute;
     inset: 0;
     z-index: -1;
     border-radius: var(--frame-shape);
+    animation-duration: var(--animation-duration);
+    animation-fill-mode: forwards;
 }
 
-.innerleaf {
-    position: relative;
-    z-index: 0;
-    padding: var(--inner-padding);
+.leaf::before {
+    background-image: linear-gradient(var(--grad-dir), var(--grad-colors));
+    background-position: var(--grad-pos);
+    background-size: var(--grad-size);
+    transform: rotate(var(--outer-deg)) scale(var(--outer-scale));
+    transition: background-position var(--animation-duration) ease;
+    animation-name: var(--outer-animation);
 }
 
 .innerleaf::before {
-    transform: rotate(var(--inner-deg));
-    background-color: var(--bg);
+    background-color: var(--inner-bg);
+    transform: rotate(var(--inner-deg)) scale(var(--inner-scale));
     transition: background-color .2s ease-in-out;
+    animation-name: var(--inner-animation);
 }
 
-.hover:hover .innerleaf::before {
-    background-color: transparent;
-}
-
-.glow::after {
-    /* filter: blur(6px); */
+.hover:hover {
+    --inner-bg: transparent;
 }

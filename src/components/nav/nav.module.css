@@ -4,34 +4,33 @@
     --grad-colors: var(--all-colors);
     --grad-size: var(--bg-size) var(--bg-size);
     --frame-shape: var(--outline-radius-sm) var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-lg);
-    --bg: var(--bg-lighter);
     --outer-deg: -1deg;
     --inner-deg: 2deg;
-    --outer-padding: 0.25rem;
-    --inner-padding: 0.75rem 0 0.5rem 0.5rem;
+    --outer-padding: .25rem;
+    --inner-padding: .75rem 0 .5rem .5rem;
 
     grid-area: nav;
     position: sticky;
-    z-index: 1;
     top: calc(1.5 * var(--h1-size));
     display: grid;
     grid-template-columns: 100%;
     align-items: center;
+    z-index: 1;
 }
 
 .nav aside {
     --dimens: calc(0.875 * var(--h1-size));
     
     position: absolute;
-    top: calc(-1.25 * var(--dimens));
+    top: calc(-1 * var(--dimens));
     right: var(--fixed-gap);
-    z-index: 5;
     font-size: var(--dimens);
     line-height: var(--dimens);
     font-family: var(--handwritten);
     color: var(--grad1);
     transform: rotate(10deg);
     transition: color var(--animation-duration) ease-in-out;
+    z-index: 5;
 }
 
 .nav ul {
@@ -93,7 +92,6 @@
     right: 0;
     height: 100%;
     min-width: 100%;
-    z-index: -1;
     padding-left: var(--overlay-padding-left);
     background-image: linear-gradient(var(--grad-direction), var(--all-colors));
     background-size: var(--bg-size);
@@ -102,13 +100,13 @@
     box-shadow: var(--box-shadow);
     transform: rotate(2deg);
     transition: opacity .3s ease-in-out, padding .3s ease-in-out, background-position .5s ease-in-out;
+    z-index: -1;
 }
 
 .nav li:hover,
 .nav li.active {
     --overlay-opacity: 1;
     --box-shadow: 0 0 6px 3px var(--bg-trans);
-    --color: #fff;
     --text-shadow: none;
 }
 

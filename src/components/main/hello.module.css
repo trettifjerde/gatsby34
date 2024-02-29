@@ -2,7 +2,6 @@
     --scale-max: 1.2;
     --scale-min: 0.6;
     --animation-duration: .4s;
-    --section-animation: none;
 }
 
 .langs {
@@ -10,82 +9,69 @@
     justify-content: center;
 }
 
+.active {
+    --inner-bg: transparent;
+    --outer-scale: var(--scale-max);
+    cursor: default !important;
+}
+
 .enter {
     --section-animation: var(--fade-in);
     --h1-animation: var(--scale-in);
-    --frame-animation: frame-on;
-    --leaf-animation: leaf-on;
+}
+
+.enter .active {
+    --outer-animation: leaf-on;
+    --inner-animation: innerleaf-on;
 }
 
 .exit {
     --section-animation: var(--fade-out);
     --h1-animation: var(--scale-out);
-    --frame-animation: frame-off;
-    --leaf-animation: leaf-off;
 }
 
-.hello section,
-.hello .active::before,
-.active > div::before  {
-    animation-duration: var(--animation-duration);
-    animation-fill-mode: forwards;
+.exit .active {
+    --outer-animation: leaf-off;
+    --inner-animation: innerleaf-off;
 }
 
-.hello section {
-    animation-name: var(--section-animation);
-}
-
-.active {
-    cursor: default !important;
-}
-
-.active::before {
-    animation-name: var(--frame-animation);
-    transform: rotate(var(--outer-deg)) scale(var(--scale-max));
-}
-
-.active > div::before {
-    animation-name: var(--leaf-animation);
-    background-color: transparent;
-}
-
-.exit .langs > div:hover > div::before {
-    background-color: var(--bg);
-}
-
-@keyframes frame-on {
-    from { transform: rotate(var(--outer-deg)) scale(1);}
-    to { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
-}
-
-@keyframes frame-off {
-    from { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
-    to { transform: rotate(var(--outer-deg)) scale(1);}
-}
-
-
-@keyframes leaf-on {
-    from {
-        background-color: var(--bg);
-    }
-
-    to {
-        background-color: transparent;
-    }
-}
-
-@keyframes leaf-off {
-    from {
-        background-color: transparent;
-    }
-
-    to {
-        background-color: var(--bg);
-    }
+.exit .langs > div:hover {
+    --inner-bg: var(--bg-lighter);
 }
 
 @media (min-width: 45rem) {
     .langs {
         justify-content: flex-end;
+    }
+}
+
+@keyframes leaf-on {
+    from { transform: rotate(var(--outer-deg)) scale(1);}
+    to { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
+}
+
+@keyframes leaf-off {
+    from { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
+    to { transform: rotate(var(--outer-deg)) scale(1);}
+}
+
+
+@keyframes innerleaf-on {
+    from {
+        background-color: var(--bg-darker);
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes innerleaf-off {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: var(--bg-darker);
     }
 }

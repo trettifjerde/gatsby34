@@ -20,7 +20,7 @@ export default function Main({project, changeColor}: {project: ProjectInfo | nul
         addEndListener={(done) => mainRef.current?.addEventListener("animationend", done, false)}>
 
         <main className={main} ref={mainRef}>
-            <Leaf glowing>
+            <Leaf>
                 {project && <Project project={project} />}
                 {!project && <Hello changeColor={changeColor} />}
             </Leaf>

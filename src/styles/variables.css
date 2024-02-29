@@ -38,7 +38,7 @@
     --nav-li-direction: 280deg;
 
     --fixed-gap: 0.75rem;
-    --relative-indent: 4vw;
+    --relative-indent: 5vh;
     --p-margin: .75rem;
     --h1-size: 2.75rem;
     --section-margin: 4rem;
@@ -71,13 +71,13 @@
     :root {
         --fixed-gap: 1rem;
         --h1-size: 3rem;
+        --relative-indent: 10vh;
     }
 }
 
 @media (min-width: 75rem) {
     :root {
         --fixed-gap: 1.25rem;
-        --relative-indent: 5vh;
         --h1-size: 3.5rem;
     }
 }

@@ -4,7 +4,7 @@
     --grad-colors: var(--two-colors);
     --grad-size: auto;
     --frame-shape: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
-    --outer-padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+    --outer-padding: .25rem .25rem .25rem .5rem;
     --inner-padding: .25rem 1rem .25rem 1.25rem;
     --outer-deg: -10deg;
     --inner-deg: 0deg;

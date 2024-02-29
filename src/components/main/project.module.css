@@ -23,18 +23,18 @@
 }
 
 .accountable p {
+    --check-col: var(--grad1);
     transform: rotate(-7deg);
+}
+.accountable p:nth-child(even) {
+    --check-col: var(--grad2);
 }
 
 .accountable p::before {
     content: '✓';
     font-size: 1.25em;
     padding-right: 0.25em;
-    color: var(--grad1);
-}
-
-.accountable p:nth-child(even)::before {
-    color: var(--grad2);
+    color: var(--check-col);
 }
 
 .links {
@@ -70,7 +70,6 @@
     border-left-color: var(--grad1);
     border-right-color: var(--grad2);
     border-block: none;
-    transition: border-color .3s ease-in-out;
 }
 
 @media (min-width: 45rem) {

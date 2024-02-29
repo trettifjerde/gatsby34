@@ -1,5 +1,4 @@
 .main {
-    --bg: var(--bg-lighter);
     --m-bg-pos: calc(100% - var(--bg-position));
     --grad-dir: -45deg;
     --grad-pos: var(--m-bg-pos) var(--m-bg-pos);
@@ -13,26 +12,36 @@
     --transY: var(--section-margin);
     --main-animation: none;
     --h1-animation: none;
+    --section-animation: none;
 
-    width: 100%;
-    position: relative;
-    background-position: var(--grad-position) var(--grad-position);
     grid-area: main;
-    animation: var(--animation-duration) forwards var(--main-animation);
+    position: relative;
+    width: 100%;
+    background-position: var(--grad-position) var(--grad-position);
+    animation-name: var(--main-animation);
+}
+
+.main,
+.main section, 
+.main h1 {
+    animation-duration: var(--animation-duration);
+    animation-fill-mode: forwards;
 }
 
 .main section {
     margin-block: var(--section-margin);
     line-height: 1.25;
+    animation-name: var(--section-animation) ;
 }
 
-:where(.main h1) {
+.main h1 {
     --transY: var(--section-margin);
     --grad-dir: 180deg;
-    margin-block: 0;
-    margin-inline: auto;
+
     width: fit-content;
     text-align: center;
+    margin-block: 0;
+    margin-inline: auto;
     font-family: var(--handwritten);
     font-size: var(--h1-size);
     font-weight: 400;
@@ -40,7 +49,7 @@
     color: transparent;
     background-clip: text;
     background-image: linear-gradient(var(--grad-dir), var(--two-colors));
-    animation: var(--animation-duration) forwards var(--h1-animation);
+    animation-name: var(--h1-animation);
 }
 
 .main section p {
@@ -49,10 +58,10 @@
 }
 
 .main section p::first-letter {
-    color: var(--grad2);
+    font-family: var(--handwritten);
     font-weight: 400;
     font-size: 1.5rem;
-    font-family: var(--handwritten);
+    color: var(--grad2);
 }
 
 .main section ul {
