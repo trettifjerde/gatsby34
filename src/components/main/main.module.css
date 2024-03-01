@@ -1,3 +1,9 @@
+:root {
+    --main-animation: none;
+    --h1-animation: none;
+    --section-animation: none;
+}
+
 .main {
     --m-bg-pos: calc(100% - var(--bg-position));
     --grad-dir: -45deg;
@@ -7,12 +13,10 @@
     --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
     --outer-padding: 0;
     --inner-padding: var(--section-margin) calc(0.5 * var(--section-margin));
-    --outer-deg: 1deg;
-    --inner-deg: -1deg;
+    --outer-deg: 2deg;
+    --inner-deg: -2deg;
+
     --transY: var(--section-margin);
-    --main-animation: none;
-    --h1-animation: none;
-    --section-animation: none;
 
     grid-area: main;
     position: relative;
@@ -119,7 +123,7 @@
 @media (min-width: 45rem) {
     .main {
         --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
-        --outer-deg: 4deg;
+        --outer-deg: 3deg;
         --inner-deg: 1deg;
         align-self: center;
     }

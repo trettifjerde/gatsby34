@@ -11,6 +11,8 @@
     --inner-scale: 1;
     --outer-animation: none;
     --inner-animation: none;
+    --outer-delay: 0;
+    --inner-delay: 0;
     --inner-bg: var(--bg-lighter);
 }
 
@@ -45,6 +47,7 @@
     transform: rotate(var(--outer-deg)) scale(var(--outer-scale));
     transition: background-position var(--animation-duration) ease;
     animation-name: var(--outer-animation);
+    animation-delay: var(--outer-delay);
 }
 
 .innerleaf::before {
@@ -52,6 +55,7 @@
     transform: rotate(var(--inner-deg)) scale(var(--inner-scale));
     transition: background-color .2s ease-in-out;
     animation-name: var(--inner-animation);
+    animation-delay: var(--inner-delay);
 }
 
 .hover:hover {

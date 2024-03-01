@@ -5,9 +5,10 @@ import { ProjectInfo } from '../../utils/types';
 
 import Project from './project';
 import Hello from './hello';
+import Leaf from '../ui/leaf';
 
 import {main, enter, exit} from './main.module.css';
-import Leaf from '../ui/leaf';
+import {appearmain} from '../layout/appear.module.css';
 
 export default function Main({project, changeColor}: {project: ProjectInfo | null, changeColor: () => void}) {
     const mainRef = React.useRef<HTMLElement>(null);
@@ -20,7 +21,7 @@ export default function Main({project, changeColor}: {project: ProjectInfo | nul
         addEndListener={(done) => mainRef.current?.addEventListener("animationend", done, false)}>
 
         <main className={main} ref={mainRef}>
-            <Leaf>
+            <Leaf className={appearmain}>
                 {project && <Project project={project} />}
                 {!project && <Hello changeColor={changeColor} />}
             </Leaf>

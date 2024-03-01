@@ -1,3 +1,8 @@
+:root {
+    --nav-aside-animation: none;
+    --nav-aside-delay: 0;
+}
+
 .nav {
     --grad-dir: 135deg;
     --grad-pos: var(--bg-position) var(--bg-position);
@@ -7,36 +12,37 @@
     --outer-deg: -1deg;
     --inner-deg: 2deg;
     --outer-padding: .25rem;
-    --inner-padding: .75rem 0 .5rem .5rem;
+    --aside-dimens: calc(0.875 * var(--h1-size));
 
     grid-area: nav;
     position: sticky;
-    top: calc(1.5 * var(--h1-size));
+    top: var(--aside-dimens);
+    padding-top: calc(0.5 * var(--aside-dimens));
     display: grid;
     grid-template-columns: 100%;
     align-items: center;
     z-index: 1;
 }
 
-.nav aside {
-    --dimens: calc(0.875 * var(--h1-size));
-    
+.nav aside {    
     position: absolute;
-    top: calc(-1 * var(--dimens));
+    top: calc(-0.5 * var(--aside-dimens));
     right: var(--fixed-gap);
-    font-size: var(--dimens);
-    line-height: var(--dimens);
+    font-size: var(--aside-dimens);
+    line-height: var(--aside-dimens);
     font-family: var(--handwritten);
     color: var(--grad1);
     transform: rotate(10deg);
     transition: color var(--animation-duration) ease-in-out;
     z-index: 5;
+    animation: var(--animation-duration) var(--nav-aside-delay) forwards var(--nav-aside-animation);
 }
 
 .nav ul {
     display: flex;
     overflow: auto;
     border-radius: var(--frame-shape);
+    padding: .75rem 0 .5rem .5rem;
 }
 
 .nav li {
@@ -114,7 +120,6 @@
     .nav {
         --frame-shape: var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg) var(--outline-radius-sm);
         --outer-padding: 0;
-        --inner-padding: 4rem 0.5rem 4rem 2rem;
         --outer-deg: -5deg;
         --inner-deg: 5deg;
         top: 30%;
@@ -127,6 +132,7 @@
     .nav ul {
         display: grid;
         gap: var(--fixed-gap);
+        padding: 4rem 0.5rem 4rem 2rem;
         justify-items: start;
         overflow: visible;
     }

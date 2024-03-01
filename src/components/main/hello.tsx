@@ -1,29 +1,36 @@
 import * as React from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
-import { hello, langs, enter, exit, active } from './hello.module.css';
-import { leaves, hover } from '../../styles/leaves.module.css';
 import Leaf from '../ui/leaf';
+import { hello, langs, enter, exit, active } from './hello.module.css';
+import { appearel, appearlang } from '../layout/appear.module.css';
+import { leaves } from '../../styles/leaves.module.css';
+import { LANG_LEAF_STAGGER_PROPERTY_NAME } from '../../config';
+import { HELLO_CONTENT as HC } from '../../utils/helpers';
 
 export default function Hello({ changeColor }: { changeColor: () => void }) {
-    const [lang, setLang] = React.useState<Lang>('en');
+    const [langI, setLangI] = React.useState(HC.length - 1);
     const ref = React.useRef<HTMLDivElement>(null);
+    const content = React.useMemo(() => (HC[langI] || HC[HC.length - 1]), [langI]);
 
     return <article className={hello}>
         <SwitchTransition mode='out-in'>
-            <CSSTransition key={lang}
-                classNames={{enter, exit}}
+            <CSSTransition key={langI}
+                classNames={{ enter, exit }}
                 nodeRef={ref}
                 onExited={changeColor}
                 addEndListener={(done) => ref.current?.addEventListener('animationend', done, false)}>
 
                 <div ref={ref}>
-                    <h1>{TEXTS[lang].h1}</h1>
+                    <h1 className={appearel}>{content.h1}</h1>
 
-                    <section>{TEXTS[lang].section}</section>
+                    <section className={appearel}>{content.section}</section>
 
                     <div className={`${leaves} ${langs}`}>
-                        {LANGS.map(l => <Leaf hoverable key={l} className={l === lang ? active : ''} onClick={() => setLang(l)}>
-                            <h3>{l}</h3>
+                        {HC.map((l, i) => <Leaf key={i}
+                            hoverable style={{ [LANG_LEAF_STAGGER_PROPERTY_NAME]: i }}
+                            className={`${appearlang} ${i === langI ? active : ''}`}
+                            onClick={() => setLangI(i)}>
+                            <h3>{l.lang}</h3>
                         </Leaf>)}
                     </div>
                 </div>
@@ -31,26 +38,3 @@ export default function Hello({ changeColor }: { changeColor: () => void }) {
         </SwitchTransition>
     </article>
 }
-
-const TEXTS = {
-    en: {
-        h1: "Hi there!",
-        section: "My name is Sasha.",
-    },
-    no: {
-        h1: "Hei!",
-        section: "Jeg heter Sasja.",
-    },
-    hr: {
-        h1: "Bok!",
-        section: "Zovem se Aleksandra.",
-    },
-    ru: {
-        h1: "Привет!",
-        section: "Меня зовут Саша.",
-    },
-};
-
-type Lang = keyof typeof TEXTS;
-
-const LANGS = Object.keys(TEXTS) as Lang[];

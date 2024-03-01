@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import { updateGradient } from '../utils/helpers';
 import { ProjectInfo } from '../utils/types';
 
+import Layout from '../components/layout/layout';
 import Header from '../components/header/header';
 import Main from '../components/main/main';
 import Nav from '../components/nav/nav';
@@ -17,11 +18,11 @@ const Index = ({ data }: PageProps<Queries.IndexQuery>) => {
   const setColorDir = React.useState<[number, number]>([0, 1])[1]; // tuple of [color, direction], where color is a number from 0 to N, and direction is 1 or -1
   const changeColor = React.useCallback(() => setColorDir(updateGradient), [setColorDir]);
 
-  return <>
+  return <Layout>
     <Header hidden={!currentProject} setProject={setCurrentProject} />
     <Nav projects={allProjects} activeId={currentProject?.id} setProject={setCurrentProject}/>
     <Main project={currentProject} changeColor={changeColor} />
-  </>
+  </Layout>
 }
 
 export default Index;

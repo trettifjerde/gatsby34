@@ -1,0 +1,90 @@
+:root {
+    --appear-opacity: 1;
+}
+
+.appear {
+    --appear-opacity: 0;
+    --ad: 1s;
+    --lang-item-d: .25s;
+    --animation-duration: var(--ad);
+}
+
+.appearel,
+.appearlang,
+.appearmain::before,
+.appearnav::before,
+.appearmain > div::before, 
+.appearnav > div::before {
+    opacity: var(--appear-opacity);
+}
+
+.appearActive {
+    --h1-animation: var(--scale-in);
+    --section-animation: var(--fade-in);
+
+    --nav-leaf-d: calc(0.25 * var(--ad));
+    --h1-delay: calc(1 * var(--ad));
+    --section-delay: calc(var(--h1-delay) + var(--ad));
+    --lang-d: calc(var(--section-delay) + var(--ad));
+    --main-frame-d: calc(var(--lang-d) + calc(var(--ad) + var(--lang-item-d)));
+    --nav-frame-d: calc(var(--main-frame-d) + var(--ad));
+}
+
+.appearActive .appearmain, 
+.appearActive .appearnav {
+    --inner-animation: float-leaf;
+    --outer-animation: open-leaf;
+}
+
+.appearActive .appearmain {
+    --rotX: 1;
+    --rotY: 0.5;
+    --transX: 50%;
+    --outer-delay: var(--main-frame-d);
+}
+
+.appearActive .appearnav {
+    --rotX: 1;
+    --rotY: -0.5;
+    --transX: -50%;
+    --inner-delay: var(--nav-leaf-d);
+    --outer-delay: var(--nav-frame-d);
+} 
+
+.appearActive .appearlang {
+    --outer-animation: scale-leaf;
+    --scale-min: 0;
+    --item-d: calc(var(--lang-d) + var(--lang-i) * var(--lang-item-d));
+    --outer-delay: var(--item-d);
+
+    animation: var(--ad) var(--item-d) forwards var(--fade-in);
+}
+
+@keyframes float-leaf {
+    from {
+        opacity: 0;
+        transform: rotate3d(var(--rotX), var(--rotY), 0, 90deg) translate(var(--transX), 100%);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(var(--inner-deg)) translate(0);
+    }
+}
+
+@keyframes open-leaf {
+    0% {
+        opacity: 0;
+        transform: rotate(var(--inner-deg));
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(var(--outer-deg));
+    }
+}
+
+@keyframes scale-leaf {
+    0% { transform: rotate(var(--outer-deg)) scale(var(--scale-min));}
+    66% { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
+    100% { transform: rotate(var(--outer-deg)) scale(var(--outer-scale)); }
+}

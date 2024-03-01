@@ -1,12 +1,25 @@
-.hello {
-    --scale-max: 1.2;
+:root {
+    --h1-delay: 0;
+    --section-delay: 0;
+    --langs-delay: 0;
+}
+
+.hello h1 {
     --scale-min: 0.6;
-    --animation-duration: .4s;
+    --scale-max: 1.2;
+    animation-delay: var(--h1-delay);
+}
+
+.hello section {
+    animation-delay: var(--section-delay);
 }
 
 .langs {
+    --scale-min: 1;
+    --scale-max: 1.2;
     text-transform: uppercase;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .active {
@@ -21,8 +34,8 @@
 }
 
 .enter .active {
-    --outer-animation: leaf-on;
-    --inner-animation: innerleaf-on;
+    --outer-animation: var(--leaf-on);
+    --inner-animation: var(--innerleaf-on);
 }
 
 .exit {
@@ -31,8 +44,8 @@
 }
 
 .exit .active {
-    --outer-animation: leaf-off;
-    --inner-animation: innerleaf-off;
+    --outer-animation: var(--leaf-off);
+    --inner-animation: var(--innerleaf-off);
 }
 
 .exit .langs > div:hover {
@@ -42,36 +55,5 @@
 @media (min-width: 45rem) {
     .langs {
         justify-content: flex-end;
-    }
-}
-
-@keyframes leaf-on {
-    from { transform: rotate(var(--outer-deg)) scale(1);}
-    to { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
-}
-
-@keyframes leaf-off {
-    from { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
-    to { transform: rotate(var(--outer-deg)) scale(1);}
-}
-
-
-@keyframes innerleaf-on {
-    from {
-        background-color: var(--bg-darker);
-    }
-
-    to {
-        background-color: transparent;
-    }
-}
-
-@keyframes innerleaf-off {
-    from {
-        background-color: transparent;
-    }
-
-    to {
-        background-color: var(--bg-darker);
     }
 }
