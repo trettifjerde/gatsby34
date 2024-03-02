@@ -4,13 +4,18 @@
 
 .appear {
     --appear-opacity: 0;
-    --ad: 1s;
-    --lang-item-d: .25s;
+    --scale-max: 1.4;
+    --ad: .4s;
+    --proj-ad: calc(0.75 * var(--ad));
+    --item-d: calc(0.33 * var(--ad));
     --animation-duration: var(--ad);
 }
 
 .appearel,
 .appearlang,
+.appearproj,
+.appearprojtitle,
+.appearheader,
 .appearmain::before,
 .appearnav::before,
 .appearmain > div::before, 
@@ -23,11 +28,14 @@
     --section-animation: var(--fade-in);
 
     --nav-leaf-d: calc(0.25 * var(--ad));
-    --h1-delay: calc(1 * var(--ad));
-    --section-delay: calc(var(--h1-delay) + var(--ad));
-    --lang-d: calc(var(--section-delay) + var(--ad));
-    --main-frame-d: calc(var(--lang-d) + calc(var(--ad) + var(--lang-item-d)));
-    --nav-frame-d: calc(var(--main-frame-d) + var(--ad));
+    --h1-delay: calc(0.5 * var(--ad));
+    --section-delay: calc(var(--h1-delay) + 0.66 * var(--ad));
+    --lang-d: calc(var(--section-delay) + 0.5 * var(--ad));
+    --proj-title-d: calc(var(--lang-d) + var(--ad) + var(--item-d) * 2);
+    --proj-d: calc(var(--proj-title-d) + 0.66 * var(--ad));
+    --nav-frame-d: calc(var(--proj-d) + 2 * var(--ad));
+    --main-frame-d: var(--nav-frame-d);
+    --header-d: calc(var(--nav-frame-d) + var(--ad) * 0.75);
 }
 
 .appearActive .appearmain, 
@@ -54,10 +62,26 @@
 .appearActive .appearlang {
     --outer-animation: scale-leaf;
     --scale-min: 0;
-    --item-d: calc(var(--lang-d) + var(--lang-i) * var(--lang-item-d));
-    --outer-delay: var(--item-d);
+    --total-d: calc(var(--lang-d) + var(--i) * var(--item-d));
+    --outer-delay: var(--total-d);
 
-    animation: var(--ad) var(--item-d) forwards var(--fade-in);
+    animation: var(--ad) var(--total-d) forwards var(--fade-in);
+}
+
+.appearActive .appearprojtitle {
+    --scale-min: 0.3;
+    animation: var(--ad) var(--proj-title-d) forwards show-proj;
+}
+
+.appearActive .appearproj {
+    --transX: 50%;
+    --total-d: calc(var(--proj-d) + var(--i) * var(--item-d) * 0.5);
+    animation: var(--proj-ad) var(--total-d) forwards slide-proj;
+}
+
+.appearActive .appearheader {
+    --transY: 50%;
+    animation: var(--ad) var(--header-d) forwards var(--slide-in);
 }
 
 @keyframes float-leaf {
@@ -87,4 +111,33 @@
     0% { transform: rotate(var(--outer-deg)) scale(var(--scale-min));}
     66% { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
     100% { transform: rotate(var(--outer-deg)) scale(var(--outer-scale)); }
+}
+
+@keyframes show-proj {
+    0% { 
+        opacity: 1;
+        transform: scale(var(--scale-min)) rotate(0); 
+    }
+    66% { 
+        opacity: 1;
+        transform: scale(var(--scale-max)) rotate(0); 
+    }
+    100% { 
+        opacity: 1;
+        transform: scale(1) rotate(var(--rot-deg)); 
+    }
+}
+@keyframes slide-proj {
+    0% { 
+        opacity: 0;
+        transform: translateX(var(--transX)); 
+    }
+    50% {
+        opacity: 0.25;
+        transform: translateX(calc(-1 * var(--transX))); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateX(0); ; 
+    }
 }

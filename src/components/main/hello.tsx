@@ -4,7 +4,7 @@ import Leaf from '../ui/leaf';
 import { hello, langs, enter, exit, active } from './hello.module.css';
 import { appearel, appearlang } from '../layout/appear.module.css';
 import { leaves } from '../../styles/leaves.module.css';
-import { LANG_LEAF_STAGGER_PROPERTY_NAME } from '../../config';
+import { STAGGER_PROPERTY_NAME } from '../../config';
 import { HELLO_CONTENT as HC } from '../../utils/helpers';
 
 export default function Hello({ changeColor }: { changeColor: () => void }) {
@@ -27,7 +27,7 @@ export default function Hello({ changeColor }: { changeColor: () => void }) {
 
                     <div className={`${leaves} ${langs}`}>
                         {HC.map((l, i) => <Leaf key={i}
-                            hoverable style={{ [LANG_LEAF_STAGGER_PROPERTY_NAME]: i }}
+                            hoverable style={{ [STAGGER_PROPERTY_NAME]: i }}
                             className={`${appearlang} ${i === langI ? active : ''}`}
                             onClick={() => setLangI(i)}>
                             <h3>{l.lang}</h3>

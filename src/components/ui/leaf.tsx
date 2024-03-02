@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { leaf, innerleaf, hover } from './leaf.module.css';
-import { LANG_LEAF_STAGGER_PROPERTY_NAME } from '../../config';
+import { STAGGER_PROPERTY_NAME } from '../../config';
 
 type Props = { 
     className?: string, 
-    style?: React.CSSProperties & {[LANG_LEAF_STAGGER_PROPERTY_NAME]: number},
+    style?: React.CSSProperties & {[STAGGER_PROPERTY_NAME]: number},
     children: React.ReactNode, 
     hoverable?: boolean, 
     onClick?: () => void 

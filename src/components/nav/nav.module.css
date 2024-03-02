@@ -24,7 +24,9 @@
     z-index: 1;
 }
 
-.nav aside {    
+.nav aside {   
+    --rot-deg: 10deg;  
+
     position: absolute;
     top: calc(-0.5 * var(--aside-dimens));
     right: var(--fixed-gap);
@@ -32,7 +34,7 @@
     line-height: var(--aside-dimens);
     font-family: var(--handwritten);
     color: var(--grad1);
-    transform: rotate(10deg);
+    transform: rotate(var(--rot-deg));
     transition: color var(--animation-duration) ease-in-out;
     z-index: 5;
     animation: var(--animation-duration) var(--nav-aside-delay) forwards var(--nav-aside-animation);

@@ -4,6 +4,7 @@
 
     grid-area: header;
     gap: 1rem;
+    transition: opacity var(--animation-duration) ease-in-out;
 }
 
 .header,
@@ -74,7 +75,7 @@
     --outer-deg: 1deg;
     --inner-deg: -3deg;
     --animation: none;
-    --transY: 50%;
+    --transY: -50%;
     --bg: var(--bg-lighter);
 
     animation: .3s forwards var(--animation);

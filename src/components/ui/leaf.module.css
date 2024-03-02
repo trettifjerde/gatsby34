@@ -45,7 +45,7 @@
     background-position: var(--grad-pos);
     background-size: var(--grad-size);
     transform: rotate(var(--outer-deg)) scale(var(--outer-scale));
-    transition: background-position var(--animation-duration) ease;
+    transition: background-position var(--animation-duration);
     animation-name: var(--outer-animation);
     animation-delay: var(--outer-delay);
 }

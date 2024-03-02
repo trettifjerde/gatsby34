@@ -6,7 +6,6 @@
 
 .hello h1 {
     --scale-min: 0.6;
-    --scale-max: 1.2;
     animation-delay: var(--h1-delay);
 }
 
@@ -15,8 +14,8 @@
 }
 
 .langs {
-    --scale-min: 1;
-    --scale-max: 1.2;
+    --scale-start: 1;
+    --scale-end: 1.2;
     text-transform: uppercase;
     justify-content: center;
     flex-wrap: wrap;
@@ -24,7 +23,7 @@
 
 .active {
     --inner-bg: transparent;
-    --outer-scale: var(--scale-max);
+    --outer-scale: var(--scale-end);
     cursor: default !important;
 }
 
