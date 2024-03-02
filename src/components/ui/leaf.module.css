@@ -9,10 +9,12 @@
     --inner-deg: 0;
     --outer-scale: 1;
     --inner-scale: 1;
-    --outer-animation: none;
-    --inner-animation: none;
-    --outer-delay: 0;
-    --inner-delay: 0;
+    --outer-anim: none;
+    --inner-anim: none;
+    --outer-del: 0s;
+    --inner-del: 0s;
+    --outer-dur: var(--anim-dur);
+    --inner-dur: var(--anim-dur);
     --inner-bg: var(--bg-lighter);
 }
 
@@ -36,8 +38,6 @@
     inset: 0;
     z-index: -1;
     border-radius: var(--frame-shape);
-    animation-duration: var(--animation-duration);
-    animation-fill-mode: forwards;
 }
 
 .leaf::before {
@@ -45,17 +45,15 @@
     background-position: var(--grad-pos);
     background-size: var(--grad-size);
     transform: rotate(var(--outer-deg)) scale(var(--outer-scale));
-    transition: background-position var(--animation-duration);
-    animation-name: var(--outer-animation);
-    animation-delay: var(--outer-delay);
+    transition: background-position var(--anim-dur) ease-in-out;
+    animation: var(--outer-dur) var(--outer-del) forwards var(--outer-anim);
 }
 
 .innerleaf::before {
     background-color: var(--inner-bg);
     transform: rotate(var(--inner-deg)) scale(var(--inner-scale));
     transition: background-color .2s ease-in-out;
-    animation-name: var(--inner-animation);
-    animation-delay: var(--inner-delay);
+    animation: var(--inner-dur) var(--inner-del) forwards var(--inner-anim);
 }
 
 .hover:hover {

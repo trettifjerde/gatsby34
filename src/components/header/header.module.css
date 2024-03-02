@@ -4,7 +4,6 @@
 
     grid-area: header;
     gap: 1rem;
-    transition: opacity var(--animation-duration) ease-in-out;
 }
 
 .header,

@@ -65,11 +65,11 @@
     font-weight: 400;
     padding: 0.25rem 0.5rem;
     border-radius: 1em;
-    border-width: calc(0.25 * var(--border-width));
-    border-style: solid;
+    border-block: none;
+    border-inline-width: 0.25rem;
+    border-inline-style: solid;
     border-left-color: var(--grad1);
     border-right-color: var(--grad2);
-    border-block: none;
 }
 
 @media (min-width: 45rem) {

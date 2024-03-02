@@ -14,7 +14,9 @@ import Nav from '../components/nav/nav';
 const Index = ({ data }: PageProps<Queries.IndexQuery>) => {
 
   const allProjects = React.useMemo(() => data.allMarkdownRemark.edges.map(edge => edge.node), [data]);
+
   const [currentProject, setCurrentProject] = React.useState<ProjectInfo | null>(null);
+  
   const setColorDir = React.useState<[number, number]>([0, 1])[1]; // tuple of [color, direction], where color is a number from 0 to N, and direction is 1 or -1
   const changeColor = React.useCallback(() => setColorDir(updateGradient), [setColorDir]);
 

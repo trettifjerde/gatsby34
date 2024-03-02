@@ -1,5 +1,5 @@
 .leaves {
-    --grad-dir: 75deg;
+    --grad-dir: 0deg;
     --grad-pos: auto;
     --grad-colors: var(--two-colors);
     --grad-size: auto;

@@ -1,7 +1,9 @@
 :root {
-    --main-animation: none;
-    --h1-animation: none;
-    --section-animation: none;
+    --main-anim: none;
+    --h1-anim: none;
+    --section-anim: none;
+    --h1-del: 0s;
+    --section-del: 0s;
 }
 
 .main {
@@ -16,30 +18,24 @@
     --outer-deg: 2deg;
     --inner-deg: -2deg;
 
-    --transY: calc(-1 * var(--section-margin));
+    --transY: calc(-1.25 * var(--section-margin));
 
     grid-area: main;
     position: relative;
     width: 100%;
     background-position: var(--grad-position) var(--grad-position);
-    animation-name: var(--main-animation);
-}
-
-.main,
-.main section, 
-.main h1 {
-    animation-duration: var(--animation-duration);
-    animation-fill-mode: forwards;
+    animation: var(--anim-dur) ease-out forwards var(--main-anim);
 }
 
 .main section {
     margin-block: var(--section-margin);
     line-height: 1.25;
-    animation-name: var(--section-animation) ;
+    animation: var(--anim-dur) var(--section-del) forwards var(--section-anim);
 }
 
 .main h1 {
     --grad-dir: 180deg;
+    --transY: calc(-0.5 * var(--section-margin));
 
     width: fit-content;
     text-align: center;
@@ -52,7 +48,7 @@
     color: transparent;
     background-clip: text;
     background-image: linear-gradient(var(--grad-dir), var(--two-colors));
-    animation-name: var(--h1-animation);
+    animation: var(--anim-dur) var(--h1-del) forwards var(--h1-anim);
 }
 
 .main section p {
@@ -104,12 +100,12 @@
 }
 
 .enter {
-    --h1-animation: var(--slide-in);
-    --main-animation: var(--slide-in);
+    --h1-anim: var(--slide-in);
+    --main-anim: var(--slide-in);
 }
 
 .exit {
-    --main-animation: var(--slide-out);
+    --main-anim: var(--slide-out);
 }
 
 @media (max-width: 45rem) {

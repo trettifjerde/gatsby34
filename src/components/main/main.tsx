@@ -8,9 +8,12 @@ import Hello from './hello';
 import Leaf from '../ui/leaf';
 
 import {main, enter, exit} from './main.module.css';
-import {appearmain} from '../layout/appear.module.css';
+import {main as am} from '../layout/appear.module.css';
 
-export default function Main({project, changeColor}: {project: ProjectInfo | null, changeColor: () => void}) {
+export default function Main({ project, changeColor}: {
+    project: ProjectInfo | null, 
+    changeColor: () => void,
+}) {
     const mainRef = React.useRef<HTMLElement>(null);
 
     return <SwitchTransition mode='out-in'>
@@ -21,7 +24,7 @@ export default function Main({project, changeColor}: {project: ProjectInfo | nul
         addEndListener={(done) => mainRef.current?.addEventListener("animationend", done, false)}>
 
         <main className={main} ref={mainRef}>
-            <Leaf className={appearmain}>
+            <Leaf className={am}>
                 {project && <Project project={project} />}
                 {!project && <Hello changeColor={changeColor} />}
             </Leaf>

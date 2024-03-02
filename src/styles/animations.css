@@ -9,6 +9,9 @@
     --leaf-off: leaf-off;
     --innerleaf-on: innerleaf-on;
     --innerleaf-off: innerleaf-off;
+    --open-leaf: open-leaf;
+    --float-leaf: float-leaf;
+    --scale-leaf: scale-leaf;
 }
 
 @keyframes fade-in {
@@ -104,4 +107,33 @@
     to {
         background-color: var(--bg-darker);
     }
+}
+
+@keyframes float-leaf {
+    from {
+        opacity: 0;
+        transform: rotate3d(var(--rotX), var(--rotY), 0, 90deg) translate(var(--transX), 100%);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(var(--inner-deg)) translate(0);
+    }
+}
+
+@keyframes open-leaf {
+    0% {
+        opacity: 0;
+        transform: rotate(var(--inner-deg));
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(var(--outer-deg));
+    }
+}
+
+@keyframes scale-leaf {
+    0% { transform: rotate(var(--outer-deg)) scale(var(--scale-min));}
+    66% { transform: rotate(var(--outer-deg)) scale(var(--scale-max));}
+    100% { transform: rotate(var(--outer-deg)) scale(var(--outer-scale)); }
 }

@@ -1,16 +1,5 @@
-:root {
-    --h1-delay: 0;
-    --section-delay: 0;
-    --langs-delay: 0;
-}
-
-.hello h1 {
-    --scale-min: 0.6;
-    animation-delay: var(--h1-delay);
-}
-
-.hello section {
-    animation-delay: var(--section-delay);
+.hello {
+    --scale-min: 0.4;
 }
 
 .langs {
@@ -28,23 +17,23 @@
 }
 
 .enter {
-    --section-animation: var(--fade-in);
-    --h1-animation: var(--scale-in);
+    --section-anim: var(--fade-in);
+    --h1-anim: var(--scale-in);
 }
 
 .enter .active {
-    --outer-animation: var(--leaf-on);
-    --inner-animation: var(--innerleaf-on);
+    --outer-anim: var(--leaf-on);
+    --inner-anim: var(--innerleaf-on);
 }
 
 .exit {
-    --section-animation: var(--fade-out);
-    --h1-animation: var(--scale-out);
+    --section-anim: var(--fade-out);
+    --h1-anim: var(--scale-out);
 }
 
 .exit .active {
-    --outer-animation: var(--leaf-off);
-    --inner-animation: var(--innerleaf-off);
+    --outer-anim: var(--leaf-off);
+    --inner-anim: var(--innerleaf-off);
 }
 
 .exit .langs > div:hover {

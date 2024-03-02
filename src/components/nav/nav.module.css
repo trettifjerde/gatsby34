@@ -1,10 +1,5 @@
-:root {
-    --nav-aside-animation: none;
-    --nav-aside-delay: 0;
-}
-
 .nav {
-    --grad-dir: 135deg;
+    --grad-dir: 180deg;
     --grad-pos: var(--bg-position) var(--bg-position);
     --grad-colors: var(--all-colors);
     --grad-size: var(--bg-size) var(--bg-size);
@@ -35,9 +30,8 @@
     font-family: var(--handwritten);
     color: var(--grad1);
     transform: rotate(var(--rot-deg));
-    transition: color var(--animation-duration) ease-in-out;
+    transition: color var(--anim-dur) ease-in-out;
     z-index: 5;
-    animation: var(--animation-duration) var(--nav-aside-delay) forwards var(--nav-aside-animation);
 }
 
 .nav ul {
@@ -54,7 +48,7 @@
     --scale: 1;
     --overlay-padding-left: 0;
     --overlay-opacity: 0;
-    --grad-direction: var(--nav-li-direction);
+    --grad-direction: 280deg;
     --grad-image: var(--all-colors);
     --border-radius: 0 var(--outline-radius-nav) 0 var(--outline-radius-nav);
     --box-shadow: none;
