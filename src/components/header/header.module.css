@@ -1,15 +1,15 @@
 .header {
     --duration: .2s;
-    --timing: ease;
+    --timing: ease-out;
 
     grid-area: header;
-    gap: 1rem;
 }
 
 .header,
 .contact {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .contact {
@@ -33,7 +33,7 @@
     font-weight: 300;
     visibility: visible;
     opacity: 1;
-    transition: opacity .4s ease-in-out .4s, visibility .4s ease-in-out .4s, color var(--duration) var(--timing), transform var(--duration) var(--timing);
+    transition: opacity var(--anim-dur) ease-in-out, visibility var(--anim-dur) ease-in-out, color var(--anim-dur) var(--timing), transform var(--duration) var(--timing);
 }
 
 .logo div.hidden {
@@ -51,15 +51,15 @@
 
 .svga svg,
 .logo div {
-    fill: var(--grad2);
-    color: var(--grad2);
+    fill: var(--grad1);
+    color: var(--grad1);
     transform: scale(1);
 }
 
 .svga:hover svg,
 .logo:hover div {
-    fill: var(--grad1);
-    color: var(--grad1);
+    fill: var(--grad2);
+    color: var(--grad2);
     transform: scale(1.4);
 }
 
@@ -79,7 +79,7 @@
 
     animation: .3s forwards var(--animation);
     position: fixed;
-    top: var(--section-margin);
+    top: calc(var(--relative-indent) + var(--section-margin));
     right: 1rem;
     z-index: 10;
 }

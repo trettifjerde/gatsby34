@@ -13,10 +13,10 @@
     --grad-colors: var(--all-colors);
     --grad-size: var(--bg-size) var(--bg-size);
     --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
-    --outer-padding: 0;
+    --outer-padding: 0.125rem;
     --inner-padding: var(--section-margin) calc(0.5 * var(--section-margin));
-    --outer-deg: 2deg;
-    --inner-deg: -2deg;
+    --outer-deg: 1deg;
+    --inner-deg: -1deg;
 
     --transY: calc(-1.25 * var(--section-margin));
 

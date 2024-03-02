@@ -5,6 +5,7 @@
 .langs {
     --scale-start: 1;
     --scale-end: 1.2;
+
     text-transform: uppercase;
     justify-content: center;
     flex-wrap: wrap;
@@ -13,6 +14,7 @@
 .active {
     --inner-bg: transparent;
     --outer-scale: var(--scale-end);
+    
     cursor: default !important;
 }
 

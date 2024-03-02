@@ -28,7 +28,7 @@
     font-size: var(--aside-dimens);
     line-height: var(--aside-dimens);
     font-family: var(--handwritten);
-    color: var(--grad1);
+    color: var(--grad2);
     transform: rotate(var(--rot-deg));
     transition: color var(--anim-dur) ease-in-out;
     z-index: 5;
@@ -119,10 +119,6 @@
         --outer-deg: -5deg;
         --inner-deg: 5deg;
         top: 30%;
-    }
-
-    .nav aside {
-        color: var(--grad2);
     }
 
     .nav ul {

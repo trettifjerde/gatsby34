@@ -1,8 +1,9 @@
 import * as React from 'react';
+import ProjLink from './proj-link';
+
 import { ProjectInfo } from '../../utils/types';
 import { leaves } from '../../styles/leaves.module.css';
 import { proj, accountable, links } from './project.module.css';
-import Leaf from '../ui/leaf';
 
 const Project = ({ project }: { project: ProjectInfo }) => <article className={proj}>
   <h1>{project.frontmatter?.name}</h1>
@@ -17,20 +18,8 @@ const Project = ({ project }: { project: ProjectInfo }) => <article className={p
       </div>
 
       <div className={`${leaves} ${links}`}>
-        {project.frontmatter?.site && <a key="site" href={project.frontmatter?.site || '#'}>
-          <Leaf hoverable>
-            <h3>site</h3>
-          </Leaf>
-        </a>
-        }
-
-        {project.frontmatter?.repo &&
-          <a key="repo" href={project.frontmatter.repo}>
-            <Leaf hoverable>
-              <h3>repo</h3>
-            </Leaf>
-          </a>
-        }
+        {project.frontmatter?.site && <ProjLink text="site" href={project.frontmatter.site} />}
+        {project.frontmatter?.repo && <ProjLink text="repo" href={project.frontmatter.repo} />}
       </div>
 
     </nav>
