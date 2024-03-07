@@ -9,7 +9,7 @@
 .contact {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.25rem;
 }
 
 .contact {
@@ -20,12 +20,11 @@
 
 .logo {
     font-family: var(--handwritten);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 .svga,
 .logo {
-    padding-inline: 0.5rem;
     cursor: pointer;
 }
 

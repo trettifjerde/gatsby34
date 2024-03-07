@@ -18,7 +18,7 @@
     --outer-deg: 1deg;
     --inner-deg: -1deg;
 
-    --transY: calc(-1.25 * var(--section-margin));
+    --transY: calc(-1 * var(--section-margin));
 
     grid-area: main;
     position: relative;
@@ -35,7 +35,7 @@
 
 .main h1 {
     --grad-dir: 180deg;
-    --transY: calc(-0.5 * var(--section-margin));
+    --transY: calc(-0.25 * var(--section-margin));
 
     width: fit-content;
     text-align: center;

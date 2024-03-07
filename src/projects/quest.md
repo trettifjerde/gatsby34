@@ -14,4 +14,4 @@ order: -1
 ---
 A simple question-and-answer single page application. 
 
-**Saves** the current **question number** in local storage so you don't have to start from the beginning if you close the app.
+**Saves** the current **question number** in local storage so you don't have to start the quest from the beginning if you close the app.

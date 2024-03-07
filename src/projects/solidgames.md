@@ -10,14 +10,15 @@ tags:
 - HTML
 order: 1
 ---
-The person I collaborated on this project with wrote the backend in C++, so I went hardcore too and wrote my front end part in **HTML** and **vanilla JavaScript** with **two third-party libraries only:** a slimmed-down [cropper](https://fengyuanchen.github.io/cropperjs/) and [Leaflet](https://leafletjs.com/).
-
 SolidGames website features:
 - a forum
+- a custom-made BBCode tag panel
 - a real time messaging system
-- a complex form for uploading mission files
+- a complex mission form for uploading user-made missions
+- a .pbo file parser to extract info needed for mission form autocomplete
 - an admin panel for user and content management
-- a custom made BBCode tag panel
 - an in-browser match replay viewer
 
-I had the most fun developing [the match replay viewer](https://sg.zone/replays/1705087203). I wrote a script that reads a JSON file (containing player positions and in-game events for every 5 seconds of the game) and **recreates the match on a map** in the browser. The script also **aggregates match statistics** for every player and squad.
+In order to be able to fully adapt the frontend to the custom backend written in C++, I wrote the frontend in plain **HTML** and **vanilla JavaScript**, with **four third-party libraries only:** a slimmed-down [cropper](https://fengyuanchen.github.io/cropperjs/), **reCAPTCHA**, [Leaflet.js](https://leafletjs.com/) and [bitjson/qr-code](https://github.com/bitjson/qr-code).
+
+The most fun I had was developing [the match replay viewer](https://sg.zone/replays/1705087203). The viewer gets a JSON file of player positions and in-game events and **recreates the match on a map** in a sort of video player UI so that users can scrutinise how the events unfolded at any moment. It allows as well to quickly rewind to a specific event from the event log or find a user from the players list on the map. The script also **aggregates and displays the overall match stats** for every player and squad.

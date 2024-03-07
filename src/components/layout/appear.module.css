@@ -5,21 +5,21 @@
 .appear {
     --scale-max: 1.4;
 
-    --anim-dur: .8s;
+    --anim-dur: 0.75s;
     --item-dur: calc(0.75 * var(--anim-dur));
-    --leaf-dur: calc(1.75 * var(--anim-dur));
-    --frame-dur: calc(1.5 * var(--anim-dur));
+    --leaf-dur: calc(2 * var(--anim-dur));
+    --frame-dur: calc(1.25 * var(--anim-dur));
     --header-dur: calc(1 * var(--frame-dur));
 
     --item-del: calc(0.33 * var(--item-dur));
-    --main-leaf-del: 0s;
-    --h1-del: calc(0.5 * var(--leaf-dur));
+    --main-leaf-del: 0.1s;
+    --h1-del: calc(var(--main-leaf-del) + 0.5 * var(--leaf-dur));
     --section-del: calc(var(--h1-del) + 0.66 * var(--anim-dur));
     --lang-del: calc(var(--section-del) + 0.5 * var(--anim-dur));
-    --nav-leaf-del: calc(var(--lang-del) + var(--anim-dur));
+    --nav-leaf-del: calc(var(--section-del) + 0.5 * var(--anim-dur));
     --proj-title-del: calc(var(--nav-leaf-del) + 0.5 * var(--leaf-dur));
     --proj-del: calc(var(--proj-title-del) + 0.66 * var(--anim-dur));
-    --nav-frame-del: calc(var(--proj-del) + 1.5 * var(--anim-dur));
+    --nav-frame-del: calc(var(--proj-del) + 1.25 * var(--anim-dur));
     --main-frame-del: var(--nav-frame-del);
     --header-del: calc(var(--main-frame-del) + 0 * var(--frame-dur));
 
