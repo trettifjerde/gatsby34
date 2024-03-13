@@ -4,10 +4,10 @@
     --grad-colors: var(--all-colors);
     --grad-size: var(--bg-size) var(--bg-size);
     --frame-shape: var(--outline-radius-sm) var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-lg);
-    --outer-deg: -1deg;
+    --outer-deg: -4deg;
     --inner-deg: 2deg;
-    --outer-padding: .25rem;
     --aside-dimens: calc(0.875 * var(--h1-size));
+    --li-dur: .25s;
 
     grid-area: nav;
     position: sticky;
@@ -30,7 +30,7 @@
     font-family: var(--handwritten);
     color: var(--grad2);
     transform: rotate(var(--rot-deg));
-    transition: color var(--anim-dur) ease-in-out;
+    transition: color var(--anim-dur) var(--anim-tf);
     z-index: 5;
 }
 
@@ -66,7 +66,7 @@
     padding-inline: calc(1.5 * var(--fixed-gap));
     
     transform: translateX(var(--translateX)) scale(var(--scale));
-    transition: transform .3s ease-in-out, color .3s ease-in-out;
+    transition: transform var(--li-dur) ease-in-out, color var(--li-dur) ease-in-out;
 
     cursor: pointer;
 }
@@ -101,7 +101,7 @@
     opacity: var(--overlay-opacity);
     box-shadow: var(--box-shadow);
     transform: rotate(2deg);
-    transition: opacity .3s ease-in-out, padding .3s ease-in-out, background-position .5s ease-in-out;
+    transition: opacity var(--li-dur) ease-in-out, padding var(--li-dur) ease-in-out, background-position var(--anim-dur) ease-in-out;
     z-index: -1;
 }
 
@@ -115,7 +115,6 @@
 @media (min-width: 45rem) {
     .nav {
         --frame-shape: var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg) var(--outline-radius-sm);
-        --outer-padding: 0;
         --outer-deg: -5deg;
         --inner-deg: 5deg;
         top: 30%;

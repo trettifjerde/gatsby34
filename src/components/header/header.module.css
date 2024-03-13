@@ -1,6 +1,7 @@
 .header {
     --duration: .2s;
     --timing: ease-out;
+    --header-dir: normal;
 
     grid-area: header;
 }
@@ -68,15 +69,14 @@
     --grad-pos: auto;
     --grad-colors: var(--two-colors);
     --grad-size: auto;
-    --outer-padding: 0;
-    --inner-padding: 1.5rem 2.5rem;
+    --leaf-padding: 1rem 1.75rem;
     --outer-deg: 1deg;
     --inner-deg: -3deg;
     --animation: none;
     --transY: -50%;
     --bg: var(--bg-lighter);
 
-    animation: .3s forwards var(--animation);
+    animation: .3s both var(--anim-dir) var(--animation);
     position: fixed;
     top: calc(var(--relative-indent) + var(--section-margin));
     right: 1rem;
@@ -87,13 +87,12 @@
     color: var(--grad2);
 }
 
-.enter {
+.enter, .exit {
     --animation: var(--slide-in);
 }
 .exit {
-    --animation: var(--slide-out);
+    --anim-dir: reverse;
 }
-
 @media (min-width: 45rem) {
     .popup {
         position: absolute;

@@ -1,51 +1,49 @@
 :root {
-    --appear-opacity: 0;
+    --init-op: 0;
 }
+
+.main h1,
+.main section,
+.main::before,
+.main::after,
+.nav::before,
+.nav::after,
+.header,
+.projtitle,
+.proj {
+    opacity: var(--init-op);
+}
+
 
 .appear {
     --scale-max: 1.4;
 
-    --anim-dur: 0.75s;
-    --item-dur: calc(0.75 * var(--anim-dur));
+    --anim-dur: 0.55s;
+    --item-dur: calc(1 * var(--anim-dur));
     --leaf-dur: calc(2 * var(--anim-dur));
-    --frame-dur: calc(1.25 * var(--anim-dur));
-    --header-dur: calc(1 * var(--frame-dur));
+    --frame-dur: calc(1.5 * var(--anim-dur));
+    --header-dur: var(--frame-dur);
 
     --item-del: calc(0.33 * var(--item-dur));
     --main-leaf-del: 0.1s;
-    --h1-del: calc(var(--main-leaf-del) + 0.5 * var(--leaf-dur));
+    --h1-del: calc(var(--main-leaf-del) + 0.66 * var(--leaf-dur));
     --section-del: calc(var(--h1-del) + 0.66 * var(--anim-dur));
-    --lang-del: calc(var(--section-del) + 0.5 * var(--anim-dur));
-    --nav-leaf-del: calc(var(--section-del) + 0.5 * var(--anim-dur));
-    --proj-title-del: calc(var(--nav-leaf-del) + 0.5 * var(--leaf-dur));
+    --lang-del: calc(var(--section-del) + 0.75 * var(--anim-dur));
+    --nav-leaf-del: calc(var(--lang-del) + var(--anim-dur));
+    --proj-title-del: calc(var(--nav-leaf-del) + 0.66 * var(--leaf-dur));
     --proj-del: calc(var(--proj-title-del) + 0.66 * var(--anim-dur));
-    --nav-frame-del: calc(var(--proj-del) + 1.25 * var(--anim-dur));
+    --nav-frame-del: calc(var(--proj-del) + var(--leaf-dur));
     --main-frame-del: var(--nav-frame-del);
-    --header-del: calc(var(--main-frame-del) + 0 * var(--frame-dur));
+    --header-del: var(--main-frame-del);
 
     --h1-anim: var(--scale-in);
     --section-anim: var(--fade-in);
-}
-.appearDone {
-    --appear-opacity: 1;
-}
-
-.el,
-.lang,
-.proj,
-.projtitle,
-.header,
-.main::before,
-.nav::before,
-.main > div::before, 
-.nav > div::before {
-    opacity: var(--appear-opacity);
 }
 
 .appear .main, 
 .appear .nav {
     --inner-anim: var(--float-leaf);
-    --outer-anim: var(--open-leaf);
+    --outer-anim: var(--open-outer);
     --inner-dur: var(--leaf-dur);
     --outer-dur: var(--frame-dur);
 }
@@ -74,29 +72,33 @@
     --scale-min: 0.5;
     --scale-max: 1.3;
 
-    animation: var(--item-dur) var(--total-del) forwards var(--fade-in);
+    animation: var(--item-dur) var(--total-del) var(--anim-tf) both var(--fade-in);
 }
 
 .appear .projtitle {
     --scale-min: 0.3;
-    animation: var(--anim-dur) var(--proj-title-del) forwards show-proj;
+    animation: var(--anim-dur) var(--proj-title-del) var(--anim-tf) both show-proj;
 }
 
 .appear .proj {
     --transX: 50%;
     --total-d: calc(var(--proj-del) + var(--i) * var(--item-del) * 0.5);
-    animation: var(--item-dur) var(--total-d) forwards slide-proj;
+    animation: var(--item-dur) var(--total-d) var(--anim-tf) both slide-proj;
 }
 
 .appear .header {
     --transY: 100%;
 
-    animation: var(--header-dur) var(--header-del) forwards var(--slide-in);
+    animation: var(--header-dur) var(--header-del) var(--anim-tf) both var(--slide-in);
+}
+
+.appearDone {
+    --init-op: 1;
 }
 
 @keyframes show-proj {
     0% { 
-        opacity: 1;
+        opacity: 0;
         transform: scale(var(--scale-min)) rotate(0); 
     }
     66% { 

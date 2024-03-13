@@ -1,8 +1,7 @@
 :root {
-    --main-anim: none;
     --h1-anim: none;
-    --section-anim: none;
     --h1-del: 0s;
+    --section-anim: none;
     --section-del: 0s;
 }
 
@@ -13,30 +12,29 @@
     --grad-colors: var(--all-colors);
     --grad-size: var(--bg-size) var(--bg-size);
     --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
-    --outer-padding: 0.125rem;
-    --inner-padding: var(--section-margin) calc(0.5 * var(--section-margin));
+    --frame-inset: -0.125rem;
+    --leaf-padding: var(--section-margin) calc(0.5 * var(--section-margin));
     --outer-deg: 1deg;
     --inner-deg: -1deg;
-
-    --transY: calc(-1 * var(--section-margin));
 
     grid-area: main;
     position: relative;
     width: 100%;
     background-position: var(--grad-position) var(--grad-position);
-    animation: var(--anim-dur) ease-out forwards var(--main-anim);
 }
 
 .main section {
     margin-block: var(--section-margin);
     line-height: 1.25;
-    animation: var(--anim-dur) var(--section-del) forwards var(--section-anim);
+    animation: var(--anim-dur) var(--section-del) var(--anim-tf) both var(--anim-dir) var(--section-anim);
 }
 
 .main h1 {
     --grad-dir: 180deg;
-    --transY: calc(-0.25 * var(--section-margin));
+    --transY: calc(0.25 * var(--section-margin));
 
+    position: relative;
+    z-index: 1;
     width: fit-content;
     text-align: center;
     margin-block: 0;
@@ -48,7 +46,7 @@
     color: transparent;
     background-clip: text;
     background-image: linear-gradient(var(--grad-dir), var(--two-colors));
-    animation: var(--anim-dur) var(--h1-del) forwards var(--h1-anim);
+    animation: var(--anim-dur) var(--h1-del) var(--anim-dir) var(--anim-tf) both var(--h1-anim);
 }
 
 .main section p {
@@ -99,13 +97,27 @@
     color: var(--grad2);
 }
 
-.enter {
+.enter,
+.exit {
+    --outer-anim: var(--open-outer);
+    --inner-anim: var(--open-inner);
     --h1-anim: var(--slide-in);
-    --main-anim: var(--slide-in);
+    --transY: calc(1 * var(--section-margin));
+
+    animation: var(--anim-dur) var(--main-del) var(--anim-tf) var(--anim-dir) both var(--slide-in);
+}
+
+.enter {
+    --main-del: 0s;
+    --outer-del: calc(0.6 * var(--anim-dur));
+    --h1-del: var(--outer-del);
 }
 
 .exit {
-    --main-anim: var(--slide-out);
+    --anim-dir: reverse;
+    --main-del: calc(0.6 * var(--anim-dur));
+    --inner-del: var(--main-del);
+    --h1-del: var(--main-del);
 }
 
 @media (max-width: 45rem) {
@@ -118,8 +130,9 @@
 @media (min-width: 45rem) {
     .main {
         --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
-        --outer-deg: 3deg;
-        --inner-deg: 1deg;
+        --outer-deg: 7deg;
+        --inner-deg: 3deg;
+        --frame-inset: 0;
         align-self: center;
     }
 
@@ -137,6 +150,6 @@
     .main {
         --outer-deg: 10deg;
         --inner-deg: 4deg;
-        --inner-padding: calc(1.5 * var(--section-margin)) var(--section-margin) var(--section-margin) calc(1.5 * var(--section-margin));
+        --leaf-padding: calc(1.5 * var(--section-margin)) var(--section-margin) var(--section-margin) calc(1.5 * var(--section-margin));
     }
 }

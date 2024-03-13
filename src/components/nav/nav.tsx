@@ -14,7 +14,7 @@ type NavProps = {
 export default function Nav({projects, activeId, setProject}: NavProps) {
     return <nav className={nav}>
       <aside className={projtitle}>projects</aside>
-      <Leaf className={anav}>
+      <Leaf shadow className={anav}>
         <ul>
           {
               projects.map((project, i) => <NavLi 

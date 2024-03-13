@@ -1,15 +1,12 @@
 :root {
     --fade-in: fade-in;
-    --fade-out: fade-out;
     --scale-in: scale-in;
     --scale-out: scale-out;
     --slide-in: slide-in;
-    --slide-out: slide-out;
-    --leaf-on: leaf-on;
-    --leaf-off: leaf-off;
-    --innerleaf-on: innerleaf-on;
-    --innerleaf-off: innerleaf-off;
-    --open-leaf: open-leaf;
+    --open-outer: open-outer;
+    --open-inner: open-inner;
+    --leaf-grow: leaf-grow;
+    --bg-change: bg-change;
     --float-leaf: float-leaf;
     --scale-leaf: scale-leaf;
 }
@@ -20,14 +17,6 @@
     }
     to {
         opacity: 1;
-    }
-}
-@keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
     }
 }
 
@@ -42,14 +31,14 @@
     }
 }
 
-@keyframes slide-out {
+@keyframes open-inner {
     from {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 0;
+        transform: rotate(0);
     }
     to {
-        opacity: 0;
-        transform: translateY(calc(-1 * var(--transY)));
+        opacity: 1;
+        transform: rotate(var(--inner-deg));
     }
 }
 
@@ -78,34 +67,18 @@
     }
 }
 
-@keyframes leaf-on {
+@keyframes leaf-grow {
     from { transform: rotate(var(--outer-deg)) scale(var(--scale-start));}
     to { transform: rotate(var(--outer-deg)) scale(var(--scale-end));}
 }
 
-@keyframes leaf-off {
-    from { transform: rotate(var(--outer-deg)) scale(var(--scale-end));}
-    to { transform: rotate(var(--outer-deg)) scale(var(--scale-start));}
-}
-
-
-@keyframes innerleaf-on {
+@keyframes bg-change {
     from {
-        background-color: var(--bg-darker);
+        background-color: var(--bg-from);
     }
 
     to {
-        background-color: transparent;
-    }
-}
-
-@keyframes innerleaf-off {
-    from {
-        background-color: transparent;
-    }
-
-    to {
-        background-color: var(--bg-darker);
+        background-color: var(--bg-to);
     }
 }
 
@@ -120,7 +93,7 @@
     }
 }
 
-@keyframes open-leaf {
+@keyframes open-outer {
     0% {
         opacity: 0;
         transform: rotate(var(--inner-deg));

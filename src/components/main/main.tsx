@@ -21,10 +21,10 @@ export default function Main({ project, changeColor}: {
         classNames={{enter, exit}}
         nodeRef={mainRef}
         onExited={changeColor}
-        addEndListener={(done) => mainRef.current?.addEventListener("animationend", done, false)}>
+        addEndListener={(done) => mainRef.current?.querySelector('h1')?.addEventListener("animationend", done, false)}>
 
         <main className={main} ref={mainRef}>
-            <Leaf className={am}>
+            <Leaf shadow className={am}>
                 {project && <Project project={project} />}
                 {!project && <Hello changeColor={changeColor} />}
             </Leaf>

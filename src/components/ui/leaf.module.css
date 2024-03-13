@@ -1,10 +1,11 @@
 :root {
+    --inner-bg: var(--bg-lighter);
     --grad-pos: auto;
     --grad-size: auto;
     --grad-dir: 0deg;
     --frame-shape: 0;
-    --outer-padding: 0;
-    --inner-padding: 0;
+    --frame-inset: 0;
+    --leaf-padding: 0;
     --outer-deg: 0;
     --inner-deg: 0;
     --outer-scale: 1;
@@ -15,47 +16,55 @@
     --inner-del: 0s;
     --outer-dur: var(--anim-dur);
     --inner-dur: var(--anim-dur);
-    --inner-bg: var(--bg-lighter);
-}
-
-.leaf, .innerleaf {
-    position: relative;
-    z-index: 0;
+    --outer-dir: normal;
+    --inner-dir: normal;
 }
 
 .leaf {
-    padding: var(--outer-padding);
-}
-
-.innerleaf {
-    padding: var(--inner-padding);
+    position: relative;
+    z-index: 0;
+    padding: var(--leaf-padding);
 }
 
 .leaf::before, 
-.innerleaf::before {
+.leaf::after {
     content: '';
     position: absolute;
-    inset: 0;
-    z-index: -1;
     border-radius: var(--frame-shape);
 }
 
 .leaf::before {
+    z-index: -2;
+    inset: var(--frame-inset);
     background-image: linear-gradient(var(--grad-dir), var(--grad-colors));
     background-position: var(--grad-pos);
     background-size: var(--grad-size);
     transform: rotate(var(--outer-deg)) scale(var(--outer-scale));
     transition: background-position var(--anim-dur) ease-in-out;
-    animation: var(--outer-dur) var(--outer-del) forwards var(--outer-anim);
+    animation: var(--outer-dur) var(--outer-del) var(--anim-dir) var(--anim-tf) both var(--outer-anim);
 }
 
-.innerleaf::before {
+.leaf::after {
+    z-index: -1;
+    inset: 0;
     background-color: var(--inner-bg);
     transform: rotate(var(--inner-deg)) scale(var(--inner-scale));
-    transition: background-color .2s ease-in-out;
-    animation: var(--inner-dur) var(--inner-del) forwards var(--inner-anim);
+    transition: background-color var(--anim-dur) ease-in-out;
+    animation: var(--inner-dur) var(--inner-del) var(--anim-dir) var(--anim-tf) both var(--inner-anim);
 }
 
 .hover:hover {
     --inner-bg: transparent;
+}
+
+.shade::before,
+.shade::after {
+    box-shadow: 3px 6px 10px var(--sh-c);
+}
+
+.shade::before {
+    --sh-c: var(--bg-shadow);
+}
+.shade::after {
+    --sh-c: var(--bg-trans);
 }

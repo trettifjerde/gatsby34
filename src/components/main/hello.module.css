@@ -1,5 +1,5 @@
 .hello {
-    --scale-min: 0.4;
+    --scale-min: 0.6;
 }
 
 .langs {
@@ -18,24 +18,28 @@
     cursor: default !important;
 }
 
-.enter {
+.enter, .exit {
     --section-anim: var(--fade-in);
+}
+
+.enter {
     --h1-anim: var(--scale-in);
 }
 
-.enter .active {
-    --outer-anim: var(--leaf-on);
-    --inner-anim: var(--innerleaf-on);
-}
-
 .exit {
-    --section-anim: var(--fade-out);
     --h1-anim: var(--scale-out);
 }
 
+.exit section {
+    --anim-dir: reverse;
+}
+
+.enter .active,
 .exit .active {
-    --outer-anim: var(--leaf-off);
-    --inner-anim: var(--innerleaf-off);
+    --bg-from: var(--bg-lighter);
+    --bg-to: transparent;
+    --outer-anim: var(--leaf-grow);
+    --inner-anim: var(--bg-change);
 }
 
 .exit .langs > div:hover {

@@ -30,7 +30,7 @@ export default function Mail() {
 
         <CSSTransition in={alert} timeout={300} classNames={{enter, exit}} mountOnEnter unmountOnExit>
             <div className={popup}>
-                <Leaf>
+                <Leaf shadow>
                     <strong>{EMAIL_ADDRESS}</strong> - copied!
                 </Leaf>
             </div>
