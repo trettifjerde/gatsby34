@@ -7,7 +7,7 @@ import Leaf from '../../ui/leaf';
 
 export default function Mail() {
     const [alert, setAlert] = React.useState(false);
-    const alertText = React.useMemo(() => navigator?.clipboard ? ' - copied!' : '', []);
+    const alertText = React.useMemo(() => window?.navigator?.clipboard ? ' - copied!' : '', []);
     const timer = React.useRef<any>(null);
 
     const copyEmail = () => {
@@ -19,7 +19,7 @@ export default function Mail() {
             timer.current = null;
         }, POPUP_DURATION);
 
-        navigator?.clipboard?.writeText(EMAIL_ADDRESS);
+        window?.navigator?.clipboard?.writeText(EMAIL_ADDRESS);
         setAlert(true);
     };
 
