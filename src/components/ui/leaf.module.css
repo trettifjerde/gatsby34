@@ -59,12 +59,5 @@
 
 .shade::before,
 .shade::after {
-    box-shadow: 3px 6px 10px var(--sh-c);
-}
-
-.shade::before {
-    --sh-c: var(--bg-shadow);
-}
-.shade::after {
-    --sh-c: var(--bg-trans);
+    box-shadow: 3px 6px 10px var(--bg-trans);
 }

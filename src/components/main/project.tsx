@@ -3,7 +3,8 @@ import ProjLink from './proj-link';
 
 import { ProjectInfo } from '../../utils/types';
 import { leaves } from '../../styles/leaves.module.css';
-import { proj, accountable, links } from './project.module.css';
+import { proj, accountable, links, tags } from './project.module.css';
+import Leaf from '../ui/leaf';
 
 const Project = ({ project }: { project: ProjectInfo }) => <article className={proj}>
   <h1>{project.frontmatter?.name}</h1>
@@ -27,8 +28,8 @@ const Project = ({ project }: { project: ProjectInfo }) => <article className={p
 
   <section dangerouslySetInnerHTML={{ __html: project.html || '' }} />
 
-  <aside>
-    {project.frontmatter?.tags?.map((tag => <span key={tag}>{tag}</span>))}
+  <aside className={tags}>
+    {project.frontmatter?.tags?.map((tag => <Leaf key={tag}>{tag}</Leaf>))}
   </aside>
 </article>
 

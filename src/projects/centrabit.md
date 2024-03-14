@@ -8,7 +8,7 @@ accountable:
 tags: 
 - TypeScript
 - React
-- Next.js (pages router)
+- Next.js 
 - nodemailer
 - Rest API
 - MongoDB

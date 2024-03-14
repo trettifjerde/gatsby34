@@ -29,7 +29,7 @@ const Index = ({ data }: PageProps<Queries.IndexQuery>) => {
 
 export default Index;
 
-export const Head = () => <SEO></SEO>
+export const Head = () => <SEO />
 
 export const query = graphql`
   query Index {

@@ -1,27 +1,4 @@
-import { BG_POS_PROPERTY_NAME, COLOR1_PROPERTY_NAME, COLOR2_PROPERTY_NAME, LAST_COLOR_N, BG_POS_SHIFT_STEP } from '../config';
-
-export const HELLO_CONTENT = [
-    {
-        lang: 'no',
-        h1: "Hei!",
-        section: "Jeg heter Sasja.",
-    },
-    {
-        lang: 'ru',
-        h1: "Привет!",
-        section: "Меня зовут Саша.",
-    },
-    {
-        lang: 'hr',
-        h1: "Bok!",
-        section: "Zovem se Aleksandra.",
-    },
-    {
-        lang: 'en',
-        h1: "Hi there!",
-        section: "My name is Sasha.",
-    },
-];
+import { BG_POS_PROPERTY_NAME, COLOR1_PROPERTY_NAME, COLOR2_PROPERTY_NAME, LAST_COLOR_N, BG_POS_SHIFT_STEP } from './config';
 
 export function updateGradient(current: [number, number]) {
     const nextColorDir = getNextColorDir(current) as [number, number];

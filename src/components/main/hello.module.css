@@ -6,20 +6,21 @@
     --scale-start: 1;
     --scale-end: 1.2;
 
+    font-family: var(--handwritten);
+    font-size: 1.125rem;
+    color: var(--light-text);
     text-transform: uppercase;
     justify-content: center;
-    flex-wrap: wrap;
+}
+
+.langs > *:not(.active) {
+    cursor: pointer;
 }
 
 .active {
     --inner-bg: transparent;
     --outer-scale: var(--scale-end);
-    
-    cursor: default !important;
-}
-
-.enter, .exit {
-    --section-anim: var(--fade-in);
+    cursor: default;
 }
 
 .enter {
@@ -30,7 +31,13 @@
     --h1-anim: var(--scale-out);
 }
 
-.exit section {
+.enter, 
+.exit {
+    --section-anim: var(--fade-in);
+}
+
+.exit section,
+.exit .active {
     --anim-dir: reverse;
 }
 

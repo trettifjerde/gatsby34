@@ -9,7 +9,7 @@ accountable:
 tags: 
 - TypeScript
 - React
-- Next.js (app router)
+- Next.js
 - Redux Toolkit
 - Rest API
 - MongoDB

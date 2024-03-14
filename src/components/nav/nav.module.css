@@ -31,6 +31,7 @@
     color: var(--grad2);
     transform: rotate(var(--rot-deg));
     transition: color var(--anim-dur) var(--anim-tf);
+    text-shadow: var(--text-shadow);
     z-index: 5;
 }
 
@@ -108,7 +109,6 @@
 .nav li:hover,
 .nav li.active {
     --overlay-opacity: 1;
-    --box-shadow: 0 0 6px 3px var(--bg-trans);
     --text-shadow: none;
 }
 
@@ -135,6 +135,7 @@
     .nav li:hover,
     .nav li.active {
         --overlay-padding-left: calc(3 * var(--fixed-gap));
+        --box-shadow: 0 0 6px 3px var(--bg-trans);
     }
 
     .nav li.active {

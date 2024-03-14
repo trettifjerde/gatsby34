@@ -1,16 +1,16 @@
 :root {
-    --light-text: #f3f3f3;
-    --gray-text: #dadada;
-    --bg-lighter: rgb(56, 63, 63);
-    --bg-darker: rgb(46, 53, 53);
+    --light-text: rgb(243, 243, 243);
+    --gray-text: rgb(206, 206, 206);
+    --dark-text: rgb(150, 150, 150);
+    --bg-lighter: #383f3f;
+    --bg-darker: #2e3535;
     --bg: var(--bg-darker);
-    --bg-shadow: rgb(38, 43, 43);
-    --bg-trans: rgba(46, 53, 53, 0.5);
+    --bg-trans: #262b2b80;
+    --text-shadow: 2px 2px var(--bg-trans);
     
     --c0: #c080e0;
     --c1: #40c0e0;
-    --c2: #40e080;
-    /* --c2: #80c080; */
+    --c2: #40c080;   
     --c3: #c040e0;
     --c4: #008080;    
     --c5: #80c0e0;
@@ -18,9 +18,9 @@
     --c7: #c08062;
     --c8: #c04080;
     --c9: #4080e0;
-    --c10: #40c080;   
+    --c10: #80c080;
     --c11: #804080;
-
+    
     --grad1: var(--c0);
     --grad2: var(--c1);
     --two-colors: var(--grad1), var(--grad2);
@@ -30,7 +30,7 @@
     --bg-position: 0%;
 
     --fixed-gap: 0.75rem;
-    --relative-indent: 5vh;
+    --relative-indent: 10vh;
     --p-margin: .75rem;
     --h1-size: 2.75rem;
     --section-margin: 4rem;

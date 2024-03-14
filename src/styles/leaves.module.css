@@ -11,15 +11,11 @@
     --outer-anim: none;
     --inner-anim: none; 
 
-    font-family: var(--handwritten);
     font-size: inherit;
     position: relative;
     z-index: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: var(--fixed-gap);
-}
-
-.leaves > * {
-    cursor: pointer;
 }
