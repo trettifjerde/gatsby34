@@ -8,6 +8,7 @@
 .main::after,
 .nav::before,
 .nav::after,
+.lang,
 .header,
 .projtitle,
 .proj {
@@ -65,8 +66,9 @@
 } 
 
 .appear .lang {
-    --total-del: calc(var(--lang-del) + var(--i) * var(--item-del));
+    --inner-anim: none;
     --outer-anim: var(--scale-leaf);
+    --total-del: calc(var(--lang-del) + var(--i) * var(--item-del));
     --outer-del: var(--total-del);
     --outer-dur: var(--anim-dur);
     --scale-min: 0.5;

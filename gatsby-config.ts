@@ -1,11 +1,10 @@
 import type { GatsbyConfig } from "gatsby";
-import { HELLO } from "./src/utils/data";
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `trettifjerde portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
-    description: HELLO[HELLO.length - 1].section,
+    siteUrl: `https://trettifjerde.vercel.app/`,
+    description: '',
     themeColor: `#2e3535`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -41,7 +40,16 @@ const config: GatsbyConfig = {
       options: {
         "name": "projects",
         "path": './src/projects/'
-      }
+      },
+      __key: "projects"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "hellos",
+        "path": './src/hellos/'
+      },
+      __key: "hellos"
     },
   ]
 };

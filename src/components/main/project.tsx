@@ -1,10 +1,10 @@
 import * as React from 'react';
 import ProjLink from './proj-link';
 
+import Leaf from '../ui/leaf';
 import { ProjectInfo } from '../../utils/types';
 import { leaves } from '../../styles/leaves.module.css';
 import { proj, accountable, links, tags } from './project.module.css';
-import Leaf from '../ui/leaf';
 
 const Project = ({ project }: { project: ProjectInfo }) => <article className={proj}>
   <h1>{project.frontmatter?.name}</h1>

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { leaf, hover, shade } from './leaf.module.css';
 import { STAGGER_PROPERTY_NAME } from '../../utils/config';
+import { leaf, hover, shade } from './leaf.module.css';
 
 type Props = { 
     shadow?: boolean,

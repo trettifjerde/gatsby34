@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { ProjectInfo } from '../../utils/types';
-import { active } from './nav.module.css';
-import { proj } from '../layout/appear.module.css';
 import { STAGGER_PROPERTY_NAME } from '../../utils/config';
+import { proj } from '../layout/appear.module.css';
+import { active } from './nav.module.css';
 
 const NavLi = ({ project, i, isActive, setProject }: {
   isActive: boolean, i: number, project: ProjectInfo, setProject: React.Dispatch<ProjectInfo>

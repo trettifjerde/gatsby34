@@ -6,9 +6,9 @@ import {nav as anav, projtitle} from '../layout/appear.module.css';
 import {nav} from './nav.module.css';
 
 type NavProps = {
-    projects: Array<ProjectInfo>, 
+    projects: readonly ProjectInfo[], 
     activeId?: string,
-    setProject: (p: ProjectInfo|null) => void
+    setProject: (p: ProjectInfo) => void
 };
 
 export default function Nav({projects, activeId, setProject}: NavProps) {

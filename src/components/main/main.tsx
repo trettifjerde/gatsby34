@@ -7,8 +7,8 @@ import Project from './project';
 import Hello from './hello';
 import Leaf from '../ui/leaf';
 
-import {main, enter, exit} from './main.module.css';
 import {main as am} from '../layout/appear.module.css';
+import {main, enter, exit} from './main.module.css';
 
 export default function Main({ project, changeColor}: {
     project: ProjectInfo | null, 
