@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import SVGWrapper from './svg-wrapper';
-import { EMAIL_ADDRESS, POPUP_DURATION } from '../../../utils/config';
-import { svga, popup, enter, exit } from '../header.module.css';
 import Leaf from '../../ui/leaf';
+import { EMAIL_ADDRESS, POPUP_DURATION } from '../../../utils/config';
+import { hasClipboard } from '../../../utils/helpers';
+import { svga, popup, enter, exit } from '../header.module.css';
 
 export default function Mail() {
     const [alert, setAlert] = React.useState(false);
-    const alertText = React.useMemo(() => window?.navigator?.clipboard ? ' - copied!' : '', []);
+    const alertText = React.useMemo(() => hasClipboard() ? ' - copied!' : '', []);
     const timer = React.useRef<any>(null);
 
     const copyEmail = () => {
@@ -19,7 +20,9 @@ export default function Mail() {
             timer.current = null;
         }, POPUP_DURATION);
 
-        window?.navigator?.clipboard?.writeText(EMAIL_ADDRESS);
+        if (hasClipboard()) 
+            window.navigator.clipboard.writeText(EMAIL_ADDRESS);
+
         setAlert(true);
     };
 
