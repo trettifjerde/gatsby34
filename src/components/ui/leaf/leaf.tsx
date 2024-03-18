@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { STAGGER_PROPERTY_NAME } from '../../utils/config';
-import { leaf, hover, shade } from './leaf.module.css';
+
+import { STAGGER_PROPERTY_NAME } from '../../../utils/config';
 
 type Props = { 
     shadow?: boolean,
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function Leaf({ shadow, className, style, children, hoverable, onClick }: Props) {
-    return <div className={`${leaf} ${hoverable ? hover : ''} ${shadow ? shade : ''} ${className ? className : ''}`} style={style} onClick={onClick}>
+    return <div className={`l ${hoverable ? 'hover' : ''} ${shadow ? 'shade' : ''} ${className ? className : ''}`} style={style} onClick={onClick}>
         {children}
     </div>
 }

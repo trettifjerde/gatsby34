@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { GITHUB_URL } from '../../../utils/config';
+
 import ASVG from './a-svg';
+
+import { GITHUB_URL } from '../../../utils/config';
 
 export default function Github() {
     return <ASVG href={GITHUB_URL} viewBox="0 0 16 16" title="go to github">

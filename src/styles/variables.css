@@ -59,7 +59,7 @@
     }
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 70rem) {
     :root {
         --fixed-gap: 1.25rem;
         --h1-size: 3.5rem;

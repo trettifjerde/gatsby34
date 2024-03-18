@@ -1,9 +1,10 @@
 import * as React from 'react';
-import ProjLink from './proj-link';
 
-import Leaf from '../ui/leaf';
-import { ProjectInfo } from '../../utils/types';
-import { leaves } from '../../styles/leaves.module.css';
+import ProjLink from './proj-link';
+import Leaf from '../../ui/leaf/leaf';
+
+import { ProjectInfo } from '../../../utils/types';
+
 import { proj, accountable, links, tags } from './project.module.css';
 
 const Project = ({ project }: { project: ProjectInfo }) => <article className={proj}>
@@ -15,10 +16,10 @@ const Project = ({ project }: { project: ProjectInfo }) => <article className={p
     <nav>
 
       <div className={accountable}>
-        {project.frontmatter?.accountable?.map(item => <p key={item}>{item}</p>)}
+        {project.frontmatter?.accountable?.map((item: string) => <p key={item}>{item}</p>)}
       </div>
 
-      <div className={`${leaves} ${links}`}>
+      <div className={`leaves ${links}`}>
         {project.frontmatter?.site && <ProjLink text="site" href={project.frontmatter.site} />}
         {project.frontmatter?.repo && <ProjLink text="repo" href={project.frontmatter.repo} />}
       </div>
@@ -26,11 +27,12 @@ const Project = ({ project }: { project: ProjectInfo }) => <article className={p
     </nav>
   </header>
 
-  <section dangerouslySetInnerHTML={{ __html: project.html || '' }} />
+  <section dangerouslySetInnerHTML={{__html: project.html || ''}} />
 
-  <aside className={tags}>
-    {project.frontmatter?.tags?.map((tag => <Leaf key={tag}>{tag}</Leaf>))}
-  </aside>
+  <div className={`circles ${tags}`}>
+    {project.frontmatter?.tags?.map(((tag: string) => <Leaf key={tag}>{tag}</Leaf>))}
+  </div>
+  
 </article>
 
 export default Project;

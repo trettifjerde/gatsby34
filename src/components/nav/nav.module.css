@@ -144,7 +144,7 @@
     }
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 70rem) {
     .nav li {
         padding-inline: var(--fixed-gap) calc(1.25 * var(--fixed-gap));
     }

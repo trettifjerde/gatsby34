@@ -2,14 +2,13 @@ import * as React from 'react';
 import { PageProps, graphql } from 'gatsby';
 
 import SEO from '../components/seo';
-
-import { updateGradient } from '../utils/helpers';
-import { ProjectInfo } from '../utils/types';
-
 import Layout from '../components/layout/layout';
 import Header from '../components/header/header';
 import Main from '../components/main/main';
 import Nav from '../components/nav/nav';
+
+import { updateGradient } from '../utils/helpers';
+import { ProjectInfo } from '../utils/types';
 
 const Index = ({ data }: PageProps<Queries.IndexQuery>) => {
 

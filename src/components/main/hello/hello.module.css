@@ -1,0 +1,135 @@
+.hello {
+    --scale-min: 0.6;
+}
+
+.hello ol {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: var(--p-margin);
+    margin-block: calc(2 * var(--p-margin));
+}
+
+.hello ol > li {
+    --inner-bg: var(--bg-darker);
+    --clr: var(--grad1);
+    --cnt: ':3';
+
+    position: relative;
+    font-size: 0.875rem;
+    padding: var(--p-margin) var(--fixed-gap);
+    border-radius: 5px var(--outline-radius-md) 5px var(--outline-radius-md);
+    background-color: var(--inner-bg);
+}
+
+.hello ol > li:nth-of-type(even) {
+    --clr: var(--grad2);
+    --cnt: ':c';
+}
+
+.hello ol strong {
+    display: block;
+    color: var(--grad2);
+    margin-right: 0.25rem;
+}
+
+.hello ol em {
+    display: inline-block;
+    margin-block: var(--p-margin);
+    font-style: normal;
+}
+
+.hello ol div {
+    font-size: 0.75rem;
+    gap: calc(0.5 * var(--p-margin)) var(--p-margin);
+    justify-content: flex-end;
+}
+
+.hello ol code {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 300;
+    color: var(--clr);
+}
+
+.hello ul {
+    padding-left: var(--p-margin);
+}
+
+.langs {
+    --scale-start: 1;
+    --scale-end: 1.2;
+
+    font-family: var(--handwritten);
+    font-size: 1.125rem;
+    margin-block: calc(var(--section-margin) - var(--p-margin));
+    color: var(--light-text);
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+.langs > *:not(.active) {
+    cursor: pointer;
+}
+
+.active {
+    --inner-bg: transparent;
+    --outer-scale: var(--scale-end);
+    cursor: default;
+}
+
+.enter {
+    --h1-anim: var(--scale-in);
+}
+
+.exit {
+    --h1-anim: var(--scale-out);
+}
+
+.enter, 
+.exit {
+    --transY: var(--section-margin);
+    --section-anim: var(--slide-in);
+}
+
+.exit section,
+.exit .active {
+    --anim-dir: reverse;
+}
+
+.enter .active,
+.exit .active {
+    --bg-from: var(--bg-lighter);
+    --bg-to: transparent;
+    --outer-anim: var(--leaf-grow);
+    --inner-anim: var(--bg-change);
+}
+
+.exit .langs > div:hover {
+    --inner-bg: var(--bg-lighter);
+}
+
+@media (min-width: 45rem) {
+
+    .hello ol em,
+    .hello ol strong {
+        display: inline-block;
+    }
+
+    .hello ol strong {
+        min-width: 3em;
+        text-align: right;
+    }
+
+    .langs {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 70rem) {
+    .hello ol:nth-of-type(2) {
+        grid-template-columns: 1fr 1fr;  
+        align-items: flex-end;      
+    }
+}

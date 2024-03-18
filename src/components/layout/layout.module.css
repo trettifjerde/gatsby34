@@ -23,7 +23,7 @@
 
 @media (min-width: 45rem) {
     .layout {
-        max-width: 75rem;
+        max-width: 80rem;
         margin-inline: auto;
         grid-template-areas: 'header header'
             'main nav';
@@ -33,10 +33,10 @@
     }
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 70rem) {
     .layout {
         padding-inline: var(--section-margin);
         grid-template-columns: 5fr 2fr;
-        column-gap: var(--section-margin);
+        column-gap: calc(1 * var(--section-margin));
     }
 }

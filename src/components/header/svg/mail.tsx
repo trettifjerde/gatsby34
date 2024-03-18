@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { CSSTransition } from 'react-transition-group';
+
 import SVGWrapper from './svg-wrapper';
-import Leaf from '../../ui/leaf';
+import Leaf from '../../ui/leaf/leaf';
+
 import { EMAIL_ADDRESS, POPUP_DURATION } from '../../../utils/config';
 import { hasClipboard } from '../../../utils/helpers';
+
 import { svga, popup, enter, exit } from '../header.module.css';
 
 export default function Mail() {

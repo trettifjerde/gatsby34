@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { LINKEDIN_URL } from '../../../utils/config';
+
 import ASVG from './a-svg';
+
+import { LINKEDIN_URL } from '../../../utils/config';
 
 export default function LinkedIn() {
     return <ASVG href={LINKEDIN_URL} viewBox="0 0 24 24" title='go to linkedIn'>

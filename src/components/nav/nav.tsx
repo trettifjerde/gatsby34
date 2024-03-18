@@ -1,8 +1,10 @@
 import * as React from 'react';
+
 import NavLi from './nav-li';
-import Leaf from '../ui/leaf';
+import Leaf from '../ui/leaf/leaf';
+
 import { ProjectInfo } from '../../utils/types';
-import {nav as anav, projtitle} from '../layout/appear.module.css';
+
 import {nav} from './nav.module.css';
 
 type NavProps = {
@@ -13,8 +15,8 @@ type NavProps = {
 
 export default function Nav({projects, activeId, setProject}: NavProps) {
     return <nav className={nav}>
-      <aside className={projtitle}>projects</aside>
-      <Leaf shadow className={anav}>
+      <aside className="projtitle">projects</aside>
+      <Leaf shadow className="nav">
         <ul>
           {
               projects.map((project, i) => <NavLi 

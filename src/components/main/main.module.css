@@ -13,7 +13,7 @@
     --grad-size: var(--bg-size) var(--bg-size);
     --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
     --frame-inset: -0.125rem;
-    --leaf-padding: var(--section-margin) calc(0.5 * var(--section-margin));
+    --leaf-padding: var(--section-margin) calc(0.75 * var(--section-margin));
     --outer-deg: 1deg;
     --inner-deg: -1deg;
 
@@ -49,41 +49,21 @@
     animation: var(--anim-dur) var(--h1-del) var(--anim-dir) var(--anim-tf) both var(--h1-anim);
 }
 
-.main section p {
+.main section > p {
+    --flc: var(--grad1);
     margin-block: var(--p-margin);
     text-indent: 1rem hanging;
 }
 
-.main section p::first-letter {
+.main section > p:nth-of-type(even) {
+    --flc: var(--grad2);
+}
+
+.main section > p::first-letter {
     font-family: var(--handwritten);
     font-weight: 400;
     font-size: 1.5rem;
-    color: var(--grad2);
-}
-
-.main section ul {
-    list-style-type: none;
-    padding-left: calc(2 * var(--p-margin));
-}
-
-.main section li {
-    --marker-color: var(--grad1);
-    position: relative;
-    padding-left: 1rem;
-}
-
-.main section li:nth-child(even) {
-    --marker-color: var(--grad2);
-}
-
-.main section li::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '~';
-    font-weight: 400;
-    margin-right: var(--p-margin);
-    color: var(--marker-color);
+    color: var(--flc);
 }
 
 .main section a {
@@ -95,6 +75,17 @@
 
 .main section a:hover {
     color: var(--grad2);
+}
+
+.main section ul li {
+    margin-block: 0.25em;
+}
+
+.main section ul li::before {
+    content: var(--cnt);
+    color: var(--clr);
+    font-weight: 400;
+    margin-right: 0.5em;
 }
 
 .enter,
@@ -130,8 +121,8 @@
 @media (min-width: 45rem) {
     .main {
         --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
-        --outer-deg: 7deg;
-        --inner-deg: 3deg;
+        --outer-deg: 4deg;
+        --inner-deg: 2deg;
         --frame-inset: 0;
         align-self: center;
     }
@@ -142,10 +133,10 @@
     }
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 70rem) {
     .main {
-        --outer-deg: 10deg;
-        --inner-deg: 4deg;
-        --leaf-padding: calc(1.5 * var(--section-margin)) var(--section-margin) var(--section-margin) calc(1.5 * var(--section-margin));
+        --outer-deg: 7deg;
+        --inner-deg: 3deg;
+        --leaf-padding: calc(1.5 * var(--section-margin)) calc(1.25 * var(--section-margin)) var(--section-margin) calc(1.75 * var(--section-margin));
     }
 }
