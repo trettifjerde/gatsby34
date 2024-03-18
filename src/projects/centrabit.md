@@ -10,7 +10,6 @@ tags:
 - React
 - Next.js 
 - nodemailer
-- Rest API
 - MongoDB
 - SCSS
 order: 1

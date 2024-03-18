@@ -11,7 +11,6 @@ tags:
 - React
 - Next.js
 - Redux Toolkit
-- Rest API
 - MongoDB
 - CSS
 - Tailwind CSS

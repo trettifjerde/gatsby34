@@ -39,20 +39,20 @@ Zasada moje vještine izgledaju ovako:
     <span class="l">Vue</span>
     </div>
 
-Trenutno živim u **Zadru**, ali mi neće biti problem preseliti se **u drugi grad**, though preferably not to another country as I like Croatia a lot **<3**
+Trenutno živim u **Zadru**, ali mogla bih se preseliti **u drugi grad**, no radije unutar zemlje jer stvarno volim Hrvatsku **<3**
 
 1. 
-    `Things I truly enjoy:`
-    - making things work exactly as planned
-    - figuring out how to achieve the aforementioned step-by-step :D
-    - brainstorming ideas with teammates
-    - learning languages, both natural and programming ones
-    - refactoring
-    - debugging
+    `Jako mi se sviđa:`
+    - truditi se da sve radi točno onako kako je i zamišljeno
+    - rješavati svakakve zagonetke
+    - razmjenjivati ideje s kolegama
+    - učiti jezike, prirodne kao i umjetne
+    - refaktorirati
+    - debagirati
 
 1. 
-    `...and as for these - well, not so much:`
-    - planning graphic design (god bless graphic designers)
-    - unit testing (and testers, too)
+    `...a ovo - pa i ne baš:`
+    - planirati grafički dizajn (bože čuvaj dizajnere)
+    - testirati softver (čuvaj i testere, bože :D)
 
-If you're looking for a passionate and dedicated developer to join your team, don't hesitate to [contact me](/#backToTop).
+Ako ste u potrazi za developerom strastveno zaljubljenim u svoj posao i želite da se Vašem timu pridruži marljiv radnik, [javite mi se](/#backToTop).

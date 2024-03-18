@@ -6,7 +6,7 @@ import Leaf from '../../ui/leaf/leaf';
 
 import { LAST_TO_APPEAR_ID, STAGGER_PROPERTY_NAME } from '../../../utils/config';
 
-import { hello, langs, enter, exit, active } from './hello.module.css';
+import { hello, langs, enter, exit, active, contact } from './hello.module.css';
 
 
 export default function Hello({ changeColor }: { 
@@ -36,7 +36,6 @@ export default function Hello({ changeColor }: {
                     </div>
 
                     <section id={LAST_TO_APPEAR_ID} dangerouslySetInnerHTML={{__html: content.html || ''}} />
-
                 </div>
             </CSSTransition>
         </SwitchTransition>

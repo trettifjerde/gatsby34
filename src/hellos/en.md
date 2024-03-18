@@ -10,7 +10,7 @@ I'm more proficient at **frontend** than at backend, but I find learning backend
 Right now my skill set looks like this:
 
 1. 
-    **★★★** *I feel comfortable working with:*
+    **★★★** *I feel most comfortable working with:*
     <div class="circles">
     <div class="l">JavaScript</div>
     <div class="l">TypeScript</div>
@@ -52,7 +52,7 @@ Currently, I live in **Zadar, Croatia**. I don't mind moving to **another city**
 
 1. 
     `...and as for these - well, not so much:`
-    - coming up with graphic design ideas (god bless graphic designers)
-    - unit testing (and testers, too)
+    - coming up with graphic design ideas (god bless you, graphic designers)
+    - unit testing (god bless testers, too)
 
-If you're looking for a passionate and dedicated developer to join your team, don't hesitate to [contact me](/#backToTop).
+If you're looking for a hardworking and dedicated developer to join your team, don't hesitate to [contact me](/#backToTop).

@@ -3,14 +3,14 @@ title: 'Hei!'
 lang: 'no'
 order: 1 
 ---
-My name is **Sasha**, and I'm a **web developer**.
+Jeg heter **Sasja**, og jeg er **webutvikler**.
 
-I'm more proficient at **frontend** than at backend, but I find learning backend development fascinating and I'm hoping to work fullstack one day.
+For øyeblikket er jeg flinkere i **frontend** enn i backend, men jeg synes backend er utrolig gøy, og jeg elsker å lære mer om det. Jeg håper å bli fullstack-utvikler en dag.
 
-Right now my skill set looks like this:
+Akkurat nå ser kompetansene mine sånn ut:
 
 1. 
-    **★★★** *I feel comfortable working with:*
+    **★★★** *Jeg trives best med:*
     <div class="circles">
     <div class="l">JavaScript</div>
     <div class="l">TypeScript</div>
@@ -22,7 +22,7 @@ Right now my skill set looks like this:
     </div>
 
 1. 
-    **★★** *I double-check while working with:*
+    **★★** *Jeg pleier å dobbeltsjekke når jeg jobber med:*
     <div class="circles">
     <span class="l">Angular </span>
     <span class="l">SQL</span>
@@ -32,27 +32,27 @@ Right now my skill set looks like this:
     </div>
 
 1. 
-    **★** *I've got some knowledge of:*
+    **★** *Jeg har litt kunnskap om:*
     <div class="circles">
     <span class="l">Gatsby</span>
     <span class="l">GraphQL</span>
     <span class="l">Vue</span>
     </div>
 
-Currently, I live in **Zadar, Croatia**. I don't mind moving to **another city**, though preferably not to another country as I like Croatia a lot **<3**
+Jeg bor i **Zadar, Kroatia** for tida. Jeg kan gjerne flytte til **en annen by**, men helst ikke til et annet land for jeg er glad i Kroatia **<3** (selv om Norge alltid vil være noe helt spesielt for meg)
 
 1. 
-    `Things I truly enjoy:`
-    - making things work exactly as planned
-    - figuring out how to achieve the aforementioned step-by-step :D
-    - brainstorming ideas with teammates
-    - learning languages, both natural and programming ones
-    - refactoring
-    - debugging
+    `Jeg koser meg veldig når jeg:`
+    - står på og klarer å få ting til å funke akkurat som planlagt 
+    - bryner meg på utfordrende oppgaver
+    - lærer språk, både naturlige og formelle
+    - utveksler ideer med kollegaene
+    - driver med refaktorering
+    - søker feil
 
 1. 
-    `...and as for these - well, not so much:`
-    - planning graphic design (god bless graphic designers)
-    - unit testing (and testers, too)
+    `...og når det gjelder disse - tja, ikke særlig:`
+    - å komme med ideer rundt grafisk design (gud bevare designere)
+    - enhetstesting (gud signe testere også)
 
-If you're looking for a passionate and dedicated developer to join your team, don't hesitate to [contact me](/#backToTop).
+Hvis du leter etter en utvikler som er skikkelig glad i jobben sin og arbeider flittig, [ta gjerne kontakt med meg](/#backToTop).

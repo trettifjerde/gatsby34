@@ -1,5 +1,6 @@
 .proj header {
     font-size: calc(0.375 * var(--h1-size));
+    margin-bottom: var(--section-margin);
 }
 
 .proj header h5 {
@@ -46,11 +47,6 @@
     text-decoration: none;
 }
 
-.proj ul {
-    list-style-type: none;
-    padding-left: calc(2 * var(--p-margin));
-}
-
 .proj ul li {
     --clr: var(--grad1);
     --cnt: '★';
@@ -62,6 +58,7 @@
 }
 
 .tags {  
+    margin-top: var(--section-margin);
     font-size: 0.875rem;
     gap: calc(0.75 * var(--fixed-gap)) calc(1.25 * var(--fixed-gap));
     justify-content: flex-end;

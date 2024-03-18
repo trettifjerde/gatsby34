@@ -23,6 +23,7 @@
     font-family: var(--handwritten);
     font-size: 1.75rem;
     text-shadow: var(--text-shadow);
+    padding-left: var(--fixed-gap);
 }
 
 .svga,
