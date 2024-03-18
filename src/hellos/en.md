@@ -22,7 +22,7 @@ Right now my skill set looks like this:
     </div>
 
 1. 
-    **★★** *I double-check while working with:*
+    **★★** *I know my way around, but often double-check while working with:*
     <div class="circles">
     <span class="l">Angular </span>
     <span class="l">SQL</span>
@@ -39,10 +39,10 @@ Right now my skill set looks like this:
     <span class="l">Vue</span>
     </div>
 
-Currently, I live in **Zadar, Croatia**. I don't mind moving to **another city**, though preferably not to another country as I like Croatia a lot **<3**
+Currently, I live in **Zadar, Croatia**. I don't mind moving to **another city**, though preferably not to another country because I like Croatia a lot **<3**
 
 1. 
-    `Things I truly enjoy:`
+    `I truly enjoy:`
     - making things work exactly as planned
     - solving all sorts of puzzles
     - learning languages, both natural and programming ones
@@ -51,7 +51,7 @@ Currently, I live in **Zadar, Croatia**. I don't mind moving to **another city**
     - debugging
 
 1. 
-    `...and as for these - well, not so much:`
+    `...as for these - well, not so much:`
     - coming up with graphic design ideas (god bless you, graphic designers)
     - unit testing (god bless testers, too)
 

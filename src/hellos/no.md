@@ -1,7 +1,7 @@
 ---
 title: 'Hei!'
 lang: 'no'
-order: 1 
+order: 2 
 ---
 Jeg heter **Sasja**, og jeg er **webutvikler**.
 
@@ -10,7 +10,7 @@ For øyeblikket er jeg flinkere i **frontend** enn i backend, men jeg synes back
 Akkurat nå ser kompetansene mine sånn ut:
 
 1. 
-    **★★★** *Jeg trives best med:*
+    **★★★** *Trives best med:*
     <div class="circles">
     <div class="l">JavaScript</div>
     <div class="l">TypeScript</div>
@@ -22,7 +22,7 @@ Akkurat nå ser kompetansene mine sånn ut:
     </div>
 
 1. 
-    **★★** *Jeg pleier å dobbeltsjekke når jeg jobber med:*
+    **★★** *Klarer meg godt med, men dobbeltsjekker ofte:*
     <div class="circles">
     <span class="l">Angular </span>
     <span class="l">SQL</span>
@@ -32,7 +32,7 @@ Akkurat nå ser kompetansene mine sånn ut:
     </div>
 
 1. 
-    **★** *Jeg har litt kunnskap om:*
+    **★** *Har litt kunnskap om:*
     <div class="circles">
     <span class="l">Gatsby</span>
     <span class="l">GraphQL</span>

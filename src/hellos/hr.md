@@ -5,9 +5,9 @@ order: 3
 ---
 Zovem se **Aleksandra**, i ja sam **web developerka**.
 
-Imam više iskustva s **frontendom** nego s backendom, ali me jako zanima više saznavati o backendu i nadam se da ću jednom raditi fullstack.
+Imam više iskustva s **frontendom** nego s backendom, ali saznavati više o backendu me jako zanima i nadam se da ću jednom raditi fullstack.
 
-Zasada moje vještine izgledaju ovako:
+Zasada mi vještine izgledaju ovako:
 
 1. 
     **★★★** *Najugodnije se osjećam kad radim s ovima:*
@@ -22,7 +22,7 @@ Zasada moje vještine izgledaju ovako:
     </div>
 
 1. 
-    **★★** *Snalazim se s:*
+    **★★** *Znam se snaći, ali sve dvostruko provjeravam:*
     <div class="circles">
     <span class="l">Angular</span>
     <span class="l">SQL</span>
