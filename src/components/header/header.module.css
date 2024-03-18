@@ -65,6 +65,16 @@
     transform: scale(1.4);
 }
 
+.mailBtn {
+    background-color: transparent;
+    font-family: var(--font-family);
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    outline: none;
+    border: none;
+}
+
 .popup {
     --frame-shape: var(--outline-radius-lg) var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-sm);
     --grad-dir: 0;
@@ -89,6 +99,7 @@
 
 .popup strong {
     color: var(--grad2);
+    user-select: all;
 }
 
 .popup strong + span,
