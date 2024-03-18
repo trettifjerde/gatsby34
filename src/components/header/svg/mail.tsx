@@ -9,6 +9,7 @@ import { EMAIL_ADDRESS, POPUP_DURATION } from '../../../utils/config';
 import { svga, popup, enter, exit } from '../header.module.css';
 
 export default function Mail() {
+    const inputRef = React.useRef<HTMLInputElement>(null);
     const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState(<></>);
     const timer = React.useRef<any>(null);
@@ -19,7 +20,7 @@ export default function Mail() {
 
         const {msg, dur} = await new Promise<void>(async (resolve, reject) => {
             try {
-                await navigator.clipboard.writeText(EMAIL_ADDRESS);
+                await navigator.clipboard.writeText(inputRef.current!.value);
                 resolve();
             }
             catch(err) {
@@ -46,6 +47,7 @@ export default function Mail() {
     };
 
     return <div className={svga} onPointerDown={copyEmail} title="copy email address">
+        <input ref={inputRef} type="hidden" value={EMAIL_ADDRESS}/>
         <SVGWrapper viewBox="0 0 32 32">
             <path d="M16,16.8l13.8-9.2C29.2,5.5,27.3,4,25,4H7C4.7,4,2.8,5.5,2.2,7.6L16,16.8z" />
             <path d="M16.6,18.8C16.4,18.9,16.2,19,16,19s-0.4-0.1-0.6-0.2L2,9.9V23c0,2.8,2.2,5,5,5h18c2.8,0,5-2.2,5-5V9.9L16.6,18.8z" />
