@@ -12,10 +12,6 @@ export function updateGradient(current: [number, number]) {
     return nextColorDir;
 }
 
-export function hasClipboard() {
-    return typeof window !== 'undefined' && window.navigator && window.navigator.clipboard;
-}
-
 function getNextColorDir(current: [number, number]) {
     const [color, direction] = current;
     const nextFirstColor = color + direction;

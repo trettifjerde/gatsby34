@@ -71,7 +71,7 @@
     --grad-pos: auto;
     --grad-colors: var(--two-colors);
     --grad-size: auto;
-    --leaf-padding: 1rem 1.75rem;
+    --leaf-padding: 1.25rem 2rem 1.25rem 1.5rem;
     --outer-deg: 1deg;
     --inner-deg: -3deg;
     --animation: none;
@@ -83,11 +83,17 @@
     top: calc(var(--relative-indent) + var(--section-margin));
     right: 1rem;
     z-index: 10;
+    text-align: right;
     cursor: text;
 }
 
 .popup strong {
     color: var(--grad2);
+}
+
+.popup strong + span,
+.popup strong + div {
+    font-size: 0.75rem;
 }
 
 .enter, .exit {

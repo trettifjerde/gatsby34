@@ -5,28 +5,44 @@ import SVGWrapper from './svg-wrapper';
 import Leaf from '../../ui/leaf/leaf';
 
 import { EMAIL_ADDRESS, POPUP_DURATION } from '../../../utils/config';
-import { hasClipboard } from '../../../utils/helpers';
 
 import { svga, popup, enter, exit } from '../header.module.css';
 
 export default function Mail() {
     const [alert, setAlert] = React.useState(false);
-    const alertText = React.useMemo(() => hasClipboard() ? ' - copied!' : '', []);
+    const [alertMsg, setAlertMsg] = React.useState(<></>);
     const timer = React.useRef<any>(null);
 
-    const copyEmail = () => {
+    const copyEmail = async() => {
         if (timer.current) 
             clearTimeout(timer.current);
+
+        const {msg, dur} = await new Promise<void>(async (resolve, reject) => {
+            try {
+                await navigator.clipboard.writeText(EMAIL_ADDRESS);
+                resolve();
+            }
+            catch(err) {
+                console.log(err);
+                reject();
+            }
+        })
+        .then(() => ({
+            msg: <span> - copied!</span>,
+            dur: POPUP_DURATION
+        }))
+        .catch(err => ({
+            msg: <div>Failed to copy to clipboard, please, copy manually!</div>,
+            dur: POPUP_DURATION * 1.5
+        }))
+
+        setAlertMsg(msg);
+        setAlert(true);
 
         timer.current = setTimeout(() => {
             setAlert(false);
             timer.current = null;
-        }, POPUP_DURATION);
-
-        if (hasClipboard()) 
-            window.navigator.clipboard.writeText(EMAIL_ADDRESS);
-
-        setAlert(true);
+        }, dur);
     };
 
     return <div className={svga} onPointerDown={copyEmail} title="copy email address">
@@ -35,10 +51,11 @@ export default function Mail() {
             <path d="M16.6,18.8C16.4,18.9,16.2,19,16,19s-0.4-0.1-0.6-0.2L2,9.9V23c0,2.8,2.2,5,5,5h18c2.8,0,5-2.2,5-5V9.9L16.6,18.8z" />
         </SVGWrapper>
 
-        <CSSTransition in={alert} timeout={300} classNames={{enter, exit}} mountOnEnter unmountOnExit>
+        <CSSTransition in={!!alert} timeout={300} classNames={{enter, exit}} mountOnEnter unmountOnExit>
             <div className={popup}>
                 <Leaf shadow>
-                    <strong>{EMAIL_ADDRESS}</strong>{alertText}
+                    <strong>{EMAIL_ADDRESS}</strong>
+                    {alertMsg}
                 </Leaf>
             </div>
         </CSSTransition>
