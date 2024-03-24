@@ -6,21 +6,21 @@ export default function SEO() {
     return <>
         { title && <>
             <title>{title}</title>
-            <meta name="og:title" content={title} />
+            <meta property="og:title" content={title} />
         </>}
 
         { description && <>
             <meta name="description" content={description} />
-            <meta name="og:description" content={description}/> 
+            <meta property="og:description" content={description}/> 
         </>}
 
         { siteUrl && <>
-                <meta name="og:url" content={siteUrl} /> 
-                {imageUrl && <meta name="og:image" content={`${siteUrl}${imageUrl}`} />}
+                <meta property="og:url" content={siteUrl} /> 
+                {imageUrl && <meta property="og:image" content={`${siteUrl}${imageUrl}`} />}
             </>
         }
 
-        <meta name="og:type" content="website" />
+        <meta property="og:type" content="website" />
     </>
 }
 
