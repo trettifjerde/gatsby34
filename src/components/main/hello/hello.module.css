@@ -89,7 +89,7 @@
 
 .enter, 
 .exit {
-    --transY: var(--section-margin);
+    --transY: calc(0.75 * var(--section-margin));
     --section-anim: var(--slide-in);
 }
 

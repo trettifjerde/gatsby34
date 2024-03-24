@@ -4,8 +4,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `trettifjerde portfolio`,
     siteUrl: `https://trettifjerde.vercel.app/`,
-    description: '',
-    themeColor: `#2e3535`
+    imageUrl: '/hi.png'
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -16,7 +15,10 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        "icon": "src/images/icon.png"
+        "name": "trettifjerde portfolio",
+        "icon": "src/images/icon.png",
+        "theme_color": `#2e3535`,
+        "background_color": `#2e3535`
       }
     },
     {

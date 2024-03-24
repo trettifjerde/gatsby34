@@ -2,7 +2,7 @@ import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 export default function SEO() {
-    const {title, description, themeColor, siteUrl} = useMetadata();
+    const {title, description, siteUrl, imageUrl } = useMetadata();
     return <>
         { title && <>
             <title>{title}</title>
@@ -14,12 +14,13 @@ export default function SEO() {
             <meta name="og:description" content={description}/> 
         </>}
 
-        { themeColor && <meta name='theme-color' content={themeColor} /> }
-
-        { siteUrl && <meta name="og:url" content={siteUrl} /> }
+        { siteUrl && <>
+                <meta name="og:url" content={siteUrl} /> 
+                {imageUrl && <meta name="og:image" content={`${siteUrl}${imageUrl}`} />}
+            </>
+        }
 
         <meta name="og:type" content="website" />
-        <meta name="og:image" content="" />
     </>
 }
 
@@ -30,7 +31,7 @@ const useMetadata = () => {
                 siteMetadata {
                     title
                     siteUrl
-                    themeColor
+                    imageUrl
                 }
             }
             markdownRemark(frontmatter: { lang: {eq: "en" } } ) {
@@ -41,7 +42,7 @@ const useMetadata = () => {
     return {
         title: q.site?.siteMetadata?.title,
         siteUrl: q.site?.siteMetadata?.siteUrl,
-        themeColor: q.site?.siteMetadata?.themeColor,
-        description: q.markdownRemark?.excerpt
+        description: q.markdownRemark?.excerpt,
+        imageUrl: q.site?.siteMetadata?.imageUrl
     }
 };

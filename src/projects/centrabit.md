@@ -9,6 +9,7 @@ tags:
 - TypeScript
 - React
 - Next.js 
+- react-markdown
 - nodemailer
 - MongoDB
 - SCSS
