@@ -1,7 +1,7 @@
 ---
 name: "Centrabit website"
 site: "http://148.251.199.126:8080/"
-desc: "An informational website for a start-up. Currently is being filled with content and not deployed on the official domain yet."
+desc: "An informational website for a crypto start-up and a place to subscribe to their desktop app. Currently is being filled with content and not deployed on the official domain yet."
 accountable: 
 - fullstack
 - design
@@ -11,13 +11,16 @@ tags:
 - Next.js 
 - react-markdown
 - nodemailer
+- paddle.js
 - MongoDB
 - SCSS
 order: 1
 ---
 Pages are rendered from **.md** files and are **revalidated regularly** - no need to rebuild the website when the content is updated.
 
+Webshop functionalities are implemented using Paddle’s APIs.
+
 The two forms (Newsletter Subscription and Contact Us) are protected with **reCAPTCHA Enterprise**.
 
-Upon form submission, the backend **stores** the form **data in a database** for future reference and **sends emails** both to the user (confirming that their request has been received) and the site administrator (notifying them of a new request).
+Upon form submission, the backend **stores** the form **data in the database** for future reference and **sends emails** both to the user (confirming that their request has been received) and the site administrator (notifying them of a new request).
 

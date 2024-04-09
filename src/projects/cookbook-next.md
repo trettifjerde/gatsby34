@@ -23,4 +23,4 @@ Database data is **cached** both on server and client, so the number of DB calls
 
 Images users attach to their recipe forms are uploaded to [imgbb](https://imgbb.com/) image hosting when the recipe is added to the database.
 
-Ingredients of any given recipe can be added to user's grocery list **in just one click**. Items with the same name and measure units **add up automatically**.
+Ingredients of any given recipe can be added to the user's grocery list **in just one click**. Items with the same name and measure units **add up automatically**.

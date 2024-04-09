@@ -3,11 +3,11 @@ title: 'Hei!'
 lang: 'no'
 order: 2 
 ---
-Jeg heter **Sasja**, og jeg er **webutvikler**. For øyeblikket er jeg flinkere i **frontend** enn i backend, men jeg synes det er utrolig gøy å lære om backend, og jeg håper å jobbe som fullstack-utvikler i framtiden.
+Jeg heter **Sasja**, jeg er 29 år og språkforsker som nå er ute etter å bli **webutvikler**. 
 
-Før jobbet jeg som norsklærer. Jeg har alltid foretrukket å **lære selv** framfor å undervise. På et tidspunkt slo deg meg at jeg lengtet etter å gjøre det samme som studentene mine, programerere, drev med. Nemlig å **løse alle slags utfordrende oppgaver** mens jeg lager ting som **sprer kunnskap**, **knytter folk sammen** og **gjør hverdagen enklere**. Så jeg begynte å lære meg hvordan man gjør det.
+Jeg har alltid vært fascinert av programmering, men turte ikke bryne meg på det før jeg hadde hatt en jobb. Jeg begynte å lære det på fritiden for moro skyld, og sånn oppdaget jeg at jeg trivdes mye bedre med programmering enn med jobben jeg faktisk hadde. **I de siste fire årene** har jeg **tatt online kurs** og **laget apper** for bekjente. Du kan få lese mer om noen av dem her på nettsiden.
 
-Akkurat nå ser **kompetansene mine** sånn ut:
+For øyeblikket er jeg flinkere i **frontend** enn i backend, men jeg jobber stadig på backend skillsene mine for jeg vil gjerne bli **fullstack**-utvikler **i framtiden**. Akkurat nå ser **kompetansene mine** sånn ut:
 
 1. 
     **★★★** *Trives best med:*
@@ -23,7 +23,7 @@ Akkurat nå ser **kompetansene mine** sånn ut:
     </div>
 
 1. 
-    **★★** *Klarer meg godt med:*
+    **★★** *Kan klare meg godt med:*
     <div class="circles">
     <span class="l">Angular </span>
     <span class="l">SQL</span>
@@ -40,20 +40,20 @@ Akkurat nå ser **kompetansene mine** sånn ut:
     <span class="l">Vue</span>
     </div>
 
-Jeg bor i **Zadar, Kroatia**, men **kan gjerne flytte** for å bli med på et lag der folk er stolte av jobben sin - og jeg skal **gjøre mitt aller beste for å bidra**.
+Siden 2020 har jeg bodd i **Zadar, Kroatia**, men jeg kan gjerne flytte hvis det er et krav at jeg jobber på kontoret. Det jeg ønsker aller helst akkurat nå er å bli med på et lag med folk som er stolte av jobben sin, å lære av dem og sammen med dem. Jeg kommer til å bli kjempeglad for å kunne bidra til å utvikle applikasjoner som **sprer kunnskap**, **knytter folk sammen** og **gjør hverdagen enklere**. 
 
 1. 
     `Jeg koser meg veldig når jeg:`
     - klarer å få ting til å funke akkurat som planlagt 
+    - driver og løser alle slags utfordrende oppgaver
+    - sitter og finner ut av ting på egen hånd
     - lærer språk, både naturlige og formelle
-    - finner ut av ting på egen hånd
-    - utveksler ideer med kollegaene
     - driver med refaktorering
     - søker feil
 
 1. 
     `...og når det gjelder disse - tja, ikke særlig:`
-    - å komme med ideer rundt grafisk design (heia designere!)
+    - å utvikle grafisk design fra bunnen av (heia designere!)
     - enhetstesting (heia testere!)
 
-For tida leter jeg etter en jobb, så [ta gjerne kontakt med meg](/#backToTop)!
+Hvis du vil se om jeg passer inn på teamet ditt og om jeg har nok kunnskap, [ta gjerne kontakt med meg](/#backToTop)!

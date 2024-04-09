@@ -3,11 +3,11 @@ title: 'Hi there!'
 lang: en
 order: 4 
 ---
-My name is **Sasha**, and I'm a **web developer** - more proficient at **frontend** than at backend, but I find learning backend development fascinating and I hope to work fullstack in the future.
+My name is **Sasha**, and I'm a 29-year-old graduate linguist making a career switch to become a **web developer**. 
 
-Previously, I worked as a Norwegian language tutor and proofreader. I've always preferred **learning languages** to teaching them. At some point, I started catching myself longing for what my software developer students were doing - **solving all sorts of puzzles** while creating things that **spread knowledge**, **connect people** and **make everyday life easier**. So I began learning how to do the same.
+I've always had a fascination for programming, but never dared to actually dive into it until I already had a job. I began learning it in my free time as a hobby, only to find out I enjoy it far more than my actual work. **For the last four years**, I've been taking **online courses** and **building web apps** for the people I know. You can read more about some of them on this website.
 
-Right now my **skill set** looks like this:
+**Currently**, I'm more proficient in **frontend** than in backend, but I constantly work on my backend skills as I hope to work **fullstack in the future**. Now my **skill set** looks like this:
 
 1. 
     **★★★** *Feel most comfortable working with:*
@@ -40,20 +40,19 @@ Right now my **skill set** looks like this:
     <span class="l">Vue</span>
     </div>
 
-I live in **Zadar, Croatia**, but I would gladly **move to another city** to join a team where people take pride in their work - and I would **give my absolute best to contribute**.
+I've been living in **Zadar, Croatia** since 2020, but I don't mind moving to another city to work on-site. My biggest wish right now is to join a team of people taking pride in their work, to learn from them and with them. I'd be thrilled if I could contribute to creating applications that **share knowledge**, **connect people** and **make everyday life a bit easier**.
 
 1. 
     `I truly enjoy:`
     - making things work exactly as planned
-    - learning languages, both natural and programming ones
+    - solving all sorts of puzzles
     - figuring things out on my own
-    - brainstorming ideas with teammates
+    - learning languages, both natural and programming ones
     - refactoring
     - debugging
-
 1. 
     `...as for these - well, not so much:`
-    - coming up with graphic design ideas (cheers to graphic designers!)
-    - unit testing (cheers to testers, too)
+    - developing design from scratch (cheers to graphic designers!)
+    - unit testing (cheers to testers!)
 
-Currently, I'm open to work, so don't hesitate to [contact me](/#backToTop)!
+If you want to see whether I'm a good fit for your team or you'd like to test my knowledge, don't hesitate to [contact me](/#backToTop)!

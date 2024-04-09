@@ -18,7 +18,8 @@
 
     position: relative;
     font-size: 0.875rem;
-    padding: var(--p-margin) var(--fixed-gap);
+    padding: var(--fixed-gap);
+    padding-left: calc(2 * var(--fixed-gap));
     border-radius: 5px var(--outline-radius-md) 5px var(--outline-radius-md);
     background-color: var(--inner-bg);
 }
@@ -36,7 +37,7 @@
 
 .hello ol em {
     display: inline-block;
-    margin-block: var(--p-margin);
+    margin-bottom: var(--p-margin);
     font-style: normal;
 }
 

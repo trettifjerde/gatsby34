@@ -13,7 +13,7 @@
     --grad-size: var(--bg-size) var(--bg-size);
     --frame-shape: var(--outline-radius-sm) var(--outline-radius-lg) var(--outline-radius-md) var(--outline-radius-lg);
     --frame-inset: -0.125rem;
-    --leaf-padding: var(--section-margin) calc(0.75 * var(--section-margin));
+    --leaf-padding: var(--section-margin) calc(0.5 * var(--section-margin));
     --outer-deg: 1deg;
     --inner-deg: -1deg;
 

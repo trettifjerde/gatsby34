@@ -3,14 +3,14 @@ title: 'Bok!'
 lang: hr
 order: 3 
 ---
-Zovem se **Aleksandra**. Ja sam **web developerka**. Imam više iskustva s **frontendom** nego s backendom, ali saznavati više o backendu jako me zanima. Nadam se da ću u budućnosti raditi fullstack.
+Zovem se **Aleksandra**, imam 29 godina, po struci sam jezikoslovka, a sad se trudim da promijenim karijeru te postanem **web developerka**.
 
-Prije sam radila kao predavačica i lektorka norveškog jezika. Uvijek sam više voljela **učiti jezike** sama nego im podučavati druge. A u nekom trenutku sam shvatila da bih se zapravo željela baviti baš onim što moji studenti softver developeri rade - **rješavati svakakve zagonetke** i praviti stvari koje **šire znanje**, **povezuju ljudi** te **olakšavaju svakodnevni život**. Pa sam krenula učiti kako se to radi.
+Programiranje me je fasciniralo oduvijek, ali sam se usudila početi ga učiti tek kad sam već bila radila, kao hobi u slobodno vrijeme. Tako sam otkrila da stvarno uživam u tome i da mi je to puno zanimljivije od mog posla. **Zadnje četiri godine** pohađala sam **online tečajeve** te **napravila niz projekata** za poznanike o nekima od kojih možete pročitati ovdje. 
 
-Ovako moje **vještine** izgledaju zasad:
+**Trenutno** imam više iskustva sa **frontendom** nego s backendom, ali stalno proučavam i backend stvari jer se **u budućnosti** nadam raditi **fullstack**. Evo kako mi **vještine** izgledaju zasad:
 
 1. 
-    **★★★** *Najugodnije se osjećam kad radim s:*
+    **★★★** *Najlakše mi je raditi s:*
     <div class="circles">
     <div class="l">JavaScript</div>
     <div class="l">TypeScript</div>
@@ -40,20 +40,20 @@ Ovako moje **vještine** izgledaju zasad:
     <span class="l">Vue</span>
     </div>
 
-Živim u **Zadru**, ali rado bih se **preselila i u drugi grad** da se pridružim prisnom timu ljudi ponosnih na svoj posao - i dala bih **sve od sebe da doprinesem** radu.
+Od 2020. živim u **Zadru**, ali ako se mora raditi on-site, mogla bih se preseliti i u drugi grad. Sad mi je najveća želja da **se pridružim timu** ljudi ponosnih na svoj posao da mogu učiti od njih i zajedno s njima. Jako bih voljela raditi na aplikacijama koje **šire znanje**, **povezuju ljudi** te **olakšavaju svakodnevni život**. 
 
 1. 
-    `Jako mi se sviđa:`
+    `Veoma mi se sviđa:`
     - truditi se da sve radi točno onako kako je i zamišljeno
-    - učiti jezike, prirodne kao i umjetne
+    - rješavati svakakve zagonetke
     - samostalno se snalaziti u zapletenim stvarima
-    - razmjenjivati ideje s kolegama
+    - učiti jezike, prirodne kao i umjetne
     - refaktorirati
     - debagirati
 
 1. 
     `...a ovo - pa i ne baš:`
-    - planirati grafički dizajn (živjeli dizajneri!)
-    - testirati softver (živjeli i testeri)
+    - od nule planirati grafički dizajn (živjeli dizajneri!)
+    - testirati softver (živjeli testeri)
 
-Trenutno sam u potrazi za poslom - [slobodno mi se javite](/#backToTop)!
+Ako želite provjeriti hoću li se uklopiti u vaš tim i da li imam dovoljno znanja, [slobodno mi se javite](/#backToTop)!
