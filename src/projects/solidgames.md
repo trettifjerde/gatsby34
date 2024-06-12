@@ -1,5 +1,5 @@
 ---
-name: "SolidGames website"
+name: "SolidGames"
 site: "https://sg.zone/"
 desc: "A multipurpose platform for a gaming community with 3000+ registered members."
 accountable: 
@@ -14,7 +14,7 @@ SolidGames website features:
 - forum
 - custom-made BBCode tag panel
 - real time messaging system
-- complex form for uploading user-made missions
+- complex form for uploading user-made mission files
 - .pbo file parser used to extract info that is needed for mission form autocomplete
 - admin panel for user and content management
 - in-browser match replay viewer

@@ -1,5 +1,5 @@
 ---
-name: "Birthday Zadar Quest Walk"
+name: "Birthday Zadar Quest"
 repo: "https://github.com/trettifjerde/quest"
 site: "https://birthday-quest-for-kesak.web.app/"
 desc: "A birthday present for a friend who is new to Zadar and enjoys city quests."

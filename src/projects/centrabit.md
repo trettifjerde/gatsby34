@@ -1,7 +1,7 @@
 ---
-name: "Centrabit website"
-site: "http://148.251.199.126:8080/"
-desc: "An informational website for a crypto start-up and a place to subscribe to their desktop app. Currently is being filled with content and not deployed on the official domain yet."
+name: "Centrabit"
+site: "https://test.centrabit.com/"
+desc: "An informational website for a crypto start-up and a place to subscribe to their desktop app."
 accountable: 
 - fullstack
 - design
@@ -22,5 +22,5 @@ Webshop functionalities are implemented using Paddle’s APIs.
 
 The two forms (Newsletter Subscription and Contact Us) are protected with **reCAPTCHA Enterprise**.
 
-Upon form submission, the backend **stores** the form **data in the database** for future reference and **sends emails** both to the user (confirming that their request has been received) and the site administrator (notifying them of a new request).
+The backend **stores** the form data **in the Mongo Atlas database** and **sends emails**: a confirmation letter to the user and a notification letter to the site administrator
 
