@@ -1,6 +1,6 @@
 ---
 name: "Centrabit"
-site: "https://test.centrabit.com/"
+site: "https://centrabit.com/"
 desc: "An informational website for a crypto start-up and a place to subscribe to their desktop app."
 accountable: 
 - fullstack
@@ -16,11 +16,11 @@ tags:
 - SCSS
 order: 1
 ---
-Pages are rendered from **.md** files and are **revalidated regularly** - no need to rebuild the website when the content is updated.
+Pages are **rendered from .md** files, using **incremented static regeneration** - no need to rebuild the website when the content is updated.
 
-Webshop functionalities are implemented using Paddle’s APIs.
+Webshop functionalities are implemented using **Paddle**’s APIs.
 
 The two forms (Newsletter Subscription and Contact Us) are protected with **reCAPTCHA Enterprise**.
 
-The backend **stores** the form data **in the Mongo Atlas database** and **sends emails**: a confirmation letter to the user and a notification letter to the site administrator
+The backend **stores** form data **in a MongoDB database** and **sends emails** on form submission: a confirmation letter to the user and a notification letter to the site administrator
 

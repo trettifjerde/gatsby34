@@ -19,8 +19,8 @@ order: 0
 ---
 Registration and authentication are implemented without any third-party libraries other than **JWT**.
 
-Database data is **cached** both on server and client, so the number of DB calls is reduced.
+Data is **cached** both on server and client, so the number of DB calls is reduced.
 
-Images users attach to their recipe forms are uploaded to [imgbb](https://imgbb.com/) image hosting when the recipe is added to the database.
+Images that users attach to their recipes are uploaded to [imgbb](https://imgbb.com/) image hosting when the recipe is added to the database.
 
 Ingredients of any given recipe can be added to the user's grocery list **in just one click**. Items with the same name and measure units **add up automatically**.

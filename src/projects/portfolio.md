@@ -13,7 +13,7 @@ tags:
 - CSS
 order: -2
 ---
-Flashy and gaudy because I wanted to practice making fancy borders and animated gradients.
+Flashy and gaudy because I wanted to practise making fancy borders and animated gradients.
 
 Made with Gatsby so that I can test out a framework that is new to me.
 
