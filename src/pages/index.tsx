@@ -31,7 +31,7 @@ export const query = graphql`
   query Index {
     allMarkdownRemark(
       filter: { frontmatter: { lang: { eq: null } } }
-      sort: { frontmatter: { order: DESC } }
+      sort: { frontmatter: { priority: DESC } }
     ) {
       nodes {
         html

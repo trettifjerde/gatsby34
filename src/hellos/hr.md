@@ -1,9 +1,9 @@
 ---
 title: 'Bok!'
 lang: hr
-order: 3 
+priority: 3 
 ---
-Zovem se **Aleksandra**, imam 29 godina, živim u Osijeku, po struci sam jezikoslovka, a sad se trudim da promijenim karijeru te postanem **web developerka**.
+Zovem se **Aleksandra**, imam 30 godina, živim u Osijeku, po struci sam jezikoslovka, a sad se trudim da promijenim karijeru te postanem **web developerka**.
 
 Programiranje me je fasciniralo oduvijek, ali početi ga učiti usudila sam se tek kad sam već bila radila, kao hobi u slobodno vrijeme. Tako sam otkrila da stvarno uživam u tome i da mi je to puno zanimljivije od mog posla. **Zadnje četiri godine** pohađala sam **online tečajeve** te **napravila niz projekata** za poznanike - o nekima od tih aplikacija možete pročitati ovdje. 
 

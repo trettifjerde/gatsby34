@@ -1,9 +1,9 @@
 ---
 title: 'Hei!'
 lang: 'no'
-order: 2 
+priority: 2 
 ---
-Jeg heter **Sasja**, jeg er 29 år, bor i Osijek (Kroatia) og er språkforsker som nå er ute etter å bli **webutvikler**. 
+Jeg heter **Sasja**, jeg er 30 år, bor i Osijek (Kroatia) og er språkforsker som nå er ute etter å bli **webutvikler**. 
 
 Jeg har alltid vært fascinert av programmering, men turte ikke bryne meg på det før jeg hadde hatt en jobb. Jeg begynte å lære det på fritiden for moro skyld, og sånn oppdaget jeg at jeg trivdes mye bedre med programmering enn med jobben jeg faktisk hadde. **I de siste fire årene** har jeg **tatt online kurs** og **laget apper** for bekjente. Du kan lese mer om noen av appene her på nettsiden.
 

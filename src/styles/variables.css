@@ -44,10 +44,10 @@
     --font-weight: 200;
     --handwritten: "Handwritten",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 
-    --anim-dur: .35s;
+    --anim-dur: .4s;
     --anim-dir: normal;
-    --anim-tf: ease;
-    --scale-max: 1.2;
+    --anim-tf: ease-in-out;
+    --scale-max: 1.15;
 }
 
 @media (min-width: 45rem) {

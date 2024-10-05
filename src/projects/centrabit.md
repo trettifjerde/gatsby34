@@ -14,7 +14,7 @@ tags:
 - paddle.js
 - MongoDB
 - SCSS
-order: 1
+priority: 1
 ---
 Pages are **rendered from .md** files, using **incremented static regeneration** - no need to rebuild the website when the content is updated.
 

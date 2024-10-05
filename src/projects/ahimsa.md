@@ -13,7 +13,7 @@ tags:
 - Sanity
 - nodemailer
 - CSS
-order: 2
+priority: 2
 ---
 Integrates with **Sanity CMS**, so that the website owner can manage all the content with ease. 
 

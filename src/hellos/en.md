@@ -1,9 +1,9 @@
 ---
 title: 'Hi there!'
 lang: en
-order: 4 
+priority: 4 
 ---
-My name is **Sasha**, and I'm a 29-year-old graduate linguist living in Osijek (Croatia) and making a career switch to become a **web developer**. 
+My name is **Sasha**, and I'm a 30-year-old graduate linguist living in Osijek (Croatia) and making a career switch to become a **web developer**. 
 
 I've always had a fascination for programming, but never dared to dive into it until I already had a job. I began learning it in my free time as a hobby, only to find out I enjoy it far more than my actual work. **For the last four years**, I've been taking **online courses** and **building web apps** for the people I know. You can read more about some of the apps on this website.
 

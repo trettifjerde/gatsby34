@@ -11,7 +11,7 @@ tags:
 - Gatsby
 - GraphQL
 - CSS
-order: -2
+priority: -2
 ---
 Flashy and gaudy because I wanted to practise making fancy borders and animated gradients.
 

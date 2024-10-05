@@ -102,7 +102,9 @@
     opacity: var(--overlay-opacity);
     box-shadow: var(--box-shadow);
     transform: rotate(2deg);
-    transition: opacity var(--li-dur) ease-in-out, padding var(--li-dur) ease-in-out, background-position var(--anim-dur) ease-in-out;
+    transition-property: opacity, padding, background-position;
+    transition-duration: var(--li-dur);
+    transition-timing-function: ease-in-out;
     z-index: -1;
 }
 
@@ -122,7 +124,7 @@
 
     .nav ul {
         display: grid;
-        gap: var(--fixed-gap);
+        gap: calc(0.5 * var(--fixed-gap));
         padding: 4rem 0.5rem 4rem 2rem;
         justify-items: start;
         overflow: visible;

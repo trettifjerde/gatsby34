@@ -10,7 +10,7 @@ tags:
 - TypeScript
 - Angular
 - SCSS
-order: -1
+priority: -1
 ---
 A simple question-and-answer single page application. 
 

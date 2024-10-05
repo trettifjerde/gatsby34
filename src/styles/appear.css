@@ -19,7 +19,7 @@
 .appear {
     --scale-max: 1.4;
 
-    --anim-dur: 0.55s;
+    --anim-dur: .6s;
     --item-dur: calc(1 * var(--anim-dur));
     --leaf-dur: calc(2 * var(--anim-dur));
     --frame-dur: calc(1.5 * var(--anim-dur));

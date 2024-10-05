@@ -15,7 +15,7 @@ tags:
 - CSS
 - Tailwind CSS
 - Framer Motion
-order: 0
+priority: 0
 ---
 Registration and authentication are implemented without any third-party libraries other than **JWT**.
 
