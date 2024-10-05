@@ -7,7 +7,7 @@ Zovem se **Aleksandra**, imam 30 godina, živim u Osijeku, po struci sam jezikos
 
 Programiranje me je fasciniralo oduvijek, ali početi ga učiti usudila sam se tek kad sam već bila radila, kao hobi u slobodno vrijeme. Tako sam otkrila da stvarno uživam u tome i da mi je to puno zanimljivije od mog posla. **Zadnje četiri godine** pohađala sam **online tečajeve** te **napravila niz projekata** za poznanike - o nekima od tih aplikacija možete pročitati ovdje. 
 
-**Trenutno** imam više iskustva s **frontendom** nego s backendom, ali stalno proučavam i backend stvari jer bih voljela znati dobro obavljati sve poslove vezane za izradu web aplikacija te moći **u budućnosti** raditi **fullstack**. Evo kako mi **vještine** izgledaju zasad:
+**Trenutno** imam više iskustva s **frontendom** nego s backendom, ali stalno proučavam i backend stvari jer bih voljela znati dobro obavljati sve poslove vezane uz izradu web aplikacija te moći **u budućnosti** raditi **fullstack**. Evo kako mi **vještine** izgledaju zasad:
 
 1. 
     **★★★** *Najlakše mi je raditi s:*
