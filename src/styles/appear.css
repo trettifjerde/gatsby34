@@ -19,7 +19,7 @@
 .appear {
     --scale-max: 1.4;
 
-    --anim-dur: .6s;
+    --anim-dur: .5s;
     --item-dur: calc(1 * var(--anim-dur));
     --leaf-dur: calc(2 * var(--anim-dur));
     --frame-dur: calc(1.5 * var(--anim-dur));
@@ -29,10 +29,10 @@
     --main-leaf-del: 0.1s;
     --h1-del: calc(var(--main-leaf-del) + 0.66 * var(--leaf-dur));
     --lang-del: calc(var(--h1-del) + 0.66 * var(--anim-dur));
-    --nav-leaf-del: calc(var(--lang-del) + 1.5 * var(--item-dur));
+    --nav-leaf-del: calc(var(--lang-del) + 1 * var(--item-dur));
     --proj-title-del: calc(var(--nav-leaf-del) + 0.66 * var(--leaf-dur));
     --proj-del: calc(var(--proj-title-del) + 0.66 * var(--anim-dur));
-    --nav-frame-del: calc(var(--proj-del) + var(--leaf-dur));
+    --nav-frame-del: calc(var(--proj-del) + 1.25 * var(--leaf-dur));
     --main-frame-del: var(--nav-frame-del);
     --header-del: var(--main-frame-del);
     --section-del: var(--main-frame-del);

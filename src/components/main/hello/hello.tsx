@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import Leaf from '../../ui/leaf/leaf';
 
-import { LAST_TO_APPEAR_ID, STAGGER_PROPERTY_NAME } from '../../../utils/config';
+import { STAGGER_PROPERTY_NAME } from '../../../utils/config';
 
 import { hello, langs, enter, exit, active } from './hello.module.css';
 
@@ -35,7 +35,7 @@ export default function Hello({ changeColor }: {
                         </Leaf>)}
                     </div>
 
-                    <section id={LAST_TO_APPEAR_ID} dangerouslySetInnerHTML={{__html: content.html || ''}} />
+                    <section dangerouslySetInnerHTML={{__html: content.html || ''}} />
                 </div>
             </CSSTransition>
         </SwitchTransition>

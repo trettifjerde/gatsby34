@@ -14,20 +14,23 @@ export default function Layout({ children }: {
     children: React.ReactNode
 }) {
     const [interactive, setInteractive] = React.useState(false);
+    const ref = React.useRef<HTMLDivElement>(null);
 
     return <>
-        <CSSTransition in appear={true}
-            addEndListener={(node, done) => node
-                .querySelector(`#${LAST_TO_APPEAR_ID}`)
+        <CSSTransition in 
+            appear={true}
+            nodeRef={ref}
+            addEndListener={(done) => document
+                .getElementById(LAST_TO_APPEAR_ID)
                 ?.addEventListener('animationend', done, false)
             }
-            onEntered={(_, isAppearing) => {
+            onEntered={(isAppearing) => {
                 if (isAppearing)
                     setInteractive(true)
             }}
             classNames={{ appear: 'appear', appearDone: 'appear-done' }}>
 
-            <div id="backToTop" className={layout}>
+            <div ref={ref} id="backToTop" className={layout}>
                 {children}
             </div>
 
